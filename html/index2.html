@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AnyTechPros Sandstone Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        :root {
+            --warm-sandstone: #E6DED3;
+            --soft-taupe: #D2C8BB;
+            --deep-charcoal: #1F1F1F;
+            --muted-brown-grey: #6F6A63;
+            --dark-taupe: #4A4641;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--warm-sandstone);
+            color: var(--deep-charcoal);
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(230, 222, 211, 0.85);
+        }
+        .case-study-image {
+            filter: sepia(20%) contrast(1.05) brightness(0.95);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .case-card:hover .case-study-image {
+            filter: sepia(0%) contrast(1.1) brightness(1);
+            transform: scale(1.03);
+        }
+        .filter-link.active {
+            color: var(--deep-charcoal);
+            border-bottom: 2px solid var(--deep-charcoal);
+        }
+        .filter-link {
+            color: var(--muted-brown-grey);
+            transition: all 0.3s ease;
+        }
+        .filter-link:hover {
+            color: var(--deep-charcoal);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "sandstone": "#E6DED3",
+                        "taupe": "#D2C8BB",
+                        "charcoal": "#1F1F1F",
+                        "brown-grey": "#6F6A63"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="antialiased overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 border-b border-black/5 glass-nav">
+<div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="text-[var(--deep-charcoal)]">
+<svg class="size-7" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-semibold tracking-tight uppercase text-[var(--deep-charcoal)]">AnyTechPros</h2>
+</div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="text-xs uppercase tracking-widest font-medium text-[var(--muted-brown-grey)] hover:text-[var(--deep-charcoal)] transition-colors" href="#">Solutions</a>
+<a class="text-xs uppercase tracking-widest font-medium text-[var(--muted-brown-grey)] hover:text-[var(--deep-charcoal)] transition-colors" href="#">Expertise</a>
+<a class="text-xs uppercase tracking-widest font-medium text-[var(--muted-brown-grey)] hover:text-[var(--deep-charcoal)] transition-colors" href="#">About</a>
+<a class="text-xs uppercase tracking-widest font-medium text-[var(--deep-charcoal)] transition-colors border-b border-charcoal/20" href="#">Insights</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="hidden sm:block text-xs uppercase tracking-widest font-medium text-[var(--muted-brown-grey)] hover:text-[var(--deep-charcoal)] transition-colors">Client Login</button>
+<button class="bg-[var(--deep-charcoal)] text-[var(--warm-sandstone)] text-xs uppercase tracking-[0.2em] font-bold px-8 py-3 transition-all hover:bg-[var(--dark-taupe)]">
+                Inquire
+            </button>
+</div>
+</div>
+</header>
+<main class="pt-40 pb-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="mb-16">
+<nav class="flex items-center gap-2 mb-6">
+<span class="text-[10px] uppercase tracking-[0.4em] text-[var(--muted-brown-grey)]">Insights</span>
+<span class="text-black/20 text-xs">/</span>
+<span class="text-[10px] uppercase tracking-[0.4em] font-semibold text-[var(--deep-charcoal)]">Case Studies</span>
+</nav>
+<h1 class="text-6xl lg:text-7xl font-light tracking-tight text-[var(--deep-charcoal)]">Forging Digital <span class="italic">Excellence</span></h1>
+</div>
+<div class="flex items-center gap-10 border-b border-black/10 pb-6 mb-16 overflow-x-auto no-scrollbar">
+<button class="filter-link active text-xs uppercase tracking-[0.3em] font-bold py-2 whitespace-nowrap">All</button>
+<button class="filter-link text-xs uppercase tracking-[0.3em] font-bold py-2 whitespace-nowrap">AI Automation</button>
+<button class="filter-link text-xs uppercase tracking-[0.3em] font-bold py-2 whitespace-nowrap">SaaS</button>
+<button class="filter-link text-xs uppercase tracking-[0.3em] font-bold py-2 whitespace-nowrap">Cloud</button>
+<button class="filter-link text-xs uppercase tracking-[0.3em] font-bold py-2 whitespace-nowrap">Government</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+<div class="case-card group cursor-pointer bg-[var(--soft-taupe)] rounded-sm overflow-hidden flex flex-col border border-black/5 shadow-sm">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="AI Neural Framework" class="case-study-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOy4H5DHJN-g0rWOtZKLF59ka1HIVpO3jH-Og9pZjaqX319vOBSnZyRBkxy7WinEAobssk_9_KkBCuEeinfhtp-Xb_dac9ltRX7-z9_MrUTvE8dnuSk7H4kq4_Tuwg2SQ-ajp2w7rN3KoBHSJ3gDsGzJtt4yf2MBSkPYM8kwkNW-kKG18gKdKnU1PMzuwdljrP0o9_QVJ1uSYLAV2Qa4Jnw8nccsWYc5mD73TzGpIFA75EWhH6TLWKMNOMdW-MQFbp8ss3ABs_k1GK"/>
+</div>
+<div class="p-8 space-y-4 flex-1">
+<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--dark-taupe)]">AI Automation</span>
+<h3 class="text-2xl font-light serif leading-tight text-[var(--deep-charcoal)]">Optimizing Global Supply Chains with Neural Logistics</h3>
+<p class="text-[var(--muted-brown-grey)] text-sm italic font-light">45% reduction in latency for Fortune 500 logistics partner</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--deep-charcoal)] border-b border-transparent hover:border-charcoal transition-all" href="#">
+                            Read Case Study <span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="case-card group cursor-pointer bg-[var(--soft-taupe)] rounded-sm overflow-hidden flex flex-col border border-black/5 shadow-sm">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Enterprise SaaS" class="case-study-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8_YoS4OimIcbuiCoBUvNRSZoL0L4LbztfZorNlIZzV5Tf9nnAVeCLYk8N3fRZCYmVOGDc2qpYN8tK3s97FuFIQRzGSALw5neVNHyD6cCIucE3Euw70DVpc5B9ObvXqfAecS69J8Wo8H8LZqqvGEeGiuMeNGzhnXYiE-NIW0SiaV-3jKGbtpH5tbNSyjYR0KSRQy-YDojXYxe7s0Gk0-2ZxJ43_gMwTwr__nog4oPDOWjx6aHohhzxr9n1R6HHdcVIDTBh6oIZCu-K"/>
+</div>
+<div class="p-8 space-y-4 flex-1">
+<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--dark-taupe)]">SaaS Architecture</span>
+<h3 class="text-2xl font-light serif leading-tight text-[var(--deep-charcoal)]">Next-Generation FinTech Infrastructure for Sterling Wealth</h3>
+<p class="text-[var(--muted-brown-grey)] text-sm italic font-light">Seamless migration of $12B AUM to proprietary SaaS environment</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--deep-charcoal)] border-b border-transparent hover:border-charcoal transition-all" href="#">
+                            Read Case Study <span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="case-card group cursor-pointer bg-[var(--soft-taupe)] rounded-sm overflow-hidden flex flex-col border border-black/5 shadow-sm">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Cloud Infrastructure" class="case-study-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh3eKkrJeQqykeJHfeeHbEURN9hu2SHtoWf3deBab-Ayzn7aSl2JW2swTqaXFWs3cMs2sXhPMJ0j54W5zpdC7xtG7YzU1B0dOpAym8iwBjExd-KlRU_0w6V81OJoQCT9kuidHpoqDnrdY4fv3yb6hNbNDrD_XYeaKI9xTwd8bI9hgCC1MqfDM59eoHnBJVP0DPZ7elFEVcZ3tQrq9Hjlub_Q7Eo2GitLTxJhrTV3s_aBqUBt45goyUMRQe879uYEMTsJVOHeLnzuH5"/>
+</div>
+<div class="p-8 space-y-4 flex-1">
+<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--dark-taupe)]">Cloud Strategy</span>
+<h3 class="text-2xl font-light serif leading-tight text-[var(--deep-charcoal)]">Resilient Multi-Cloud Deployment for Federal Oversight</h3>
+<p class="text-[var(--muted-brown-grey)] text-sm italic font-light">Zero-downtime transition for mission-critical datasets</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--deep-charcoal)] border-b border-transparent hover:border-charcoal transition-all" href="#">
+                            Read Case Study <span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="case-card group cursor-pointer lg:col-span-2 bg-[var(--soft-taupe)] rounded-sm overflow-hidden flex flex-col md:flex-row border border-black/5 shadow-sm">
+<div class="md:w-1/2 overflow-hidden h-full min-h-[300px]">
+<img alt="Government AI" class="case-study-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsUkmjpbmnccYkHhogScBlNvHOnK-R2lLPhXMlh2mNrfhiS9BUlWb1KXwW6NTfVi4r2a4AA-ral6tJk4ctxLHXKggtfPQ-g_C7x9Fd-JItUxpIuQju4RObl2Qz2m0nMNy6nRWnNMhtSuMlB5XXd-jGtA4Udblxl2WM9Cr1JnJfs0Wp_dMvlF4CWmIVHH1_tdJ3pdb5bqa3hBZKHYXFtRmx6F7Sy2_8l8G8ephrayQON0f9sRud3yWLN7M1bLKMVBaZxxDNYlenh_Nq"/>
+</div>
+<div class="md:w-1/2 p-10 lg:p-12 space-y-6 flex flex-col justify-center">
+<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--dark-taupe)]">Government Solutions</span>
+<h3 class="text-3xl lg:text-4xl font-light serif leading-tight text-[var(--deep-charcoal)]">Modernizing Public Health Surveillance with Predictive Analytics</h3>
+<p class="text-[var(--muted-brown-grey)] text-base italic font-light">30% efficiency increase for National Health Institute workflows</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--deep-charcoal)] border-b border-transparent hover:border-charcoal transition-all" href="#">
+                            Read Case Study <span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+<div class="case-card group cursor-pointer bg-[var(--soft-taupe)] rounded-sm overflow-hidden flex flex-col border border-black/5 shadow-sm">
+<div class="aspect-[16/10] overflow-hidden">
+<img alt="Digital Transformation" class="case-study-image w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiw_KGCcf9l-8FAXpkb54jN7mQlX7eGqmqnlHYBNemxfB01fN-hmJwTZ6hjJ22qZOcDRrl4ukq9LE5WabhuU4KkgjTuVDtLjD44JydUJ1QcE8vIfftGlWXLOCW_8ppgVj8WrCKvAyBsCguwT-G53fr6BYf6eu5awPteWYeZ6rdMEvXF5dwVm_zRV2KsrgQdytJ-g1lhPMNJfvFJyGjp-O0bwU7ihCYZqH0uO7iLHuXbN_LF3CpA5SPpHIMxrkmmw5c2xGRMc9VfH2_"/>
+</div>
+<div class="p-8 space-y-4 flex-1">
+<span class="text-[10px] uppercase tracking-[0.4em] font-bold text-[var(--dark-taupe)]">Data Intelligence</span>
+<h3 class="text-2xl font-light serif leading-tight text-[var(--deep-charcoal)]">Harnessing Big Data for Real-Time Retail Forecasting</h3>
+<p class="text-[var(--muted-brown-grey)] text-sm italic font-light">Inventory accuracy improved by 22% across 400+ locations</p>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold text-[var(--deep-charcoal)] border-b border-transparent hover:border-charcoal transition-all" href="#">
+                            Read Case Study <span class="material-symbols-outlined text-sm">east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-[var(--deep-charcoal)] text-[var(--warm-sandstone)] pt-24 pb-12">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-24">
+<div class="lg:col-span-1">
+<div class="flex items-center gap-3 mb-8 text-[var(--warm-sandstone)]">
+<div>
+<svg class="size-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-semibold tracking-widest uppercase">AnyTechPros</h2>
+</div>
+<p class="text-[var(--soft-taupe)] opacity-80 text-sm leading-relaxed mb-8">
+                    Defining the next era of enterprise intelligence through elite engineering and strategic digital vision.
+                </p>
+<div class="flex gap-6">
+<a class="text-[var(--soft-taupe)] hover:text-white transition-colors" href="#">
+<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-8">Expertise</h4>
+<ul class="space-y-4 text-xs tracking-widest text-[var(--soft-taupe)] opacity-80">
+<li><a class="hover:text-white transition-colors" href="#">AI Automation</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Bespoke SaaS</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Cloud Infrastructure</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Data Intelligence</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-8">Firm</h4>
+<ul class="space-y-4 text-xs tracking-widest text-[var(--soft-taupe)] opacity-80">
+<li><a class="hover:text-white transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Methodology</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Careers</a></li>
+<li><a class="hover:text-white transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-[10px] uppercase tracking-[0.4em] font-bold text-white/40 mb-8">Newsletter</h4>
+<p class="text-[var(--soft-taupe)] text-xs mb-6 tracking-wide opacity-80">Quarterly insights on enterprise technology.</p>
+<div class="relative">
+<input class="w-full bg-white/5 border-white/10 text-xs py-4 px-4 tracking-widest focus:ring-1 focus:ring-[var(--soft-taupe)] focus:border-transparent text-white" placeholder="Professional Email" type="email"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-[var(--soft-taupe)]">
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+<p class="text-[9px] uppercase tracking-[0.3em] text-white/20">© 2024 AnyTechPros Consulting Group. All rights reserved.</p>
+<div class="flex gap-12 text-[9px] uppercase tracking-[0.3em] text-white/20">
+<a class="hover:text-white transition-colors" href="#">Privacy</a>
+<a class="hover:text-white transition-colors" href="#">Terms</a>
+<a class="hover:text-white transition-colors" href="#">Security</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>

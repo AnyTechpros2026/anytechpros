@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply transition-colors duration-300;
+  }
+  
+  body {
+    @apply bg-sandstone dark:bg-charcoal text-charcoal dark:text-sandstone antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  
+  /* Luxury uppercase labels */
+  .label-luxury {
+    @apply text-xs uppercase tracking-widest-3xl font-bold text-brown-grey;
+  }
+  
+  .label-luxury-sm {
+    @apply text-[10px] uppercase tracking-widest-4xl font-bold text-brown-grey;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 md:py-24 lg:py-32;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Glassmorphism Navigation */
+  .glass-nav {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    @apply bg-sandstone/85 dark:bg-charcoal/85;
+  }
+  
+  /* Luxury Card Styles */
+  .luxury-card {
+    @apply bg-taupe dark:bg-charcoal-light border border-charcoal/10 dark:border-sandstone/10 rounded-sm p-8 md:p-12 shadow-card hover:shadow-elevated hover:border-charcoal/30 dark:hover:border-sandstone/30 transition-all duration-500;
+  }
+  
+  .luxury-card-white {
+    @apply bg-white dark:bg-card-dark border border-charcoal/5 dark:border-border-dark rounded-xl p-6 md:p-8 shadow-card hover:shadow-elevated transition-all duration-300;
+  }
+  
+  /* Button Styles - Sandstone Theme */
+  .btn-primary {
+    @apply bg-charcoal text-sandstone px-8 py-3 text-xs uppercase tracking-widest-xl font-bold hover:opacity-90 transition-all duration-300 shadow-card;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-charcoal/20 text-charcoal px-8 py-3 text-xs uppercase tracking-widest-xl font-bold hover:bg-taupe/30 transition-all duration-300;
+  }
+  
+  .btn-large {
+    @apply px-10 py-5 text-sm;
+  }
+  
+  /* Heading Styles */
+  .heading-xl {
+    @apply text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.05] text-charcoal dark:text-sandstone font-serif;
+  }
+  
+  .heading-lg {
+    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-charcoal dark:text-sandstone font-serif;
+  }
+  
+  .heading-md {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light text-charcoal dark:text-sandstone font-serif;
+  }
+  
+  .heading-sm {
+    @apply text-2xl md:text-3xl font-light text-charcoal dark:text-sandstone font-serif;
+  }
+  
+  .text-body {
+    @apply text-base md:text-lg text-brown-grey dark:text-text-dark-muted leading-relaxed font-light;
+  }
+  
+  /* Partner Logo Styles */
+  .partner-logo {
+    filter: grayscale(100%) contrast(0.5);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+  }
+  
+  .partner-logo:hover {
+    filter: grayscale(100%) contrast(1);
+    opacity: 1;
+  }
+  
+  /* Accent Divider */
+  .accent-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, #6F6A63, transparent);
+  }
+  
+  /* Case Study Image Filter */
+  .case-study-image {
+    filter: sepia(20%) contrast(1.05) brightness(0.95);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .case-card:hover .case-study-image {
+    filter: sepia(0%) contrast(1.1) brightness(1);
+    transform: scale(1.03);
+  }
+  
+  /* Industry Image Overlay */
+  .industry-image-overlay {
+    mix-blend-mode: multiply;
+    filter: sepia(20%) contrast(90%) brightness(110%);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-accent-sage;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar - Sandstone Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-sandstone-light dark:bg-charcoal-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-charcoal dark:bg-sandstone rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-charcoal-light dark:bg-sandstone-dark;
+}
+
+/* Custom Scrollbar for Horizontal */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-charcoal;
+}

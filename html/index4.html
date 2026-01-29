@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AnyTechPros Industry Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "sandstone": "#E6DED3",
+                        "taupe": "#D2C8BB",
+                        "charcoal": "#1F1F1F",
+                        "muted-grey": "#6F6A63",
+                    },
+                    fontFamily: {
+                        "serif": ["Playfair Display", "serif"],
+                        "sans": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        body {
+            @apply bg-sandstone text-charcoal font-sans antialiased;
+            scroll-behavior: smooth;
+        }
+        .luxury-card {
+            @apply bg-taupe border border-charcoal/10 p-12 transition-all duration-500 flex flex-col justify-between;
+        }
+        .luxury-card:hover {
+            @apply border-charcoal/30 shadow-2xl shadow-charcoal/5;
+        }
+        .industry-image-overlay {
+            mix-blend-mode: multiply;
+            filter: sepia(20%) contrast(90%) brightness(110%);
+        }
+    </style>
+</head>
+<body class="selection:bg-charcoal selection:text-sandstone">
+<div class="relative flex min-h-screen flex-col overflow-x-hidden">
+<header class="fixed top-0 z-50 w-full border-b border-charcoal/5 bg-sandstone/80 backdrop-blur-md px-6 py-4">
+<div class="max-w-[1400px] mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-charcoal text-3xl font-light">account_balance</span>
+<h2 class="text-xl font-bold tracking-tight font-serif">AnyTechPros</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-grey hover:text-charcoal transition-colors" href="#">Solutions</a>
+<a class="text-[10px] uppercase tracking-[0.25em] font-bold text-charcoal" href="#">Industries</a>
+<a class="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-grey hover:text-charcoal transition-colors" href="#">Insights</a>
+<a class="text-[10px] uppercase tracking-[0.25em] font-bold text-muted-grey hover:text-charcoal transition-colors" href="#">Contact</a>
+</nav>
+<button class="bg-charcoal text-sandstone text-[10px] font-bold uppercase tracking-widest px-8 py-3 rounded hover:opacity-90 transition-all">
+                Portal Access
+            </button>
+</div>
+</header>
+<section class="relative pt-48 pb-32 px-6">
+<div class="max-w-[1000px] mx-auto text-center">
+<span class="text-muted-grey text-[11px] font-bold uppercase tracking-[0.5em] mb-6 block">Global Expertise</span>
+<h1 class="text-6xl md:text-8xl font-serif font-light tracking-tight text-charcoal mb-10 leading-[1.1]">
+                Industry <span class="italic">Excellence</span>
+</h1>
+<p class="text-charcoal text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed font-light mb-16">
+                Our platform delivers specialized digital intelligence, meticulously engineered to adapt to the unique architectural and regulatory demands of your specific sector.
+            </p>
+</div>
+<div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 px-4">
+<div class="luxury-card group h-[600px] relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+<img alt="Financial district" class="w-full h-full object-cover industry-image-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcsKPGvaXFkatBwDE3oOlay1Jtu_k5hLDMWyvtpAqMDVdYgX4QRYwlO_GxUEhwL1BLErCQ3OiR0RY7dewco4Y-CSjdVDcxT_coMXTpt8miVITQs6GzcW08vISaEQacVyEe6lNo51a0aLqMvWMuR_hUtzVoWSHQJ7qOo4Z-quTFhw2aB3vszswvXOZescMaWujhAei9q6FJeB2uFgGTbZL-r-N7RdP6KhmTI0EPFSpnf3uPtPPv7fu9fsPi1-Mi1uWRgcKJncTpM3X-"/>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-5xl font-extralight text-charcoal">account_balance</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-grey">Section 01</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-3xl font-serif mb-4 text-charcoal">Financial Services</h3>
+<p class="text-muted-grey text-lg font-light mb-8 max-w-sm">
+                            Advancing capital markets through <span class="text-charcoal font-medium">Secure AI &amp; Compliance</span> infrastructures.
+                        </p>
+<a class="inline-flex items-center gap-4 text-charcoal text-[11px] font-bold uppercase tracking-[0.2em] group/link" href="#">
+                            View Sector Solutions 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="luxury-card group h-[600px] relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+<img alt="Civic building" class="w-full h-full object-cover industry-image-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIv9urWPUEXuCY65dhRJSdj4ZI6IZO4MHNr9fmsO0FnHl1HYsGf3yJ9GAfFyA0Pr__BskRtEIV36aFGa-M_Dkl7WBOU1up1158KU6X-aVM4m0nFBt_b0NrZNVQjaCqm8yoxrFgSDpbNQtXlcmGEEU2gbYA11BhAIcflXBnJ_7HHHzOFia8l8f1RMhT22fQODgKsAbhnKUcGfb-u-jytze6z6ClHMhft6MDHRWAp69eE2Q_eDc0RMAn5oqxH2rMwiHJ7t8MBvXI9JV-"/>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-5xl font-extralight text-charcoal">temple_hindu</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-grey">Section 02</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-3xl font-serif mb-4 text-charcoal">Government &amp; Public Sector</h3>
+<p class="text-muted-grey text-lg font-light mb-8 max-w-sm">
+                            Modernizing civil services with <span class="text-charcoal font-medium">Resilient Infrastructure</span> and transparent governance.
+                        </p>
+<a class="inline-flex items-center gap-4 text-charcoal text-[11px] font-bold uppercase tracking-[0.2em] group/link" href="#">
+                            View Sector Solutions 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="luxury-card group h-[600px] relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+<img alt="Laboratory" class="w-full h-full object-cover industry-image-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyTi6mZ11f6ZF14WKzy0SL-ztso6_lYmRnCEYxPmEAklA2j8bMoDy7-UYUbmizo5tApJVtWBN7PfFR-quPs1degsdnKShzFTmrlCPxAkJkgg7ltOTgxz82_eCctvDzikPXcLTwLYE8jZ-FA9Brv-Ux1xLp8F-6tJ4BK_UsaDpWQwg1i0_7qXMtE5qIlXTC5o1XMRfuuADZDOL6zNUUODtn86o99_fe4csySEwX7yzgmCI-a5P3JQL6QJOcFI9LBTZoQHQs70UCjT1W"/>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-5xl font-extralight text-charcoal">genetics</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-grey">Section 03</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-3xl font-serif mb-4 text-charcoal">Healthcare &amp; Life Sciences</h3>
+<p class="text-muted-grey text-lg font-light mb-8 max-w-sm">
+                            Accelerating therapeutic discovery with <span class="text-charcoal font-medium">Data Privacy &amp; Precision</span> analytics.
+                        </p>
+<a class="inline-flex items-center gap-4 text-charcoal text-[11px] font-bold uppercase tracking-[0.2em] group/link" href="#">
+                            View Sector Solutions 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="luxury-card group h-[600px] relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+<img alt="Industrial robot" class="w-full h-full object-cover industry-image-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5um1AKLkt_N6Dk-sdcGBXBvk_pA1b3jZGnzxb0GLSUmsbo_gkn30UvMoOGmefiKriBCNa04z0qc_k8pS3DBsSI51sR0XUpkwRjESzs8srrMuc6c773tdM_NL_wwtiJB_XusTwGoTpjMIHzZgQ0qmRYgv4I5HP5KRHbEwWp_W4AZsQU4SYlSaXMmZBcEWIq1nZsWlYSLWcQsl7bWHg6IuOHPRH3aLzoXO3CSDee9zSdq8k3YxZ9oFmkQJzPG8Z2_SX3zOtIxJBDsF1"/>
+</div>
+<div class="relative z-10 flex flex-col h-full">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-5xl font-extralight text-charcoal">settings</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-grey">Section 04</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-3xl font-serif mb-4 text-charcoal">Manufacturing &amp; Logistics</h3>
+<p class="text-muted-grey text-lg font-light mb-8 max-w-sm">
+                            Optimizing throughput with autonomous <span class="text-charcoal font-medium">Supply Chain Intelligence</span> and robotics.
+                        </p>
+<a class="inline-flex items-center gap-4 text-charcoal text-[11px] font-bold uppercase tracking-[0.2em] group/link" href="#">
+                            View Sector Solutions 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<div class="luxury-card group md:col-span-2 h-[500px] relative overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 transition-transform duration-700 group-hover:scale-105">
+<img alt="Energy grid" class="w-full h-full object-cover industry-image-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnvUb92c8QFOq99WD88owqmtb9Z9Pwofy0P9-hvSDZKAz4fx9UkM6S_TM1h7nm6MS9-ACQxTr1gjWVStmuv7RF4qMBE3TiIJq9YZfjobw4bPLlO7kN0GjJ-R8mi-188JxgTLaZIhdNoU8aS08VqDlf4eVeC16sBL23roTBMN6HqdL7lg-ld51J-cgkbus2oBek7FZNMVBoqvyEtnnRO4ubjW3Y3f-VFbaFt2bP0XC_sh2PhgKbxS0c2FzKyQdcJsAoXOekbdlqJw94"/>
+</div>
+<div class="relative z-10 flex flex-col h-full max-w-xl">
+<div class="flex justify-between items-start mb-12">
+<span class="material-symbols-outlined text-5xl font-extralight text-charcoal">bolt</span>
+<span class="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-grey">Section 05</span>
+</div>
+<div class="mt-auto">
+<h3 class="text-3xl font-serif mb-4 text-charcoal">Energy &amp; Utilities</h3>
+<p class="text-muted-grey text-lg font-light mb-8">
+                            Transforming legacy networks into dynamic smart systems through <span class="text-charcoal font-medium">Grid Optimization</span> and renewable forecasting.
+                        </p>
+<a class="inline-flex items-center gap-4 text-charcoal text-[11px] font-bold uppercase tracking-[0.2em] group/link" href="#">
+                            View Sector Solutions 
+                            <span class="material-symbols-outlined text-sm transition-transform group-hover/link:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-32 px-6 bg-taupe/30 border-y border-charcoal/5">
+<div class="max-w-[1200px] mx-auto">
+<div class="mb-20">
+<span class="text-muted-grey text-[10px] font-bold uppercase tracking-[0.4em]">Architectural Foundation</span>
+<h2 class="text-4xl font-serif font-medium mt-4 text-charcoal">Technical Interoperability</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="border-l border-charcoal/20 pl-8">
+<h4 class="text-xl font-serif font-medium text-charcoal mb-4">Neural substrate</h4>
+<p class="text-muted-grey font-light text-sm leading-relaxed">Proprietary large-language kernels fine-tuned on sector-specific taxonomies for zero-shot accuracy.</p>
+</div>
+<div class="border-l border-charcoal/20 pl-8">
+<h4 class="text-xl font-serif font-medium text-charcoal mb-4">Unified Data Lake</h4>
+<p class="text-muted-grey font-light text-sm leading-relaxed">Soft taupe architecture for high-dimensional vector search across disparate legacy silos.</p>
+</div>
+<div class="border-l border-charcoal/20 pl-8">
+<h4 class="text-xl font-serif font-medium text-charcoal mb-4">Secure Pipelines</h4>
+<p class="text-muted-grey font-light text-sm leading-relaxed">Deep charcoal encryption standards ensuring absolute compliance within sovereign digital borders.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-40 px-6">
+<div class="max-w-4xl mx-auto text-center">
+<span class="text-muted-grey text-[10px] font-bold uppercase tracking-[0.5em] mb-8 block">Tailored Engagement</span>
+<h2 class="text-4xl md:text-6xl font-serif font-light mb-12 text-charcoal leading-tight">Bespoke Solutions for Your Sector</h2>
+<div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+<button class="bg-charcoal text-sandstone px-14 py-5 rounded font-bold text-[11px] tracking-[0.25em] uppercase hover:bg-charcoal/90 transition-all shadow-xl shadow-charcoal/10">
+                    Consult Our Experts
+                </button>
+<button class="text-charcoal/60 hover:text-charcoal px-8 py-5 font-bold text-[11px] tracking-[0.25em] uppercase transition-all flex items-center gap-3">
+                    Download Industry Briefs <span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</section>
+<footer class="py-16 px-6 border-t border-charcoal/5 mt-auto">
+<div class="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-charcoal">account_balance</span>
+<span class="font-serif font-bold tracking-tight text-lg">AnyTechPros</span>
+</div>
+<p class="text-muted-grey text-[10px] uppercase tracking-[0.3em] font-bold">© 2024 AnyTechPros Industry Solutions. Precision Engineered.</p>
+<div class="flex gap-8">
+<a class="text-muted-grey hover:text-charcoal transition-colors" href="#"><span class="material-symbols-outlined text-xl font-light">language</span></a>
+<a class="text-muted-grey hover:text-charcoal transition-colors" href="#"><span class="material-symbols-outlined text-xl font-light">deployed_code</span></a>
+<a class="text-muted-grey hover:text-charcoal transition-colors" href="#"><span class="material-symbols-outlined text-xl font-light">fingerprint</span></a>
+</div>
+</div>
+</footer>
+</div>
+
+</body></html>
