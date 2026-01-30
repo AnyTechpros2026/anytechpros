@@ -82,19 +82,6 @@ const Services = () => {
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop',
       date: 'Partner / Case Studies'
     },
-    {
-      title: 'Advanced Unmanned Aerial Systems for Defence & Security',
-      description: 'Next gen tactical FPV drones engineered for speed, precision, and mission success—covering micro, fixed wing, and kamikaze style platforms for demanding field operations.',
-      path: '/drones',
-      icon: 'flight',
-      bgColor: 'bg-[#3D5A45]',
-      textColor: 'text-[#F7F3ED]',
-      dateColor: 'text-[#A8B5A1]',
-      descColor: 'text-[#D4DDCE]',
-      type: 'image',
-      image: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=1000&auto=format&fit=crop',
-      date: 'Partner / Case Studies'
-    },
   ];
 
   return (

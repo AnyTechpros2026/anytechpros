@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
+import DropdownMenu from './DropdownMenu';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isWhatWeDoOpen, setIsWhatWeDoOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
@@ -24,10 +26,30 @@ const Header = () => {
   const navigation = [
     { name: 'Overview', path: '/' },
     { name: 'Our Story', path: '/about' },
-    { name: 'What We Do', path: '/services' },
     { name: 'Careers', path: '/careers' },
     { name: 'Get in Touch', path: '/contact' },
   ];
+
+  const whatWeDoMenu = {
+    services: {
+      title: 'Services',
+      items: [
+        { name: 'Sales & Growth Consulting', path: '/services/sales-growth-consulting' },
+        { name: 'Management & Business Consulting', path: '/services/management-consulting' },
+        { name: 'HR & Talent Consulting', path: '/services/hr-consulting' },
+        { name: 'SaaS Platforms', path: '/services/saas-platforms' },
+        { name: 'Software Development & Product Engineering', path: '/services/software-development' },
+        { name: 'Cyber Security', path: '/services/cyber-security' },
+      ]
+    },
+    products: {
+      title: 'Products',
+      items: [
+        { name: 'Advanced Unmanned Aerial Systems', path: '/products/drones' },
+        { name: 'BotMind', path: '/products/botminds' },
+      ]
+    }
+  };
 
   return (
     <header
@@ -61,6 +83,77 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
+            
+            {/* What We Do Dropdown */}
+            <DropdownMenu 
+              label="What We Do" 
+              sections={[
+                whatWeDoMenu.services,
+                whatWeDoMenu.products
+              ]}
+              isOpen={isWhatWeDoOpen}
+              onClose={() => setIsWhatWeDoOpen(false)}
+            />
+            
+            <div 
+              onMouseEnter={() => setIsWhatWeDoOpen(true)}
+              onMouseLeave={() => setIsWhatWeDoOpen(false)}
+              className="relative"
+            >
+              <button className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 flex items-center gap-1 ${
+                isWhatWeDoOpen
+                  ? 'text-charcoal dark:text-sandstone'
+                  : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+              }`}>
+                What We Do
+                <svg className={`w-3 h-3 transition-transform ${isWhatWeDoOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isWhatWeDoOpen && (
+                <div className="absolute left-0 mt-0 w-80 bg-white dark:bg-charcoal rounded-2xl shadow-2xl border border-charcoal/10 dark:border-sandstone/10 py-6 z-50">
+                  {/* Services Section */}
+                  <div className="mb-6">
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
+                      Services
+                    </h3>
+                    <div className="space-y-0">
+                      {whatWeDoMenu.services.items.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          to={item.path}
+                          className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
+                          onClick={() => setIsWhatWeDoOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Products Section */}
+                  <div>
+                    <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
+                      Products
+                    </h3>
+                    <div className="space-y-0">
+                      {whatWeDoMenu.products.items.map((item, idx) => (
+                        <Link
+                          key={idx}
+                          to={item.path}
+                          className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
+                          onClick={() => setIsWhatWeDoOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Theme Toggle & CTA */}
@@ -124,6 +217,36 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              {/* What We Do Mobile Submenu */}
+              <div className="border-t border-charcoal/10 dark:border-sandstone/10 pt-4 mt-4">
+                <p className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone mb-3">Services</p>
+                <div className="space-y-2 ml-2">
+                  {whatWeDoMenu.services.items.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className="block text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
+                <p className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone mb-3 mt-6">Products</p>
+                <div className="space-y-2 ml-2">
+                  {whatWeDoMenu.products.items.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      to={item.path}
+                      className="block text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               <Link to="/contact" className="pt-2">
                 <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-xs uppercase tracking-widest-xl font-bold px-6 py-2.5 hover:opacity-90 transition-all w-full">
                   Inquire

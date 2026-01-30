@@ -11,6 +11,11 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 import SoftwareDevelopmentPage from './pages/SoftwareDevelopmentPage';
+import SalesGrowthConsultingPage from './pages/SalesGrowthConsultingPage';
+import ManagementBusinessConsultingPage from './pages/ManagementBusinessConsultingPage';
+import HRTalentConsultingPage from './pages/HRTalentConsultingPage';
+import SaasPlatformsPage from './pages/SaasPlatformsPage';
+import DronesAdvancedPage from './pages/DronesAdvancedPage';
 
 // Service Pages
 import {
@@ -60,17 +65,19 @@ function App() {
               <Route path="/careers" element={<CareersPage />} />
 
               {/* Product Pages */}
-              <Route path="/products/drones" element={<DronesPage />} />
-              <Route path="/products/botminds" element={<BotMindsPage />} />
+              <Route path="/products/drones" element={<DronesAdvancedPage />} />
+              <Route path="/products/botminds" element={<SaasPlatformsPage />} />
 
               {/* Service Detail Pages */}
+              <Route path="/services/sales-growth-consulting" element={<SalesGrowthConsultingPage />} />
+              <Route path="/services/management-consulting" element={<ManagementBusinessConsultingPage />} />
+              <Route path="/services/business-consulting" element={<ManagementBusinessConsultingPage />} />
+              <Route path="/services/hr-consulting" element={<HRTalentConsultingPage />} />
+              <Route path="/services/saas-platforms" element={<SaasPlatformsPage />} />
               <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
               <Route path="/services/digital-marketing" element={<DigitalMarketingPage />} />
               <Route path="/services/cyber-security" element={<CyberSecurityPage />} />
               <Route path="/services/it-consulting" element={<ITConsultingPage />} />
-              <Route path="/services/management-consulting" element={<ManagementConsultingPage />} />
-              <Route path="/services/business-consulting" element={<BusinessConsultingPage />} />
-              <Route path="/services/hr-consulting" element={<HRConsultingPage />} />
               <Route path="/services/telecom-consulting" element={<TelecomConsultingPage />} />
               <Route path="/services/e-governance-consulting" element={<EGovernanceConsultingPage />} />
               <Route path="/services/market-research" element={<MarketResearchPage />} />
