@@ -58,7 +58,50 @@ const DronesPage = () => {
         </div>
       </section>
 
-      {/* Overview Section */}
+      {/* What We Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-[#F5EFE7] dark:bg-charcoal px-4 md:px-6">
+        <div className="container-custom max-w-5xl mx-auto">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
+              What We Deliver
+            </h2>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                number: '01',
+                title: 'Precision Engineering',
+                description: 'Cutting-edge drone technology engineered for demanding field operations.'
+              },
+              {
+                number: '02',
+                title: 'Mission Capability',
+                description: 'Specialized platforms for reconnaissance, surveillance, and tactical missions.'
+              },
+              {
+                number: '03',
+                title: 'Operational Excellence',
+                description: 'Reliable systems built for performance in extreme environments.'
+              },
+            ].map((item, index) => (
+              <ScrollAnimation key={index}>
+                <div className="scroll-animate text-center">
+                  <div className="text-5xl md:text-6xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 mb-4">
+                    {item.number}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
         <div className="container-custom max-w-4xl mx-auto">
           <ScrollAnimation>
@@ -160,6 +203,25 @@ const DronesPage = () => {
             <Link to="/contact">
               <button className="bg-sandstone text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
                 Get in Touch
+              </button>
+            </Link>
+          </ScrollAnimation>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
+        <div className="container-custom max-w-3xl mx-auto text-center">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-charcoal dark:text-sandstone">
+              Join Our Engineering Team
+            </h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted mb-8">
+              We're recruiting engineers, designers, and operations specialists who are passionate about advanced aerospace technology. Help us build the future of unmanned systems.
+            </p>
+            <Link to="/careers">
+              <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
+                View Open Positions
               </button>
             </Link>
           </ScrollAnimation>

@@ -45,7 +45,7 @@ const HRTalentConsultingPage = () => {
       <section 
         className="relative h-screen md:h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
         style={{
-          backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.5) 0%, rgba(31, 31, 31, 0.7) 100%), url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2000&auto=format&fit=crop')`
+          backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.5) 0%, rgba(31, 31, 31, 0.7) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop')`
         }}
       >
         <div className="container-custom px-4 md:px-6 text-center text-white relative z-10">
@@ -58,7 +58,50 @@ const HRTalentConsultingPage = () => {
         </div>
       </section>
 
-      {/* Overview Section */}
+      {/* What We Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-[#F5EFE7] dark:bg-charcoal px-4 md:px-6">
+        <div className="container-custom max-w-5xl mx-auto">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
+              What We Deliver
+            </h2>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                number: '01',
+                title: 'Strategic Talent Plans',
+                description: 'Comprehensive workforce strategies aligned with business objectives and market realities.'
+              },
+              {
+                number: '02',
+                title: 'High-Performance Teams',
+                description: 'Build and develop teams with the right skills, culture, and leadership capabilities.'
+              },
+              {
+                number: '03',
+                title: 'Optimized Operations',
+                description: 'Implement modern HR systems and processes that reduce costs and improve employee experience.'
+              },
+            ].map((item, index) => (
+              <ScrollAnimation key={index}>
+                <div className="scroll-animate text-center">
+                  <div className="text-5xl md:text-6xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 mb-4">
+                    {item.number}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
         <div className="container-custom max-w-4xl mx-auto">
           <ScrollAnimation>
@@ -179,7 +222,26 @@ const HRTalentConsultingPage = () => {
             </p>
             <Link to="/contact">
               <button className="bg-sandstone text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
-                Schedule a Consultation
+                Get in Touch
+              </button>
+            </Link>
+          </ScrollAnimation>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
+        <div className="container-custom max-w-3xl mx-auto text-center">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-charcoal dark:text-sandstone">
+              Join Our Team
+            </h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted mb-8">
+              We're always looking for talented professionals who are passionate about transforming organizations through people and technology. Explore career opportunities with AnyTechPros.
+            </p>
+            <Link to="/careers">
+              <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
+                View Open Positions
               </button>
             </Link>
           </ScrollAnimation>

@@ -58,7 +58,50 @@ const SaasPlatformsPage = () => {
         </div>
       </section>
 
-      {/* BotMind Overview */}
+      {/* What We Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-[#F5EFE7] dark:bg-charcoal px-4 md:px-6">
+        <div className="container-custom max-w-5xl mx-auto">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
+              What We Deliver
+            </h2>
+          </ScrollAnimation>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                number: '01',
+                title: 'Intelligent Automation',
+                description: 'Reduce ticket volumes and accelerate incident resolution with intelligent automation.'
+              },
+              {
+                number: '02',
+                title: 'Predictive Intelligence',
+                description: 'Anticipate issues before they occur with advanced analytics and machine learning.'
+              },
+              {
+                number: '03',
+                title: 'Operational Efficiency',
+                description: 'Transform reactive operations into proactive, self-healing systems.'
+              },
+            ].map((item, index) => (
+              <ScrollAnimation key={index}>
+                <div className="scroll-animate text-center">
+                  <div className="text-5xl md:text-6xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 mb-4">
+                    {item.number}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
         <div className="container-custom max-w-4xl mx-auto">
           <ScrollAnimation>
@@ -171,7 +214,26 @@ const SaasPlatformsPage = () => {
             </p>
             <Link to="/contact">
               <button className="bg-sandstone text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
-                Request a Demo
+                Get in Touch
+              </button>
+            </Link>
+          </ScrollAnimation>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
+        <div className="container-custom max-w-3xl mx-auto text-center">
+          <ScrollAnimation>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-charcoal dark:text-sandstone">
+              Join Our Team
+            </h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted mb-8">
+              We're building the future of intelligent operations. If you're passionate about AI, automation, and operational excellence, we'd love to hear from you.
+            </p>
+            <Link to="/careers">
+              <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
+                View Open Positions
               </button>
             </Link>
           </ScrollAnimation>
