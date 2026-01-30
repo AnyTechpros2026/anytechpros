@@ -42,30 +42,30 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-sandstone dark:bg-charcoal text-charcoal dark:text-sandstone pt-24 pb-12 border-t border-charcoal/10 dark:border-sandstone/10">
-      <div className="container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+    <footer className="bg-charcoal dark:bg-charcoal text-sandstone dark:text-sandstone pt-12 md:pt-20 lg:pt-24 pb-8 md:pb-12 border-t border-sandstone/10 dark:border-sandstone/10">
+      <div className="container-custom px-4 md:px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-24">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3 mb-8">
-              <div className="text-charcoal dark:text-sandstone">
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
+              <div className="text-sandstone dark:text-sandstone">
+                <svg className="w-5 md:w-6 h-5 md:h-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
                 </svg>
               </div>
-              <span className="text-lg font-semibold tracking-widest uppercase">AnyTechPros</span>
+              <span className="text-base md:text-lg font-semibold tracking-widest uppercase">AnyTechPros</span>
             </Link>
-            <p className="text-brown-grey dark:text-text-dark-muted text-sm leading-relaxed mb-8 font-light">
+            <p className="text-text-dark-muted dark:text-text-dark-muted text-sm leading-relaxed mb-6 md:mb-8 font-light">
               Defining the next era of enterprise intelligence through elite engineering and strategic digital vision.
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-4 md:gap-6">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-brown-grey hover:text-charcoal dark:hover:text-sandstone transition-colors"
+                  className="text-text-dark-muted hover:text-sandstone dark:hover:text-sandstone transition-colors"
                   aria-label={social.name}
                 >
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -89,13 +89,13 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-charcoal dark:text-sandstone mb-8">Expertise</h4>
-            <ul className="space-y-4 text-xs tracking-widest text-brown-grey dark:text-text-dark-muted">
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Expertise</h4>
+            <ul className="space-y-3 md:space-y-4 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="hover:text-charcoal dark:hover:text-sandstone transition-colors"
+                    className="hover:text-sandstone dark:hover:text-sandstone transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -106,13 +106,13 @@ const Footer = () => {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-charcoal dark:text-sandstone mb-8">Services</h4>
-            <ul className="space-y-4 text-xs tracking-widest text-brown-grey dark:text-text-dark-muted">
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Services</h4>
+            <ul className="space-y-3 md:space-y-4 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
               {serviceLinks.slice(0, 4).map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="hover:text-charcoal dark:hover:text-sandstone transition-colors"
+                    className="hover:text-sandstone dark:hover:text-sandstone transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -123,8 +123,8 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-charcoal dark:text-sandstone mb-8">Newsletter</h4>
-            <p className="text-brown-grey dark:text-text-dark-muted text-xs mb-6 tracking-wide">Quarterly insights on enterprise technology.</p>
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Newsletter</h4>
+            <p className="text-text-dark-muted dark:text-text-dark-muted text-xs mb-4 md:mb-6 tracking-wide">Quarterly insights on enterprise technology.</p>
             <form onSubmit={handleNewsletterSubmit} className="relative">
               <input
                 type="email"
@@ -132,11 +132,11 @@ const Footer = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Professional Email"
                 required
-                className="w-full bg-taupe/30 dark:bg-charcoal-light border border-charcoal/10 dark:border-sandstone/10 text-xs py-4 px-4 tracking-widest focus:ring-1 focus:ring-charcoal dark:focus:ring-sandstone focus:border-charcoal dark:focus:border-sandstone text-charcoal dark:text-sandstone placeholder-brown-grey"
+                className="w-full bg-charcoal-light dark:bg-charcoal-light border border-sandstone/10 dark:border-sandstone/10 text-xs py-4 px-4 tracking-widest focus:ring-1 focus:ring-sandstone dark:focus:ring-sandstone focus:border-sandstone dark:focus:border-sandstone text-sandstone dark:text-sandstone placeholder-text-dark-muted"
               />
               <button
                 type="submit"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-charcoal dark:text-sandstone"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-sandstone dark:text-sandstone"
               >
                 <span className="material-symbols-outlined text-lg">arrow_forward</span>
               </button>
@@ -145,14 +145,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-charcoal/10 dark:border-sandstone/10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <p className="text-[9px] uppercase tracking-widest-3xl text-brown-grey/60 dark:text-text-dark-muted/60">
+        <div className="pt-8 md:pt-12 border-t border-sandstone/10 dark:border-sandstone/10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+          <p className="text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60 text-center md:text-left">
             © {new Date().getFullYear()} AnyTechPros Consulting Group. All rights reserved.
           </p>
-          <div className="flex gap-12 text-[9px] uppercase tracking-widest-3xl text-brown-grey/60 dark:text-text-dark-muted/60">
-            <Link to="/privacy" className="hover:text-charcoal dark:hover:text-sandstone transition-colors">Privacy</Link>
-            <Link to="/terms" className="hover:text-charcoal dark:hover:text-sandstone transition-colors">Terms</Link>
-            <a href="#" className="hover:text-charcoal dark:hover:text-sandstone transition-colors">Security</a>
+          <div className="flex gap-8 md:gap-12 text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60">
+            <Link to="/privacy" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Privacy</Link>
+            <Link to="/terms" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Terms</Link>
+            <a href="#" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Security</a>
           </div>
         </div>
       </div>

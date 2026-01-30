@@ -44,22 +44,22 @@ const Contact = () => {
   };
 
   return (
-    <section className="section bg-section-light dark:bg-section-dark" id="contact">
-      <div className="container-custom">
+    <section className="section bg-section-light dark:bg-section-dark py-12 md:py-20 lg:py-24" id="contact">
+      <div className="container-custom px-4 md:px-6">
         <ScrollAnimation>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-lg mb-6">Get in Touch</h2>
-            <p className="text-body">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">Get in Touch</h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted">
               Ready to transform your business? Let's discuss how we can help you achieve your goals.
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Form */}
           <ScrollAnimation>
-            <div className="luxury-card">
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="luxury-card p-6 md:p-8">
+              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-text-primary dark:text-text-dark mb-2">

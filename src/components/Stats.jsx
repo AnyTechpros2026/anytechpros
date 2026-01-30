@@ -10,20 +10,20 @@ const Stats = () => {
   ];
 
   return (
-    <section className="section bg-gradient-primary text-white" id="stats">
-      <div className="container-custom">
+    <section className="section bg-gradient-primary text-white py-12 md:py-20 lg:py-24" id="stats">
+      <div className="container-custom px-4 md:px-6">
         <ScrollAnimation>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">
               Our Impact in Numbers
             </h2>
-            <p className="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl opacity-90 max-w-2xl mx-auto">
               Trusted by leading organizations worldwide to deliver exceptional results
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
           {stats.map((stat, index) => (
             <StatCounter key={index} {...stat} delay={index * 100} />
           ))}

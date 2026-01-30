@@ -51,12 +51,12 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="section bg-section-light dark:bg-section-dark" id="testimonials">
-      <div className="container-custom">
+    <section className="section bg-section-light dark:bg-section-dark py-12 md:py-20 lg:py-24" id="testimonials">
+      <div className="container-custom px-4 md:px-6">
         <ScrollAnimation>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-lg mb-6">Client Testimonials</h2>
-            <p className="text-body">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">Client Testimonials</h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted">
               Don't just take our word for it. Here's what our clients say about working with us.
             </p>
           </div>

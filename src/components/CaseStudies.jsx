@@ -98,12 +98,12 @@ const CaseStudies = () => {
     : caseStudies.filter(study => study.category === activeFilter || study.tag.includes(activeFilter));
 
   return (
-    <section className="section bg-background-light dark:bg-background-dark py-16" id="case-studies">
-      <div className="container-custom max-w-7xl mx-auto px-6">
+    <section className="section bg-background-light dark:bg-background-dark py-12 md:py-16 lg:py-20" id="case-studies">
+      <div className="container-custom max-w-7xl mx-auto px-4 md:px-6">
         <ScrollAnimation>
-          <div className="mb-12">
+          <div className="mb-8 md:mb-12">
             <p className="text-xs tracking-[0.3em] uppercase text-text-muted mb-3">INSIGHTS / CASE STUDIES</p>
-            <h2 className="text-5xl md:text-6xl font-serif mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif mb-4">
               Forging Digital <em className="italic font-serif">Excellence</em>
             </h2>
           </div>

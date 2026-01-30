@@ -30,25 +30,25 @@ const WhyUs = () => {
   ];
 
   return (
-    <section className="section bg-section-light dark:bg-section-dark" id="why-us">
-      <div className="container-custom">
+    <section className="section bg-section-light dark:bg-section-dark py-12 md:py-20 lg:py-24" id="why-us">
+      <div className="container-custom px-4 md:px-6">
         <ScrollAnimation>
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="heading-lg mb-6">Why Choose AnyTechPros?</h2>
-            <p className="text-body">
+          <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-4 md:mb-6">Why Choose AnyTechPros?</h2>
+            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted">
               We combine strategic thinking, technical expertise, and a client-first approach to deliver exceptional value.
             </p>
           </div>
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {advantages.map((advantage, index) => (
             <ScrollAnimation key={index}>
-              <div className="luxury-card hover:-translate-y-2 text-center">
-                <h3 className="text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-3">
+              <div className="luxury-card hover:-translate-y-2 text-center p-6 md:p-8">
+                <h3 className="text-lg md:text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-3">
                   {advantage.title}
                 </h3>
-                <p className="text-text-muted dark:text-text-dark-muted leading-relaxed">
+                <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
                   {advantage.description}
                 </p>
               </div>
