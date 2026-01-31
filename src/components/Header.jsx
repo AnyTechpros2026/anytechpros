@@ -29,6 +29,14 @@ const Header = () => {
     { name: 'Get in Touch', path: '/contact' },
   ];
 
+  const navigationOrder = [
+    { name: 'Overview', path: '/' },
+    { name: 'Our Story', path: '/about' },
+    { type: 'dropdown' }, // What We Do dropdown placeholder
+    { name: 'Careers', path: '/careers' },
+    { name: 'Get in Touch', path: '/contact' },
+  ];
+
   const whatWeDoMenu = {
     services: {
       title: 'Services',
@@ -69,77 +77,85 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-12 ml-16">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.path}
-                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
-                  location.pathname === item.path
-                    ? 'text-charcoal dark:text-sandstone'
-                    : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
-                }`}
-              >
-                {item.name}
-              </Link>
-            ))}
-            
-            {/* What We Do Dropdown */}
-            <div 
-              onMouseEnter={() => setIsWhatWeDoOpen(true)}
-              onMouseLeave={() => setIsWhatWeDoOpen(false)}
-              className="relative"
-            >
-              <button className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 flex items-center gap-1 ${
-                isWhatWeDoOpen
-                  ? 'text-charcoal dark:text-sandstone'
-                  : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
-              }`}>
-                What We Do
-              </button>
+            {navigationOrder.map((item, index) => {
+              if (item.type === 'dropdown') {
+                // What We Do Dropdown
+                return (
+                  <div 
+                    key="what-we-do"
+                    onMouseEnter={() => setIsWhatWeDoOpen(true)}
+                    onMouseLeave={() => setIsWhatWeDoOpen(false)}
+                    className="relative"
+                  >
+                    <button className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 flex items-center gap-1 ${
+                      isWhatWeDoOpen
+                        ? 'text-charcoal dark:text-sandstone'
+                        : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                    }`}>
+                      What We Do
+                    </button>
 
-              {/* Dropdown Menu */}
-              {isWhatWeDoOpen && (
-                <div className="absolute left-0 mt-0 w-80 bg-white dark:bg-charcoal rounded-2xl shadow-2xl border border-charcoal/10 dark:border-sandstone/10 py-6 z-50">
-                  {/* Services Section */}
-                  <div className="mb-6">
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
-                      Services
-                    </h3>
-                    <div className="space-y-0">
-                      {whatWeDoMenu.services.items.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          to={item.path}
-                          className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
-                          onClick={() => setIsWhatWeDoOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
+                    {/* Dropdown Menu */}
+                    {isWhatWeDoOpen && (
+                      <div className="absolute left-0 mt-0 w-80 bg-white dark:bg-charcoal rounded-2xl shadow-2xl border border-charcoal/10 dark:border-sandstone/10 py-6 z-50">
+                        {/* Services Section */}
+                        <div className="mb-6">
+                          <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
+                            Services
+                          </h3>
+                          <div className="space-y-0">
+                            {whatWeDoMenu.services.items.map((serviceItem, idx) => (
+                              <Link
+                                key={idx}
+                                to={serviceItem.path}
+                                className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
+                                onClick={() => setIsWhatWeDoOpen(false)}
+                              >
+                                {serviceItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
 
-                  {/* Products Section */}
-                  <div>
-                    <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
-                      Products
-                    </h3>
-                    <div className="space-y-0">
-                      {whatWeDoMenu.products.items.map((item, idx) => (
-                        <Link
-                          key={idx}
-                          to={item.path}
-                          className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
-                          onClick={() => setIsWhatWeDoOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
+                        {/* Products Section */}
+                        <div>
+                          <h3 className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone px-6 mb-3">
+                            Products
+                          </h3>
+                          <div className="space-y-0">
+                            {whatWeDoMenu.products.items.map((productItem, idx) => (
+                              <Link
+                                key={idx}
+                                to={productItem.path}
+                                className="block px-6 py-3 text-sm text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-200"
+                                onClick={() => setIsWhatWeDoOpen(false)}
+                              >
+                                {productItem.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
-              )}
-            </div>
+                );
+              } else {
+                // Regular navigation items
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
+                      location.pathname === item.path
+                        ? 'text-charcoal dark:text-sandstone'
+                        : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              }
+            })}
           </nav>
 
           {/* Theme Toggle & CTA */}
