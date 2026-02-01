@@ -44,7 +44,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="section bg-section-light dark:bg-section-dark py-12 md:py-20 lg:py-24" id="contact">
+    <section className="section bg-background-light dark:bg-background-dark py-12 md:py-20 lg:py-24" id="contact">
       <div className="container-custom px-4 md:px-6">
         <ScrollAnimation>
           <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -55,12 +55,15 @@ const Contact = () => {
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-7xl mx-auto">
           {/* Contact Form */}
           <ScrollAnimation>
-            <div className="luxury-card p-6 md:p-8">
-              <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-6">
+            <div className="bg-white dark:bg-gray-800 p-8 md:p-10 rounded-2xl shadow-xl">
+              <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-6">
+                Send us a Message
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold text-text-primary dark:text-text-dark mb-2">
                       Full Name *
@@ -72,8 +75,8 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="John Doe"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent transition-all"
+                      placeholder="Subhash Maurya"
                     />
                   </div>
                   <div>
@@ -87,13 +90,13 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary"
-                      placeholder="john@example.com"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent transition-all"
+                      placeholder="RkmDev@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-semibold text-text-primary dark:text-text-dark mb-2">
                       Phone Number
@@ -104,7 +107,7 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent transition-all"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -118,7 +121,7 @@ const Contact = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary"
+                      className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent transition-all"
                       placeholder="Your Company"
                     />
                   </div>
@@ -135,7 +138,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent transition-all"
                     placeholder="How can we help?"
                   />
                 </div>
@@ -150,8 +153,8 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    rows="6"
-                    className="w-full px-4 py-3 rounded-lg bg-section-light dark:bg-section-dark border border-border-light dark:border-border-dark text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                    rows="5"
+                    className="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 text-text-primary dark:text-text-dark placeholder-text-muted dark:placeholder-text-dark-muted focus:outline-none focus:ring-2 focus:ring-[#2F3B35] focus:border-transparent resize-none transition-all"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -160,10 +163,10 @@ const Contact = () => {
                   <div
                     className={`p-4 rounded-lg ${
                       status.type === 'success'
-                        ? 'bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-200'
+                        ? 'bg-green-50 dark:bg-green-900/30 text-green-800 dark:text-green-200 border border-green-200 dark:border-green-800'
                         : status.type === 'error'
-                        ? 'bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-200'
-                        : 'bg-primary/10 text-primary'
+                        ? 'bg-red-50 dark:bg-red-900/30 text-red-800 dark:text-red-200 border border-red-200 dark:border-red-800'
+                        : 'bg-blue-50 dark:bg-blue-900/30 text-blue-800 dark:text-blue-200 border border-blue-200 dark:border-blue-800'
                     }`}
                   >
                     {status.message}
@@ -172,7 +175,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="btn-primary w-full"
+                  className="w-full bg-[#2F3B35] hover:bg-[#1F2B25] text-white px-8 py-4 rounded-lg font-semibold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                   disabled={status.type === 'loading'}
                 >
                   {status.type === 'loading' ? 'Sending...' : 'Send Message'}
@@ -181,88 +184,81 @@ const Contact = () => {
             </div>
           </ScrollAnimation>
 
-          {/* Contact Information */}
-          <ScrollAnimation>
-            <div className="space-y-8">
-              <div className="luxury-card">
-                <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-6">
-                  Contact Information
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-text-primary dark:text-text-dark mb-1">Email</h4>
-                      <p className="text-text-muted dark:text-text-dark-muted">info@anytechpros.com</p>
-                      <p className="text-text-muted dark:text-text-dark-muted">support@anytechpros.com</p>
-                    </div>
+          {/* Contact Information Cards */}
+          <div className="space-y-6">
+            <ScrollAnimation>
+              <div className="bg-[#E8DDD0] p-8 rounded-2xl shadow-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-[#2F3B35] rounded-xl flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white text-2xl">mail</span>
                   </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-text-primary dark:text-text-dark mb-1">Phone</h4>
-                      <p className="text-text-muted dark:text-text-dark-muted">+1 (555) 123-4567</p>
-                      <p className="text-text-muted dark:text-text-dark-muted">+1 (555) 987-6543</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-text-primary dark:text-text-dark mb-1">Address</h4>
-                      <p className="text-text-muted dark:text-text-dark-muted">
-                        123 Business Avenue<br />
-                        Suite 456<br />
-                        San Francisco, CA 94105
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-text-primary dark:text-text-dark mb-1">Business Hours</h4>
-                      <p className="text-text-muted dark:text-text-dark-muted">
-                        Monday - Friday: 9:00 AM - 6:00 PM<br />
-                        Saturday: 10:00 AM - 4:00 PM<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Email Us</h4>
+                    <p className="text-[#2F3B35]/80 text-sm mb-1">info@anytechpros.com</p>
+                    <p className="text-[#2F3B35]/80 text-sm">support@anytechpros.com</p>
                   </div>
                 </div>
               </div>
+            </ScrollAnimation>
 
-              <div className="luxury-card bg-gradient-primary text-white">
-                <h3 className="text-2xl font-heading font-semibold mb-4">
-                  Schedule a Consultation
-                </h3>
-                <p className="mb-6 opacity-90">
-                  Prefer to talk? Book a free 30-minute consultation call with our experts.
-                </p>
-                <button className="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
-                  Book a Call
-                </button>
+            <ScrollAnimation>
+              <div className="bg-[#C9D8BF] p-8 rounded-2xl shadow-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-[#2F3B35] rounded-xl flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white text-2xl">call</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Call Us</h4>
+                    <p className="text-[#2F3B35]/80 text-sm mb-1">+1 (555) 123-4567</p>
+                    <p className="text-[#2F3B35]/80 text-sm">+1 (555) 987-6543</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </ScrollAnimation>
+            </ScrollAnimation>
+
+            <ScrollAnimation>
+              <div className="bg-[#A8B5A1] p-8 rounded-2xl shadow-lg">
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0 w-14 h-14 bg-[#2F3B35] rounded-xl flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white text-2xl">location_on</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Visit Us</h4>
+                    <p className="text-[#2F3B35]/80 text-sm">
+                      123 Business Avenue<br />
+                      Suite 456<br />
+                      San Francisco, CA 94105
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScrollAnimation>
+
+            <ScrollAnimation>
+              <div className="bg-gradient-to-br from-[#2F3B35] to-[#1F2B25] p-8 rounded-2xl shadow-xl text-white">
+                <div className="flex items-start space-x-4 mb-6">
+                  <div className="flex-shrink-0 w-14 h-14 bg-white/20 backdrop-blur rounded-xl flex items-center justify-center">
+                    <span className="material-symbols-outlined text-white text-2xl">schedule</span>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white text-lg mb-2">Business Hours</h4>
+                    <p className="text-white/80 text-sm mb-1">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p className="text-white/80 text-sm mb-1">Saturday: 10:00 AM - 4:00 PM</p>
+                    <p className="text-white/80 text-sm">Sunday: Closed</p>
+                  </div>
+                </div>
+                <div className="pt-6 border-t border-white/20">
+                  <h4 className="font-semibold text-white text-lg mb-3">Schedule a Consultation</h4>
+                  <p className="text-white/80 text-sm mb-4">
+                    Book a free 30-minute consultation call with our experts.
+                  </p>
+                  <button className="w-full bg-white text-[#2F3B35] px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    Book a Call
+                  </button>
+                </div>
+              </div>
+            </ScrollAnimation>
+          </div>
         </div>
       </div>
     </section>

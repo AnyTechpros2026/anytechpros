@@ -7,34 +7,51 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SoftwareDevelopmentPage = () => {
   useEffect(() => {
-    gsap.fromTo('.hero-heading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+    // Faster hero animation
+    gsap.fromTo('.hero-heading', 
+      { opacity: 0, y: 20 }, 
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 }
+    );
+    
+    // Optimized scroll animations with faster timing
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
-      gsap.fromTo(element, { opacity: 0, y: 30 }, {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: element, start: 'top 80%', toggleActions: 'play none none reverse' }
-      });
+      gsap.fromTo(element, 
+        { opacity: 0, y: 20 }, 
+        {
+          opacity: 1, 
+          y: 0, 
+          duration: 0.5, 
+          ease: 'power2.out',
+          scrollTrigger: { 
+            trigger: element, 
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true // Only animate once
+          }
+        }
+      );
     });
   }, []);
 
   const technologies = [
-    { icon: 'data_object', name: 'React', category: 'Frontend', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
-    { icon: 'circle', name: 'Node.js', category: 'Backend', iconColor: 'text-[#68A063]', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
-    { icon: 'code', name: 'Python', category: 'Backend', iconColor: 'text-[#3776AB]', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
-    { icon: 'coffee', name: 'Java', category: 'Backend', iconColor: 'text-[#007396]', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' },
-    { icon: 'php', name: 'PHP', category: 'Backend', iconColor: 'text-[#777BB4]', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
-    { icon: 'storage', name: 'MongoDB', category: 'Database', iconColor: 'text-[#47A248]', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
-    { icon: 'database', name: 'MySQL', category: 'Database', iconColor: 'text-[#4479A1]', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
-    { icon: 'cloud', name: 'AWS', category: 'Cloud', iconColor: 'text-[#FF9900]', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' }
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg', name: 'React', category: 'Frontend', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg', name: 'Node.js', category: 'Backend', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg', name: 'Python', category: 'Backend', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg', name: 'Java', category: 'Backend', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-plain.svg', name: 'PHP', category: 'Backend', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg', name: 'MySQL', category: 'Database', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg', name: 'PostgreSQL', category: 'Database', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg', name: 'AWS', category: 'Cloud', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' }
   ];
 
   const mobileLanguages = [
-    { icon: 'android', name: 'Android (Java)', iconColor: 'text-[#3DDC84]', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
-    { icon: 'code', name: 'Kotlin', iconColor: 'text-[#7F52FF]', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
-    { icon: 'smartphone', name: 'iOS Swift', iconColor: 'text-[#F05138]', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
-    { icon: 'data_object', name: 'React Native', iconColor: 'text-[#61DAFB]', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' },
-    { icon: 'flutter_dash', name: 'Flutter', iconColor: 'text-[#02569B]', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
-    { icon: 'bolt', name: 'Ionic', iconColor: 'text-[#3880FF]', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
-    { icon: 'apps', name: 'Xamarin', iconColor: 'text-[#3498DB]', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' }
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original-wordmark.svg', name: 'Android (Java)', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original-wordmark.svg', name: 'Kotlin', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swift/swift-original-wordmark.svg', name: 'iOS Swift', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg', name: 'React Native', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg', name: 'Flutter', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg', name: 'Javascript', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg', name: 'Docker', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' }
   ];
 
   const offerings = [
@@ -74,7 +91,7 @@ const SoftwareDevelopmentPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {technologies.map((tech, index) => (
               <div key={index} className={`scroll-animate ${tech.bgColor} ${tech.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
-                <span className={`material-symbols-outlined text-5xl mb-3 block ${tech.iconColor || ''}`}>{tech.icon}</span>
+                <img src={tech.logo} alt={tech.name} className="w-16 h-16 mx-auto mb-3 object-contain" />
                 <h3 className="font-heading mb-1">{tech.name}</h3>
                 <p className="text-xs uppercase tracking-widest opacity-75">{tech.category}</p>
               </div>
@@ -134,7 +151,7 @@ const SoftwareDevelopmentPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {mobileLanguages.map((lang, index) => (
                 <div key={index} className={`${lang.bgColor} ${lang.textColor} p-4 text-center hover:opacity-90 transition-opacity duration-300`}>
-                  <span className={`material-symbols-outlined text-3xl mb-2 block ${lang.iconColor || ''}`}>{lang.icon}</span>
+                  <img src={lang.logo} alt={lang.name} className="w-12 h-12 mx-auto mb-2 object-contain" />
                   <p className="text-sm font-medium">{lang.name}</p>
                 </div>
               ))}

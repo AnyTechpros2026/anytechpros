@@ -7,13 +7,14 @@ gsap.registerPlugin(ScrollTrigger);
 
 const BotMindsSaaSPage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [currency, setCurrency] = useState('INR'); // INR or USD
 
   useEffect(() => {
-    gsap.fromTo('.hero-heading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
+    gsap.fromTo('.hero-heading', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 });
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
-      gsap.fromTo(element, { opacity: 0, y: 30 }, {
-        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-        scrollTrigger: { trigger: element, start: 'top 80%', toggleActions: 'play none none reverse' }
+      gsap.fromTo(element, { opacity: 0, y: 20 }, {
+        opacity: 1, y: 0, duration: 0.5, ease: 'power2.out',
+        scrollTrigger: { trigger: element, start: 'top 85%', toggleActions: 'play none none none', once: true }
       });
     });
   }, []);
@@ -83,6 +84,15 @@ const BotMindsSaaSPage = () => {
       textColor: 'text-[#2F3B35]'
     }
   ];
+
+  // Currency conversion function (1 USD = 83 INR approximately)
+  const convertPrice = (inrPrice) => {
+    const numPrice = parseInt(inrPrice.replace('₹', ''));
+    if (currency === 'USD') {
+      return `$${Math.round(numPrice / 83)}`;
+    }
+    return inrPrice;
+  };
 
   const plans = [
     {
@@ -384,7 +394,7 @@ const BotMindsSaaSPage = () => {
               MONTHLY/ANNUALLY SUBSCRIPTION
             </p>
             <div className="bg-white/10 inline-block px-8 py-6 mb-8">
-              <p className="text-4xl md:text-5xl font-heading font-light mb-4">JUST ₹250/MONTH/SYSTEM</p>
+              <p className="text-4xl md:text-5xl font-heading font-light mb-4">JUST {convertPrice('₹250')}/MONTH/SYSTEM</p>
             </div>
             <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto text-center">
               <div>
@@ -407,16 +417,43 @@ const BotMindsSaaSPage = () => {
       {/* Pricing Plans */}
       <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
         <div className="container-custom px-4 md:px-6">
-          <div className="text-center mb-12 scroll-animate">
+          <div className="text-center mb-8 scroll-animate">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
               Pricing & Plans
             </h2>
             <p className="text-lg md:text-xl text-brown-grey dark:text-text-dark-muted mb-2">
               Simple Plans, Powerful Value
             </p>
-            <p className="text-base text-brown-grey dark:text-text-dark-muted">
+            <p className="text-base text-brown-grey dark:text-text-dark-muted mb-6">
               Pick the plan that works best for your goals — simple, clear, and flexible.
             </p>
+            
+            {/* Currency Toggle */}
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <span className="text-sm font-medium text-text-muted dark:text-text-dark-muted">Currency:</span>
+              <div className="inline-flex bg-gray-200 dark:bg-gray-700 rounded-lg p-1">
+                <button
+                  onClick={() => setCurrency('USD')}
+                  className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-300 ${
+                    currency === 'USD'
+                      ? 'bg-[#2F3B35] text-white shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  $ USD
+                </button>
+                <button
+                  onClick={() => setCurrency('INR')}
+                  className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-300 ${
+                    currency === 'INR'
+                      ? 'bg-[#2F3B35] text-white shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  ₹ INR
+                </button>
+              </div>
+            </div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 mb-8">
@@ -429,7 +466,7 @@ const BotMindsSaaSPage = () => {
                 )}
                 <h3 className="text-3xl font-heading text-charcoal dark:text-sandstone mb-2 text-center">{plan.name}</h3>
                 <div className="text-center mb-4">
-                  <span className="text-5xl font-heading text-charcoal dark:text-sandstone">{plan.price}</span>
+                  <span className="text-5xl font-heading text-charcoal dark:text-sandstone">{convertPrice(plan.price)}</span>
                   <span className="text-brown-grey dark:text-text-dark-muted text-lg">{plan.period}</span>
                 </div>
                 <p className="text-sm text-brown-grey dark:text-text-dark-muted text-center mb-6 italic">

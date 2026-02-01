@@ -10,29 +10,30 @@ const ManagementBusinessConsultingPage = () => {
   useEffect(() => {
     gsap.fromTo(
       '.hero-heading',
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 }
     );
 
     gsap.fromTo(
       '.hero-subtext',
       { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power3.out' }
+      { opacity: 1, y: 0, duration: 0.5, delay: 0.15, ease: 'power2.out' }
     );
 
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.5,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: element,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
           },
         }
       );

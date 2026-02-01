@@ -79,10 +79,10 @@ const SalesGrowthConsultingPage = () => {
   ];
 
   const benefits = [
-    { icon: '📈', title: 'Accelerated Revenue Growth', description: 'Implement proven strategies to increase sales velocity and revenue', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
-    { icon: '🎯', title: 'Improved Conversion Rates', description: 'Optimize your sales funnel for higher conversion at every stage', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
-    { icon: '💡', title: 'Data-Driven Decisions', description: 'Leverage analytics for strategic sales planning and forecasting', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
-    { icon: '🚀', title: 'Scalable Growth Systems', description: 'Build repeatable processes that scale with your business', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' }
+    { icon: 'trending_up', title: 'Accelerated Revenue Growth', description: 'Implement proven strategies to increase sales velocity and revenue', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { icon: 'track_changes', title: 'Improved Conversion Rates', description: 'Optimize your sales funnel for higher conversion at every stage', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { icon: 'insights', title: 'Data-Driven Decisions', description: 'Leverage analytics for strategic sales planning and forecasting', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' },
+    { icon: 'rocket_launch', title: 'Scalable Growth Systems', description: 'Build repeatable processes that scale with your business', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' }
   ];
 
   return (
@@ -139,7 +139,7 @@ const SalesGrowthConsultingPage = () => {
                   <ul className="space-y-3">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
-                        <span className="material-symbols-outlined text-lg">check</span>
+                        <span className="material-symbols-outlined text-lg text-black">check</span>
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -168,7 +168,7 @@ const SalesGrowthConsultingPage = () => {
             {benefits.map((benefit, index) => (
               <ScrollAnimation key={index}>
                 <div className={`${benefit.bgColor} ${benefit.textColor} p-6 md:p-8 text-center hover:opacity-90 transition-opacity duration-300`}>
-                  <div className="text-5xl mb-4">{benefit.icon}</div>
+                  <span className="material-symbols-outlined text-6xl text-black mb-4 block">{benefit.icon}</span>
                   <h3 className="text-xl font-heading font-semibold mb-3">
                     {benefit.title}
                   </h3>

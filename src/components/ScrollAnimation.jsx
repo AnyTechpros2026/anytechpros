@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const ScrollAnimation = ({ children, className = '', threshold = 0.1 }) => {
+const ScrollAnimation = ({ children, className = '', threshold = 0.15 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -9,6 +9,10 @@ const ScrollAnimation = ({ children, className = '', threshold = 0.1 }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Stop observing once visible
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
         }
       },
       { threshold }

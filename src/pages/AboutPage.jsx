@@ -59,67 +59,67 @@ const AboutPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollAnimation>
-              <div className="luxury-card">
-                <h3 className="text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Quality, IT Service & Business Continuity
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">ISO 9001:2015 – Quality Management Systems</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">ISO 9001:2015 – Quality Management Systems</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">ISO 20000-1:2018 – IT Service Management</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">ISO 20000-1:2018 – IT Service Management</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">ISO 22301:2019 – Business Continuity Management</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">ISO 22301:2019 – Business Continuity Management</span>
                   </li>
                 </ul>
               </div>
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="luxury-card">
-                <h3 className="text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   AI, Software & Systems Engineering
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">ISO 42001:2023 – AI Management Systems</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">ISO 42001:2023 – AI Management Systems</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">IEC 90003:2018 – Software Engineering Guidelines</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">IEC 90003:2018 – Software Engineering Guidelines</span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">IEC 25101:2023 – System Quality Models</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">IEC 25101:2023 – System Quality Models</span>
                   </li>
                 </ul>
               </div>
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="luxury-card">
-                <h3 className="text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Information Security & Privacy
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">IEC 27701:2022 – Privacy Information Management</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">IEC 27701:2022 – Privacy Information Management</span>
                   </li>
                 </ul>
-                <h3 className="text-xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4 mt-6">
+                <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4 mt-6">
                   Process & Capability Excellence
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-primary dark:text-primary-light mr-2">•</span>
-                    <span className="text-text-muted dark:text-text-dark-muted">CMMI Level 5 – Process Maturity and Performance Excellence</span>
+                    <span className="text-[#2F3B35] mr-2">•</span>
+                    <span className="text-[#2F3B35]/80">CMMI Level 5 – Process Maturity and Performance Excellence</span>
                   </li>
                 </ul>
               </div>
@@ -150,33 +150,33 @@ const AboutPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <ScrollAnimation>
-              <div className="luxury-card text-center">
-                <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+                <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Strategy
                 </h3>
-                <p className="text-text-muted dark:text-text-dark-muted">
+                <p className="text-[#2F3B35]/80">
                   Designing digital and business transformation roadmaps aligned with organisational goals.
                 </p>
               </div>
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="luxury-card text-center">
-                <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+                <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Engineering
                 </h3>
-                <p className="text-text-muted dark:text-text-dark-muted">
+                <p className="text-[#2F3B35]/80">
                   Building scalable, secure, and high-performance software and platforms.
                 </p>
               </div>
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="luxury-card text-center">
-                <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-4">
+              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+                <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Intelligence
                 </h3>
-                <p className="text-text-muted dark:text-text-dark-muted">
+                <p className="text-[#2F3B35]/80">
                   Embedding AI, automation, and data-driven capabilities into every solution.
                 </p>
               </div>
@@ -219,7 +219,7 @@ const AboutPage = () => {
               <p className="text-body text-lg mb-6">
                 At AnyTechPros, innovation is not an option — it is a discipline. We continuously invest in AI, automation, cybersecurity, and emerging technologies to help organisations stay ahead of disruption.
               </p>
-              <p className="text-xl font-heading font-semibold text-accent-sage dark:text-accent-sage">
+              <p className="text-xl font-heading font-semibold text-black">
                 AnyTechPros InfoTech LLP is where consulting meets engineering, and strategy becomes scalable technology.
               </p>
             </div>

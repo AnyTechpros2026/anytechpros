@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -6,31 +6,43 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const DigitalMarketingPage = () => {
+  const [currency, setCurrency] = useState('INR'); // INR or USD
+
   useEffect(() => {
     gsap.fromTo(
       '.hero-heading',
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 }
     );
 
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 30 },
+        { opacity: 0, y: 20 },
         {
           opacity: 1,
           y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
+          duration: 0.5,
+          ease: 'power2.out',
           scrollTrigger: {
             trigger: element,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+            once: true,
           },
         }
       );
     });
   }, []);
+
+  // Currency conversion function (1 USD = 83 INR approximately)
+  const convertPrice = (inrPrice) => {
+    const numPrice = parseInt(inrPrice.replace('₹', ''));
+    if (currency === 'USD') {
+      return `$${Math.round(numPrice / 83)}`;
+    }
+    return inrPrice;
+  };
 
   const plans = [
     {
@@ -155,11 +167,38 @@ const DigitalMarketingPage = () => {
       {/* Pricing Plans */}
       <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
         <div className="container-custom px-4 md:px-6">
-          <div className="text-center mb-12 md:mb-16 scroll-animate">
+          <div className="text-center mb-8 md:mb-12 scroll-animate">
             <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">WHAT WE OFFER</div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-6">
               DIGITAL MARKETING PLANS & SERVICES
             </h2>
+            
+            {/* Currency Toggle */}
+            <div className="flex items-center justify-center gap-3 mt-6">
+              <span className="text-sm font-medium text-text-muted dark:text-text-dark-muted">Currency:</span>
+              <div className="inline-flex bg-gray-200 dark:bg-gray-700 rounded-lg p-1">
+                <button
+                  onClick={() => setCurrency('USD')}
+                  className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-300 ${
+                    currency === 'USD'
+                      ? 'bg-[#2F3B35] text-white shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  $ USD
+                </button>
+                <button
+                  onClick={() => setCurrency('INR')}
+                  className={`px-6 py-2 rounded-md text-sm font-semibold transition-all duration-300 ${
+                    currency === 'INR'
+                      ? 'bg-[#2F3B35] text-white shadow-md'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
+                  }`}
+                >
+                  ₹ INR
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
@@ -171,7 +210,7 @@ const DigitalMarketingPage = () => {
                   </div>
                 )}
                 <h3 className="text-2xl font-heading mb-2">{plan.name}</h3>
-                <div className="text-4xl font-light mb-6">{plan.price}<span className="text-lg">/mo</span></div>
+                <div className="text-4xl font-light mb-6">{convertPrice(plan.price)}<span className="text-lg">/mo</span></div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm">
@@ -194,7 +233,7 @@ const DigitalMarketingPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="text-sm uppercase tracking-widest mb-4 text-white/70">PREMIUM PACKAGE</div>
               <h3 className="text-3xl md:text-4xl font-heading mb-4">SOFTWARE DEVELOPMENT + DIGITAL MARKETING</h3>
-              <div className="text-4xl font-light mb-6">₹29999<span className="text-lg">/mo</span></div>
+              <div className="text-4xl font-light mb-6">{convertPrice('₹29999')}<span className="text-lg">/mo</span></div>
               <p className="text-lg leading-relaxed mb-8 text-white/90">
                 This is the premium service offered by us in which we provide the Software development for your business as well as Digital Marketing Services to grow your business. Our highly skilled, experienced and professional software developers are able to design and develop the software with all the functionalities you require and our dynamic Digital Marketing Team will help you to grow your business and achieve your market goals and make profits. In this service you are also able to customise your package according to your business needs.
               </p>
