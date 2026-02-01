@@ -8,10 +8,14 @@ const Footer = () => {
 
   useEffect(() => {
     if (canvasRef.current) {
-      const map = new DottedMap({ height: 60, grid: 'diagonal' });
+      // Adjust map height based on screen size
+      const isMobile = window.innerWidth < 768;
+      const mapHeight = isMobile ? 40 : 60;
+      
+      const map = new DottedMap({ height: mapHeight, grid: 'diagonal' });
       
       const svgMap = map.getSVG({
-        radius: 0.22,
+        radius: isMobile ? 0.18 : 0.22,
         color: '#E8DDD0',
         shape: 'circle',
         backgroundColor: 'transparent'
