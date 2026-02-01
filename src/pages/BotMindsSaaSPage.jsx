@@ -262,7 +262,7 @@ const BotMindsSaaSPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
             {whyChooseFeatures.map((feature, index) => (
-              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{feature.icon}</span>
                 <h3 className="text-xl font-heading mb-3">{feature.title}</h3>
                 <p className="leading-relaxed opacity-90">{feature.description}</p>
@@ -286,7 +286,7 @@ const BotMindsSaaSPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {automationFeatures.map((feature, index) => (
-              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{feature.icon}</span>
                 <h3 className="text-xl font-heading mb-3">{feature.title}</h3>
                 <p className="leading-relaxed opacity-90">{feature.description}</p>
@@ -317,24 +317,35 @@ const BotMindsSaaSPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 scroll-animate">
-            <div className="bg-taupe/20 dark:bg-charcoal-light p-8 text-center hover:shadow-card transition-all duration-300">
-              <div className="mb-4">
-                <span className="material-symbols-outlined text-6xl text-charcoal dark:text-sandstone">dashboard</span>
-              </div>
-              <h3 className="text-xl font-heading text-charcoal dark:text-sandstone">BOTMINDS Dashboard</h3>
+          {/* Product Screenshots */}
+          <div className="grid md:grid-cols-2 gap-8 scroll-animate">
+            <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/screenshot (11).png" 
+                alt="BOTMINDS Dashboard Overview" 
+                className="w-full h-auto rounded-lg"
+              />
             </div>
-            <div className="bg-taupe/20 dark:bg-charcoal-light p-8 text-center hover:shadow-card transition-all duration-300">
-              <div className="mb-4">
-                <span className="material-symbols-outlined text-6xl text-charcoal dark:text-sandstone">analytics</span>
-              </div>
-              <h3 className="text-xl font-heading text-charcoal dark:text-sandstone">BOTMINDS Optimization</h3>
+            <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/screenshot (12).png" 
+                alt="BOTMINDS Analytics" 
+                className="w-full h-auto rounded-lg"
+              />
             </div>
-            <div className="bg-taupe/20 dark:bg-charcoal-light p-8 text-center hover:shadow-card transition-all duration-300">
-              <div className="mb-4">
-                <span className="material-symbols-outlined text-6xl text-charcoal dark:text-sandstone">power</span>
-              </div>
-              <h3 className="text-xl font-heading text-charcoal dark:text-sandstone">BOTMINDS BOTrigger</h3>
+            <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/screenshot (13).png" 
+                alt="BOTMINDS Automation" 
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+            <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+              <img 
+                src="/screenshot (14).png" 
+                alt="BOTMINDS Intelligence" 
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         </div>
@@ -353,7 +364,7 @@ const BotMindsSaaSPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="scroll-animate bg-white dark:bg-charcoal p-8">
+            <div className="scroll-animate bg-white dark:bg-charcoal p-8 rounded-xl">
               <div className="flex items-start gap-4 mb-6">
                 <span className="material-symbols-outlined text-5xl text-charcoal dark:text-sandstone flex-shrink-0">business_center</span>
                 <div>
@@ -369,7 +380,7 @@ const BotMindsSaaSPage = () => {
             </div>
 
             {strategicBenefits.map((benefit, index) => (
-              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <div className="flex items-start gap-4">
                   <span className="material-symbols-outlined text-5xl flex-shrink-0">{benefit.icon}</span>
                   <div>
@@ -514,7 +525,7 @@ const BotMindsSaaSPage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-8 hover:shadow-card transition-all duration-300">
+              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-8 rounded-xl hover:shadow-card transition-all duration-300">
                 <div className="mb-4">
                   <span className="material-symbols-outlined text-4xl text-charcoal dark:text-sandstone">format_quote</span>
                 </div>

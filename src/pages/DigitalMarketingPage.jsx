@@ -203,7 +203,7 @@ const DigitalMarketingPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
             {plans.map((plan, index) => (
-              <div key={index} className={`scroll-animate ${plan.bgColor} p-6 md:p-8 ${plan.textColor} relative`}>
+              <div key={index} className={`scroll-animate ${plan.bgColor} p-6 md:p-8 ${plan.textColor} rounded-xl relative`}>
                 {plan.popular && (
                   <div className="absolute top-0 right-0 bg-charcoal text-white text-xs uppercase tracking-widest px-4 py-2">
                     POPULAR
@@ -259,7 +259,7 @@ const DigitalMarketingPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 md:p-8 shadow-card">
+              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 md:p-8 rounded-xl shadow-card">
                 <p className="text-brown-grey dark:text-text-dark-muted leading-relaxed mb-6 italic">
                   "{testimonial.quote}"
                 </p>

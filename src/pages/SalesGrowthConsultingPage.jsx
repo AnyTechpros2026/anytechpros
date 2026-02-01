@@ -129,7 +129,7 @@ const SalesGrowthConsultingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <ScrollAnimation key={index}>
-                <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                   <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
                     {service.title}
                   </h3>
@@ -167,7 +167,7 @@ const SalesGrowthConsultingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {benefits.map((benefit, index) => (
               <ScrollAnimation key={index}>
-                <div className={`${benefit.bgColor} ${benefit.textColor} p-6 md:p-8 text-center hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`${benefit.bgColor} ${benefit.textColor} p-6 md:p-8 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                   <span className="material-symbols-outlined text-6xl text-black mb-4 block">{benefit.icon}</span>
                   <h3 className="text-xl font-heading font-semibold mb-3">
                     {benefit.title}
@@ -230,7 +230,7 @@ const SalesGrowthConsultingPage = () => {
                 }
               ].map((phase, index) => (
                 <ScrollAnimation key={index}>
-                  <div className={`${phase.bgColor} ${phase.textColor} p-6 md:p-8 flex gap-6 items-start hover:opacity-90 transition-opacity duration-300`}>
+                  <div className={`${phase.bgColor} ${phase.textColor} p-6 md:p-8 rounded-xl flex gap-6 items-start hover:opacity-90 transition-opacity duration-300`}>
                     <div className="text-4xl font-heading font-light flex-shrink-0">
                       {phase.step}
                     </div>

@@ -246,7 +246,7 @@ const CyberSecurityPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {threats.map((threat, index) => (
-              <div key={index} className={`scroll-animate ${threat.bgColor} ${threat.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${threat.bgColor} ${threat.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{threat.icon}</span>
                 <h3 className="text-lg font-heading mb-3">{threat.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{threat.description}</p>
@@ -268,7 +268,7 @@ const CyberSecurityPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{service.icon}</span>
                 <h3 className="text-xl font-heading mb-3">{service.title}</h3>
                 <p className="leading-relaxed opacity-90">{service.description}</p>

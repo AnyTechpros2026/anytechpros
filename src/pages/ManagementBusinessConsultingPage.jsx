@@ -93,7 +93,7 @@ const ManagementBusinessConsultingPage = () => {
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className={`scroll-animate text-center ${item.bgColor} ${item.textColor} p-6 md:p-8`}>
+                <div className={`scroll-animate text-center ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl`}>
                   <div className="text-5xl md:text-6xl font-heading font-bold opacity-20 mb-4">
                     {item.number}
                   </div>
@@ -176,7 +176,7 @@ const ManagementBusinessConsultingPage = () => {
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                   <h3 className="text-xl md:text-2xl font-heading font-bold mb-4">
                     {item.title}
                   </h3>
@@ -231,7 +231,7 @@ const ManagementBusinessConsultingPage = () => {
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                   <div className="flex gap-6 md:gap-8">
                     <div className="text-4xl md:text-5xl font-heading font-bold opacity-40 flex-shrink-0">
                       {item.step}

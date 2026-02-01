@@ -126,7 +126,7 @@ const TelecomConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${feature.bgColor} ${feature.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{feature.icon}</span>
                 <h3 className="text-lg font-heading mb-2">{feature.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{feature.description}</p>
@@ -147,7 +147,7 @@ const TelecomConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {passengerSafety.map((item, index) => (
-              <div key={index} className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{item.icon}</span>
                 <h3 className="text-lg font-heading mb-2">{item.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{item.description}</p>

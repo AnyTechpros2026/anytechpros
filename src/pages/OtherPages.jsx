@@ -129,7 +129,7 @@ export const CareersPage = () => (
             { title: 'Business Consultant', department: 'Consulting', location: 'New York', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]', btnBg: 'bg-[#F7F3ED]', btnText: 'text-[#2F4538]' },
           ].map((job, index) => (
             <ScrollAnimation key={index}>
-              <div className={`${job.bgColor} ${job.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div className={`${job.bgColor} ${job.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <h3 className="text-xl md:text-2xl font-heading font-semibold mb-4">
                   {job.title}
                 </h3>

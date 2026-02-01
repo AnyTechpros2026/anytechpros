@@ -98,7 +98,7 @@ const EGovernancePage = () => {
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{service.icon}</span>
                 <h3 className="text-2xl font-heading mb-4">{service.title}</h3>
                 <p className="mb-4 leading-relaxed opacity-90">{service.description}</p>
@@ -124,7 +124,7 @@ const EGovernancePage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{benefit.icon}</span>
                 <h3 className="text-lg font-heading mb-2">{benefit.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{benefit.description}</p>

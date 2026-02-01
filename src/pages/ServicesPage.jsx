@@ -129,7 +129,7 @@ const ServicesPage = () => {
             {services.map((service, index) => (
               <ScrollAnimation key={index}>
                 <Link to={service.path}>
-                  <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300 h-full`}>
+                  <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full`}>
                     <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
                       {service.title}
                     </h3>
@@ -173,7 +173,7 @@ const ServicesPage = () => {
             {products.map((product, index) => (
               <ScrollAnimation key={index}>
                 <Link to={product.path}>
-                  <div className={`${product.bgColor} ${product.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300 h-full`}>
+                  <div className={`${product.bgColor} ${product.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full`}>
                     <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
                       {product.title}
                     </h3>

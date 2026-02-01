@@ -96,7 +96,7 @@ const HRTalentConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{service.icon}</span>
                 <h3 className="text-2xl font-heading mb-3">{service.title}</h3>
                 <p className="leading-relaxed opacity-90">{service.description}</p>
@@ -116,7 +116,7 @@ const HRTalentConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-5xl mb-4 block">{benefit.icon}</span>
                 <h3 className="font-heading mb-2 text-lg">{benefit.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{benefit.description}</p>
@@ -139,7 +139,7 @@ const HRTalentConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {jobRoles.map((item, index) => (
-              <div key={index} className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 rounded-xl border-2 border-[#2F3B35]/10 dark:border-sandstone/20 hover:opacity-90 transition-opacity duration-300`}>
                 <h3 className="text-xl font-heading mb-2">{item.role}</h3>
                 <p className="opacity-90">{item.desc}</p>
               </div>
@@ -158,7 +158,7 @@ const HRTalentConsultingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {compliances.map((comp, index) => (
-              <div key={index} className={`scroll-animate ${comp.bgColor} ${comp.textColor} p-6 hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${comp.bgColor} ${comp.textColor} p-6 rounded-xl border-2 border-[#2F3B35]/10 dark:border-sandstone/20 hover:opacity-90 transition-opacity duration-300`}>
                 <span className="material-symbols-outlined text-4xl mb-4 block">{comp.icon}</span>
                 <h3 className="font-heading mb-2">{comp.title}</h3>
                 <p className="text-sm leading-relaxed opacity-90">{comp.description}</p>
@@ -176,7 +176,7 @@ const HRTalentConsultingPage = () => {
               Our HR Expertise
             </h2>
           </div>
-          <div className="bg-taupe/20 dark:bg-charcoal-light p-8 md:p-12 scroll-animate">
+          <div className="bg-taupe/20 dark:bg-charcoal-light p-8 md:p-12 scroll-animate border-2 border-[#2F3B35]/10 dark:border-sandstone/20 rounded-xl">
             <div className="grid md:grid-cols-2 gap-4">
               {expertise.map((exp, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -205,7 +205,7 @@ const HRTalentConsultingPage = () => {
               { step: '04', title: 'Monitoring & Support', desc: 'Continuous monitoring, optimization, and ongoing HR support' }
             ].map((item, index) => (
               <div key={index} className="scroll-animate text-center">
-                <div className="bg-white dark:bg-charcoal p-6 mb-4">
+                <div className="bg-white dark:bg-charcoal p-6 mb-4 border-2 border-[#2F3B35]/10 dark:border-sandstone/20 rounded-xl">
                   <div className="text-4xl font-heading text-charcoal dark:text-sandstone mb-2">{item.step}</div>
                   <h3 className="font-heading text-charcoal dark:text-sandstone">{item.title}</h3>
                 </div>

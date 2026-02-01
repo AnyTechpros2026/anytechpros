@@ -90,7 +90,7 @@ const SoftwareDevelopmentPage = () => {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {technologies.map((tech, index) => (
-              <div key={index} className={`scroll-animate ${tech.bgColor} ${tech.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+              <div key={index} className={`scroll-animate ${tech.bgColor} ${tech.textColor} p-6 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
                 <img src={tech.logo} alt={tech.name} className="w-16 h-16 mx-auto mb-3 object-contain" />
                 <h3 className="font-heading mb-1">{tech.name}</h3>
                 <p className="text-xs uppercase tracking-widest opacity-75">{tech.category}</p>
@@ -170,7 +170,7 @@ const SoftwareDevelopmentPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {['RESTful API Development', 'Payment Gateway Integration', 'Razorpay Integration', 'PayU Integration', 'Third-party API Integration', 'Custom API Solutions'].map((item, index) => (
-              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 text-center">
+              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 rounded-xl text-center">
                 <span className="material-symbols-outlined text-5xl text-charcoal dark:text-sandstone mb-4 block">cloud_sync</span>
                 <h3 className="text-lg font-heading text-charcoal dark:text-sandstone">{item}</h3>
               </div>
