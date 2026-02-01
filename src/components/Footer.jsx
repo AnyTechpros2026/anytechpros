@@ -1,8 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import DottedMap from 'dotted-map';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    if (canvasRef.current) {
+      const map = new DottedMap({ height: 60, grid: 'diagonal' });
+      
+      const svgMap = map.getSVG({
+        radius: 0.22,
+        color: '#E8DDD0',
+        shape: 'circle',
+        backgroundColor: 'transparent'
+      });
+
+      canvasRef.current.innerHTML = svgMap;
+    }
+  }, []);
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -42,8 +59,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-charcoal dark:bg-charcoal text-sandstone dark:text-sandstone pt-12 md:pt-20 lg:pt-24 pb-8 md:pb-12 border-t border-sandstone/10 dark:border-sandstone/10">
-      <div className="container-custom px-4 md:px-6">
+    <footer className="relative overflow-hidden bg-charcoal dark:bg-charcoal text-sandstone dark:text-sandstone pt-12 md:pt-20 lg:pt-24 pb-8 md:pb-12 border-t border-sandstone/10 dark:border-sandstone/10">
+      {/* Dotted World Map Background */}
+      <div 
+        ref={canvasRef}
+        className="absolute inset-0 opacity-10 pointer-events-none"
+        style={{ 
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          overflow: 'hidden'
+        }}
+      />
+      
+      <div className="container-custom px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-24">
           {/* Company Info */}
           <div className="lg:col-span-1">
