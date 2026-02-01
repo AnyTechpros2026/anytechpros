@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import ScrollAnimation from '../components/ScrollAnimation';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -8,243 +7,214 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HRTalentConsultingPage = () => {
   useEffect(() => {
-    gsap.fromTo(
-      '.hero-heading',
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
-    );
-
-    gsap.fromTo(
-      '.hero-subtext',
-      { opacity: 0, y: 20 },
-      { opacity: 1, y: 0, duration: 0.8, delay: 0.2, ease: 'power3.out' }
-    );
-
+    gsap.fromTo('.hero-heading', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' });
     gsap.utils.toArray('.scroll-animate').forEach((element) => {
-      gsap.fromTo(
-        element,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
+      gsap.fromTo(element, { opacity: 0, y: 30 }, {
+        opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
+        scrollTrigger: { trigger: element, start: 'top 80%', toggleActions: 'play none none reverse' }
+      });
     });
   }, []);
+
+
+  const services = [
+    { icon: 'person_search', title: 'Talent Acquisition', description: 'Strategic recruitment solutions to identify, attract, and hire top talent.', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { icon: 'payments', title: 'Payroll Management', description: 'Complete payroll processing with compliance, tax management, and statutory reporting.', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { icon: 'trending_up', title: 'Performance Management System', description: 'Implement systems for effective performance tracking, appraisals, and employee development.', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' }
+  ];
+
+  const benefits = [
+    { icon: 'verified', title: 'Compliance Assurance', description: 'Ensure full adherence to labor laws, statutory requirements, and HR best practices.', bgColor: 'bg-[#A8B5A1]', textColor: 'text-[#2F3B35]' },
+    { icon: 'people', title: 'Talent Retention', description: 'Build strategies to engage, develop, and retain your most valuable employees.', bgColor: 'bg-[#E8DDD0]', textColor: 'text-[#2F3B35]' },
+    { icon: 'speed', title: 'Efficiency Gains', description: 'Streamline HR processes and reduce administrative burden on your organization.', bgColor: 'bg-[#C9D8BF]', textColor: 'text-[#2F3B35]' },
+    { icon: 'sentiment_very_satisfied', title: 'Workplace Culture', description: 'Foster a positive, inclusive workplace culture that drives employee satisfaction.', bgColor: 'bg-[#2F4538]', textColor: 'text-[#F7F3ED]' }
+  ];
+
+  const jobRoles = [
+    { role: 'HR Manager', desc: 'Overall HR strategy and operations management' },
+    { role: 'Recruitment Specialist', desc: 'Talent sourcing and candidate selection' },
+    { role: 'Payroll Administrator', desc: 'Salary processing and compliance management' },
+    { role: 'Training Officer', desc: 'Employee training and development programs' },
+    { role: 'Employee Relations Manager', desc: 'Employee engagement and relations' },
+    { role: 'HR Analyst', desc: 'HR analytics and workforce planning' }
+  ];
+
+  const compliances = [
+    { icon: 'gavel', title: 'Statutory Compliance', description: 'Full compliance with labor laws, tax regulations, and statutory requirements.' },
+    { icon: 'description', title: 'HR Standard Operating Procedures', description: 'Documented policies and procedures for consistent HR service delivery.' },
+    { icon: 'verified_user', title: 'Employment Law Compliance', description: 'Adherence to employment contracts, policies, and legal requirements.' },
+    { icon: 'security', title: 'Data Protection & Privacy', description: 'Secure employee data management in compliance with privacy regulations.' }
+  ];
+
+  const expertise = [
+    'Recruitment & Selection', 'Talent Management', 'Performance Appraisals',
+    'Learning & Development', 'Compensation & Benefits', 'Employee Relations',
+    'Labor Law Compliance', 'Payroll Processing', 'HR Policy Development', 'Workforce Planning'
+  ];
 
   return (
     <div className="pt-20 md:pt-24">
       {/* Hero Section */}
-      <section 
-        className="relative h-screen md:h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.5) 0%, rgba(31, 31, 31, 0.7) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop')`
-        }}
-      >
-        <div className="container-custom px-4 md:px-6 text-center text-white relative z-10">
-          <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-6">
-            HR & Talent Consulting
-          </h1>
-          <p className="hero-subtext text-lg md:text-xl max-w-2xl mx-auto opacity-90">
-            We help you architect future-ready teams through workforce planning, talent advisory, and tech-enabled hiring and HR processes.
-          </p>
+      <section className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
+        style={{ backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.7) 0%, rgba(31, 31, 31, 0.8) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop')` }}>
+        <div className="container-custom px-4 md:px-6 py-16 md:py-24 relative z-10">
+          <div className="max-w-4xl">
+            <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl font-heading font-light text-white mb-6 leading-tight">
+              Human Resources Consulting
+            </h1>
+            <p className="hero-heading text-lg md:text-xl text-white/90 leading-relaxed">
+              Transform your HR capabilities with strategic consulting that maximizes talent potential, ensures compliance, and builds strong workplace cultures.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* What We Section */}
-      <section className="py-12 md:py-20 lg:py-24 bg-[#F5EFE7] dark:bg-charcoal px-4 md:px-6">
-        <div className="container-custom max-w-5xl mx-auto">
-          <ScrollAnimation>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
-              What We Deliver
+      {/* HR Services */}
+      <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Our HR Services
             </h2>
-          </ScrollAnimation>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                number: '01',
-                title: 'Strategic Talent Plans',
-                description: 'Comprehensive workforce strategies aligned with business objectives and market realities.'
-              },
-              {
-                number: '02',
-                title: 'High-Performance Teams',
-                description: 'Build and develop teams with the right skills, culture, and leadership capabilities.'
-              },
-              {
-                number: '03',
-                title: 'Optimized Operations',
-                description: 'Implement modern HR systems and processes that reduce costs and improve employee experience.'
-              },
-            ].map((item, index) => (
-              <ScrollAnimation key={index}>
-                <div className="scroll-animate text-center">
-                  <div className="text-5xl md:text-6xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 mb-4">
-                    {item.number}
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className={`scroll-animate ${service.bgColor} ${service.textColor} p-8 hover:opacity-90 transition-opacity duration-300`}>
+                <span className="material-symbols-outlined text-5xl mb-4 block">{service.icon}</span>
+                <h3 className="text-2xl font-heading mb-3">{service.title}</h3>
+                <p className="leading-relaxed opacity-90">{service.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
-      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
-        <div className="container-custom max-w-4xl mx-auto">
-          <ScrollAnimation>
-            <div className="scroll-animate">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-charcoal dark:text-sandstone">
-                Building High-Performance Teams for the Future
-              </h2>
-              <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted mb-6 leading-relaxed">
-                Your people are your competitive advantage. In a rapidly changing business environment, organizations need sophisticated talent strategies that go beyond traditional HR. We help you attract, develop, and retain the best talent while building organizational cultures that drive performance and innovation.
-              </p>
-              <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted leading-relaxed">
-                Through workforce planning, talent advisory, and technology-enabled HR transformation, we help you build teams equipped for tomorrow's challenges.
-              </p>
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-taupe/30 dark:bg-charcoal-light">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Why Choose HR Consulting?
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {benefits.map((benefit, index) => (
+              <div key={index} className={`scroll-animate ${benefit.bgColor} ${benefit.textColor} p-6 text-center hover:opacity-90 transition-opacity duration-300`}>
+                <span className="material-symbols-outlined text-5xl mb-4 block">{benefit.icon}</span>
+                <h3 className="font-heading mb-2 text-lg">{benefit.title}</h3>
+                <p className="text-sm leading-relaxed opacity-90">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Job Roles We Handle */}
+      <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Key HR Roles & Functions
+            </h2>
+            <p className="text-lg text-brown-grey dark:text-text-dark-muted max-w-3xl mx-auto">
+              Specialized support across all critical HR functions
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {jobRoles.map((item, index) => (
+              <div key={index} className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 hover:opacity-90 transition-opacity duration-300`}>
+                <h3 className="text-xl font-heading mb-2">{item.role}</h3>
+                <p className="opacity-90">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Standards */}
+      <section className="py-16 md:py-24 bg-taupe/30 dark:bg-charcoal-light">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              HR Compliance & Standards
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {compliances.map((comp, index) => (
+              <div key={index} className={`scroll-animate ${comp.bgColor} ${comp.textColor} p-6 hover:opacity-90 transition-opacity duration-300`}>
+                <span className="material-symbols-outlined text-4xl mb-4 block">{comp.icon}</span>
+                <h3 className="font-heading mb-2">{comp.title}</h3>
+                <p className="text-sm leading-relaxed opacity-90">{comp.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Core Expertise */}
+      <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Our HR Expertise
+            </h2>
+          </div>
+          <div className="bg-taupe/20 dark:bg-charcoal-light p-8 md:p-12 scroll-animate">
+            <div className="grid md:grid-cols-2 gap-4">
+              {expertise.map((exp, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="material-symbols-outlined text-charcoal dark:text-sandstone flex-shrink-0 mt-1">check_circle</span>
+                  <span className="text-brown-grey dark:text-text-dark-muted">{exp}</span>
+                </div>
+              ))}
             </div>
-          </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-12 md:py-20 lg:py-24 bg-[#F5EFE7] dark:bg-charcoal px-4 md:px-6">
-        <div className="container-custom max-w-4xl mx-auto">
-          <ScrollAnimation>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
-              Our Services
-            </h2>
-          </ScrollAnimation>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Workforce Planning & Strategy',
-                description: 'Develop talent strategies aligned with business objectives, including headcount planning, skills assessments, and succession planning.'
-              },
-              {
-                title: 'Executive Search & Recruitment',
-                description: 'Identify and attract executive leadership and specialized talent to drive organizational growth and transformation.'
-              },
-              {
-                title: 'Organizational Development',
-                description: 'Design organizational structures, develop leadership capabilities, and build high-performance cultures.'
-              },
-              {
-                title: 'Compensation & Benefits Strategy',
-                description: 'Create competitive compensation packages and benefits programs that attract, retain, and motivate talent.'
-              },
-              {
-                title: 'HR Technology & Transformation',
-                description: 'Implement modern HR systems and processes that streamline operations and improve employee experience.'
-              },
-              {
-                title: 'Talent Development & Training',
-                description: 'Build comprehensive development programs that enhance skills, capabilities, and leadership across the organization.'
-              },
-            ].map((item, index) => (
-              <ScrollAnimation key={index}>
-                <div className="scroll-animate luxury-card p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-4 text-charcoal dark:text-sandstone">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted">
-                    {item.description}
-                  </p>
-                </div>
-              </ScrollAnimation>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Impact */}
-      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
-        <div className="container-custom max-w-4xl mx-auto">
-          <ScrollAnimation>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-12 text-charcoal dark:text-sandstone text-center">
-              Measurable Outcomes
+      {/* Implementation Process */}
+      <section className="py-16 md:py-24 bg-taupe/30 dark:bg-charcoal-light">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 scroll-animate">
+            <h2 className="text-3xl md:text-4xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Our Implementation Approach
             </h2>
-          </ScrollAnimation>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+          </div>
+          <div className="grid md:grid-cols-4 gap-4">
             {[
-              {
-                metric: '40% ↓',
-                description: 'Reduction in time-to-hire for critical positions'
-              },
-              {
-                metric: '35% ↑',
-                description: 'Improvement in employee retention'
-              },
-              {
-                metric: '50% ↑',
-                description: 'Enhanced leadership bench strength'
-              },
+              { step: '01', title: 'Assessment', desc: 'Evaluate current HR processes and identify improvement areas' },
+              { step: '02', title: 'Strategy Development', desc: 'Design customized HR strategies aligned with business goals' },
+              { step: '03', title: 'Implementation', desc: 'Execute programs with dedicated support and training' },
+              { step: '04', title: 'Monitoring & Support', desc: 'Continuous monitoring, optimization, and ongoing HR support' }
             ].map((item, index) => (
-              <ScrollAnimation key={index}>
-                <div className="scroll-animate text-center">
-                  <div className="text-3xl md:text-4xl font-heading font-bold text-charcoal dark:text-sandstone mb-2">
-                    {item.metric}
-                  </div>
-                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted">
-                    {item.description}
-                  </p>
+              <div key={index} className="scroll-animate text-center">
+                <div className="bg-white dark:bg-charcoal p-6 mb-4">
+                  <div className="text-4xl font-heading text-charcoal dark:text-sandstone mb-2">{item.step}</div>
+                  <h3 className="font-heading text-charcoal dark:text-sandstone">{item.title}</h3>
                 </div>
-              </ScrollAnimation>
+                <p className="text-sm text-brown-grey dark:text-text-dark-muted">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 md:py-20 lg:py-24 bg-charcoal text-white px-4 md:px-6">
-        <div className="container-custom max-w-3xl mx-auto text-center">
-          <ScrollAnimation>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-              Ready to Build Your Future-Ready Team?
+      <section className="py-16 md:py-24 bg-charcoal dark:bg-charcoal-light text-white">
+        <div className="container-custom px-4 md:px-6 text-center">
+          <div className="max-w-3xl mx-auto scroll-animate">
+            <h2 className="text-3xl md:text-4xl font-heading font-light mb-6">
+              Build a High-Performing HR Function
             </h2>
-            <p className="text-lg mb-8 opacity-90">
-              Let's discuss how talent strategy and HR transformation can drive organizational performance.
+            <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
+              Let our HR experts help you create strategic talent management and build a thriving workplace culture.
             </p>
             <Link to="/contact">
-              <button className="bg-sandstone text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
-                Get in Touch
+              <button className="bg-white text-charcoal text-sm uppercase tracking-widest font-bold px-10 py-5 hover:bg-white/90 transition-all duration-300 shadow-2xl">
+                Schedule HR Consultation
               </button>
             </Link>
-          </ScrollAnimation>
-        </div>
-      </section>
-
-      {/* Careers Section */}
-      <section className="py-12 md:py-20 lg:py-24 bg-section-light dark:bg-section-dark px-4 md:px-6">
-        <div className="container-custom max-w-3xl mx-auto text-center">
-          <ScrollAnimation>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6 text-charcoal dark:text-sandstone">
-              Join Our Team
-            </h2>
-            <p className="text-base md:text-lg text-text-muted dark:text-text-dark-muted mb-8">
-              We're always looking for talented professionals who are passionate about transforming organizations through people and technology. Explore career opportunities with AnyTechPros.
-            </p>
-            <Link to="/careers">
-              <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-base md:text-lg font-bold px-8 md:px-10 py-3 hover:opacity-90 transition-all duration-300">
-                View Open Positions
-              </button>
-            </Link>
-          </ScrollAnimation>
+          </div>
         </div>
       </section>
     </div>

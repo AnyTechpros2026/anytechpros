@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ScrollAnimation from '../components/ScrollAnimation';
-import AnimatedCard from '../components/AnimatedCard';
 
 const ServicesPage = () => {
   const services = [
@@ -10,84 +9,102 @@ const ServicesPage = () => {
       description: 'Custom software solutions with cutting-edge technologies and agile development practices.',
       path: '/services/software-development',
       features: ['Web Applications', 'Mobile Apps', 'Cloud Solutions', 'API Development'],
+      bgColor: 'bg-[#E8DDD0]',
+      textColor: 'text-[#2F3B35]'
     },
     {
       title: 'Digital Marketing',
       description: 'Comprehensive digital marketing strategies to boost your online presence and reach.',
       path: '/services/digital-marketing',
       features: ['SEO Optimization', 'Social Media', 'Content Marketing', 'PPC Campaigns'],
+      bgColor: 'bg-[#C9D8BF]',
+      textColor: 'text-[#2F3B35]'
     },
     {
       title: 'Cyber Security',
       description: 'Enterprise-grade security solutions and risk management for your business.',
       path: '/services/cyber-security',
       features: ['Security Audits', 'Penetration Testing', 'Compliance', 'Threat Monitoring'],
+      bgColor: 'bg-[#2F4538]',
+      textColor: 'text-[#F7F3ED]'
     },
     {
-      title: 'IT Consulting',
-      description: 'Strategic IT consulting to optimize your technology infrastructure.',
-      path: '/services/it-consulting',
-      features: ['IT Strategy', 'Infrastructure', 'Cloud Migration', 'DevOps'],
+      title: 'Sales & Growth Consulting',
+      description: 'Strategic sales and growth consulting to scale your business revenue.',
+      path: '/services/sales-growth-consulting',
+      features: ['Sales Strategy', 'Revenue Growth', 'Market Expansion', 'Performance Analytics'],
+      bgColor: 'bg-[#A8B5A1]',
+      textColor: 'text-[#2F3B35]'
     },
     {
-      title: 'Management Consulting',
+      title: 'Management & Business Consulting',
       description: 'Expert guidance to improve organizational efficiency and decision-making.',
       path: '/services/management-consulting',
-      features: ['Strategy Planning', 'Change Management', 'Process Optimization', 'Leadership'],
-    },
-    {
-      title: 'Business Consulting',
-      description: 'Transform your business with strategic insights and operational excellence.',
-      path: '/services/business-consulting',
-      features: ['Business Strategy', 'Operations', 'Growth Planning', 'Risk Management'],
+      features: ['Strategy Planning', 'Change Management', 'Process Optimization', 'Leadership Development'],
+      bgColor: 'bg-[#E8DDD0]',
+      textColor: 'text-[#2F3B35]'
     },
     {
       title: 'HR Consulting',
       description: 'Optimize human resources with strategic talent management solutions.',
       path: '/services/hr-consulting',
       features: ['Talent Acquisition', 'Performance Management', 'Training', 'HR Technology'],
+      bgColor: 'bg-[#C9D8BF]',
+      textColor: 'text-[#2F3B35]'
     },
     {
       title: 'Telecom Consulting',
       description: 'Advanced telecommunications solutions for modern connectivity needs.',
       path: '/services/telecom-consulting',
       features: ['Network Design', '5G Solutions', 'Infrastructure', 'Optimization'],
+      bgColor: 'bg-[#2F4538]',
+      textColor: 'text-[#F7F3ED]'
     },
     {
       title: 'E-Governance',
       description: 'Digital governance solutions for public sector transformation.',
       path: '/services/e-governance-consulting',
       features: ['Digital Services', 'Citizen Engagement', 'Data Management', 'Compliance'],
+      bgColor: 'bg-[#A8B5A1]',
+      textColor: 'text-[#2F3B35]'
+    },
+  ];
+
+  const products = [
+    {
+      title: 'Advanced Unmanned Aerial Systems',
+      description: 'Next-generation tactical FPV drones engineered for speed, precision, and mission success.',
+      path: '/products/drones',
+      features: ['Micro Systems', 'Fixed Wing', 'Tactical Platforms', 'Mission Capability'],
+      bgColor: 'bg-[#2F4538]',
+      textColor: 'text-[#F7F3ED]'
     },
     {
-      title: 'Market Research',
-      description: 'Data-driven market insights to inform strategic business decisions.',
-      path: '/services/market-research',
-      features: ['Market Analysis', 'Consumer Insights', 'Competitive Intelligence', 'Trends'],
-    },
-    {
-      title: 'WhatsApp Marketing',
-      description: 'Leverage WhatsApp for effective customer engagement and campaigns.',
-      path: '/services/whatsapp-marketing',
-      features: ['Campaigns', 'Automation', 'Customer Support', 'Analytics'],
-    },
-    {
-      title: 'AI & Automation',
-      description: 'Intelligent automation solutions powered by artificial intelligence.',
-      path: '/services/ai-automation',
-      features: ['Process Automation', 'Machine Learning', 'Chatbots', 'Predictive Analytics'],
+      title: 'BotMinds - AI Automation Platform',
+      description: 'AI-powered automation platform that reduces IT burden and boosts productivity.',
+      path: '/products/botminds',
+      features: ['AI Automation', 'Smart Alerts', 'Seamless Integration', 'Real-time Analytics'],
+      bgColor: 'bg-[#C9D8BF]',
+      textColor: 'text-[#2F3B35]'
     },
   ];
 
   return (
-    <div className="pt-20">
-      {/* Hero */}
-      <section className="section bg-gradient-hero dark:bg-gradient-hero-dark">
-        <div className="container-custom">
+    <div className="pt-20 md:pt-24">
+      {/* Hero Section */}
+      <section
+        className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.7) 0%, rgba(31, 31, 31, 0.8) 100%), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2000&auto=format&fit=crop')`,
+        }}
+      >
+        <div className="container-custom px-4 md:px-6 py-16 md:py-24 relative z-10">
           <ScrollAnimation>
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="heading-xl mb-6">Our Services</h1>
-              <p className="text-xl text-text-muted dark:text-text-dark-muted leading-relaxed">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-light text-white mb-6 leading-tight">
+                Our Services & Products
+              </h1>
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
                 Comprehensive consulting and technology solutions designed to accelerate your business growth and digital transformation.
               </p>
             </div>
@@ -95,37 +112,87 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="section bg-background-light dark:bg-background-dark">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Services Section */}
+      <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 md:mb-16 scroll-animate">
+            <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">WHAT WE OFFER</div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-brown-grey dark:text-text-dark-muted max-w-3xl mx-auto">
+              Expert consulting services to transform your business
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <ScrollAnimation key={index}>
                 <Link to={service.path}>
-                  <AnimatedCard>
-                    <h3 className="text-2xl font-heading font-semibold text-text-primary dark:text-text-dark mb-3">
+                  <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300 h-full`}>
+                    <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
                       {service.title}
                     </h3>
-                    <p className="text-text-muted dark:text-text-dark-muted mb-6">
+                    <p className="mb-6 opacity-90">
                       {service.description}
                     </p>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-3 mb-6">
                       {service.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-text-muted dark:text-text-dark-muted">
-                          <svg className="w-4 h-4 text-primary mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          {feature}
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="material-symbols-outlined text-lg">check</span>
+                          <span>{feature}</span>
                         </div>
                       ))}
                     </div>
-                    <span className="inline-flex items-center text-primary dark:text-primary-light font-semibold hover:underline">
+                    <span className="inline-flex items-center font-semibold hover:underline text-sm uppercase tracking-widest">
                       Learn More
-                      <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
+                      <span className="material-symbols-outlined text-lg ml-1">arrow_forward</span>
                     </span>
-                  </AnimatedCard>
+                  </div>
+                </Link>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-16 md:py-24 bg-taupe/30 dark:bg-charcoal-light">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 md:mb-16 scroll-animate">
+            <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">OUR INNOVATIONS</div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Our Products
+            </h2>
+            <p className="text-lg text-brown-grey dark:text-text-dark-muted max-w-3xl mx-auto">
+              Innovative products designed to solve real business challenges
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+            {products.map((product, index) => (
+              <ScrollAnimation key={index}>
+                <Link to={product.path}>
+                  <div className={`${product.bgColor} ${product.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300 h-full`}>
+                    <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
+                      {product.title}
+                    </h3>
+                    <p className="mb-6 opacity-90">
+                      {product.description}
+                    </p>
+                    <div className="space-y-3 mb-6">
+                      {product.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="material-symbols-outlined text-lg">check</span>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center font-semibold hover:underline text-sm uppercase tracking-widest">
+                      Learn More
+                      <span className="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+                    </span>
+                  </div>
                 </Link>
               </ScrollAnimation>
             ))}
@@ -134,19 +201,19 @@ const ServicesPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="section bg-section-light dark:bg-section-dark">
-        <div className="container-custom">
+      <section className="py-16 md:py-24 bg-charcoal dark:bg-charcoal-light text-white">
+        <div className="container-custom px-4 md:px-6 text-center">
           <ScrollAnimation>
-            <div className="bg-gradient-primary rounded-2xl p-12 text-center text-white">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light mb-6">
                 Need a Custom Solution?
               </h2>
-              <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
+              <p className="text-lg md:text-xl text-white/80 mb-8 leading-relaxed">
                 We create tailored solutions that address your unique business challenges.
               </p>
               <Link to="/contact">
-                <button className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:scale-105 transition-transform duration-300">
-                  Discuss Your Project
+                <button className="bg-white text-charcoal text-sm uppercase tracking-widest font-bold px-10 py-5 hover:bg-white/90 transition-all duration-300 shadow-2xl">
+                  Get Started
                 </button>
               </Link>
             </div>

@@ -47,6 +47,9 @@ const Header = () => {
         { name: 'SaaS Platforms', path: '/services/saas-platforms' },
         { name: 'Software Development & Product Engineering', path: '/services/software-development' },
         { name: 'Cyber Security', path: '/services/cyber-security' },
+        { name: 'Digital Marketing', path: '/services/digital-marketing' },
+        { name: 'Telecom Consulting', path: '/services/telecom-consulting' },
+        { name: 'E-Governance Consulting', path: '/services/e-governance-consulting' },
       ]
     },
     products: {

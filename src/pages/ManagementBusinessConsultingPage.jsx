@@ -72,28 +72,34 @@ const ManagementBusinessConsultingPage = () => {
               {
                 number: '01',
                 title: 'Strategic Transformation',
-                description: 'Reimagine business models and drive organizational transformation.'
+                description: 'Reimagine business models and drive organizational transformation.',
+                bgColor: 'bg-[#E8DDD0]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 number: '02',
                 title: 'Operational Excellence',
-                description: 'Streamline processes, reduce costs, and improve performance.'
+                description: 'Streamline processes, reduce costs, and improve performance.',
+                bgColor: 'bg-[#C9D8BF]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 number: '03',
                 title: 'Change Leadership',
-                description: 'Navigate complex transformations with structured change management.'
+                description: 'Navigate complex transformations with structured change management.',
+                bgColor: 'bg-[#2F4538]',
+                textColor: 'text-[#F7F3ED]'
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className="scroll-animate text-center">
-                  <div className="text-5xl md:text-6xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 mb-4">
+                <div className={`scroll-animate text-center ${item.bgColor} ${item.textColor} p-6 md:p-8`}>
+                  <div className="text-5xl md:text-6xl font-heading font-bold opacity-20 mb-4">
                     {item.number}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted leading-relaxed">
+                  <p className="text-sm md:text-base leading-relaxed opacity-90">
                     {item.description}
                   </p>
                 </div>
@@ -133,35 +139,47 @@ const ManagementBusinessConsultingPage = () => {
             {[
               {
                 title: 'Business Model Innovation',
-                description: 'Redesign your business model to capture new market opportunities and create sustainable competitive advantage.'
+                description: 'Redesign your business model to capture new market opportunities and create sustainable competitive advantage.',
+                bgColor: 'bg-[#E8DDD0]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 title: 'Operational Excellence',
-                description: 'Streamline processes, reduce costs, and improve performance through lean methodologies and continuous improvement.'
+                description: 'Streamline processes, reduce costs, and improve performance through lean methodologies and continuous improvement.',
+                bgColor: 'bg-[#C9D8BF]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 title: 'Organizational Design',
-                description: 'Build agile, efficient organizational structures aligned with strategic objectives and market dynamics.'
+                description: 'Build agile, efficient organizational structures aligned with strategic objectives and market dynamics.',
+                bgColor: 'bg-[#2F4538]',
+                textColor: 'text-[#F7F3ED]'
               },
               {
                 title: 'Digital Transformation',
-                description: 'Guide organizations through comprehensive digital evolution, from strategy to execution and organizational change.'
+                description: 'Guide organizations through comprehensive digital evolution, from strategy to execution and organizational change.',
+                bgColor: 'bg-[#A8B5A1]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 title: 'Mergers & Integrations',
-                description: 'Navigate complex M&A transactions with strategic due diligence, integration planning, and post-merger optimization.'
+                description: 'Navigate complex M&A transactions with strategic due diligence, integration planning, and post-merger optimization.',
+                bgColor: 'bg-[#E8DDD0]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 title: 'Change Management',
-                description: 'Lead organizational change successfully through structured transformation programs and stakeholder engagement.'
+                description: 'Lead organizational change successfully through structured transformation programs and stakeholder engagement.',
+                bgColor: 'bg-[#C9D8BF]',
+                textColor: 'text-[#2F3B35]'
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className="scroll-animate luxury-card p-6 md:p-8">
-                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-4 text-charcoal dark:text-sandstone">
+                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+                  <h3 className="text-xl md:text-2xl font-heading font-bold mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base text-text-muted dark:text-text-dark-muted">
+                  <p className="text-sm md:text-base opacity-90">
                     {item.description}
                   </p>
                 </div>
@@ -185,36 +203,46 @@ const ManagementBusinessConsultingPage = () => {
               {
                 step: '01',
                 title: 'Strategic Assessment',
-                description: 'Deep analysis of your business, market, competitive landscape, and organizational capabilities to identify opportunities and challenges.'
+                description: 'Deep analysis of your business, market, competitive landscape, and organizational capabilities to identify opportunities and challenges.',
+                bgColor: 'bg-[#E8DDD0]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 step: '02',
                 title: 'Strategy Development',
-                description: 'Co-create a compelling vision and roadmap for transformation aligned with your stakeholders and market realities.'
+                description: 'Co-create a compelling vision and roadmap for transformation aligned with your stakeholders and market realities.',
+                bgColor: 'bg-[#C9D8BF]',
+                textColor: 'text-[#2F3B35]'
               },
               {
                 step: '03',
                 title: 'Implementation Planning',
-                description: 'Develop detailed implementation plans with clear milestones, resource allocation, and success metrics.'
+                description: 'Develop detailed implementation plans with clear milestones, resource allocation, and success metrics.',
+                bgColor: 'bg-[#2F4538]',
+                textColor: 'text-[#F7F3ED]'
               },
               {
                 step: '04',
                 title: 'Execution & Optimization',
-                description: 'Guide implementation, manage change, and continuously optimize as your organization evolves.'
+                description: 'Guide implementation, manage change, and continuously optimize as your organization evolves.',
+                bgColor: 'bg-[#A8B5A1]',
+                textColor: 'text-[#2F3B35]'
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className="scroll-animate flex gap-6 md:gap-8">
-                  <div className="text-4xl md:text-5xl font-heading font-bold text-charcoal/20 dark:text-sandstone/20 flex-shrink-0">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-heading font-bold mb-3 text-charcoal dark:text-sandstone">
-                      {item.title}
-                    </h3>
-                    <p className="text-base text-text-muted dark:text-text-dark-muted">
-                      {item.description}
-                    </p>
+                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 hover:opacity-90 transition-opacity duration-300`}>
+                  <div className="flex gap-6 md:gap-8">
+                    <div className="text-4xl md:text-5xl font-heading font-bold opacity-40 flex-shrink-0">
+                      {item.step}
+                    </div>
+                    <div>
+                      <h3 className="text-xl md:text-2xl font-heading font-bold mb-3">
+                        {item.title}
+                      </h3>
+                      <p className="text-base opacity-90">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </ScrollAnimation>
