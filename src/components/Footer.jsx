@@ -63,7 +63,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden bg-charcoal dark:bg-charcoal text-sandstone dark:text-sandstone pt-12 md:pt-20 lg:pt-24 pb-8 md:pb-12 border-t border-sandstone/10 dark:border-sandstone/10">
+    <footer className="relative overflow-hidden bg-charcoal dark:bg-charcoal text-sandstone dark:text-sandstone pt-12 md:pt-16 pb-6 md:pb-8 border-t border-sandstone/10 dark:border-sandstone/10">
       {/* Dotted World Map Background */}
       <div 
         ref={canvasRef}
@@ -77,10 +77,10 @@ const Footer = () => {
       />
       
       <div className="container-custom px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-12 md:mb-20 lg:mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-8 md:mb-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-6 md:mb-8">
+            <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
               <div className="text-sandstone dark:text-sandstone">
                 <svg className="w-5 md:w-6 h-5 md:h-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                   <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
@@ -88,7 +88,7 @@ const Footer = () => {
               </div>
               <span className="text-base md:text-lg font-semibold tracking-widest uppercase">AnyTechPros</span>
             </Link>
-            <p className="text-text-dark-muted dark:text-text-dark-muted text-sm leading-relaxed mb-6 md:mb-8 font-light">
+            <p className="text-text-dark-muted dark:text-text-dark-muted text-sm leading-relaxed mb-4 md:mb-6 font-light">
               Defining the next era of enterprise intelligence through elite engineering and strategic digital vision.
             </p>
             <div className="flex gap-4 md:gap-6">
@@ -122,8 +122,8 @@ const Footer = () => {
 
           {/* Company Links */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Expertise</h4>
-            <ul className="space-y-3 md:space-y-4 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Expertise</h4>
+            <ul className="space-y-2 md:space-y-3 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -139,8 +139,8 @@ const Footer = () => {
 
           {/* Services Links */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Services</h4>
-            <ul className="space-y-3 md:space-y-4 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Services</h4>
+            <ul className="space-y-2 md:space-y-3 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
               {serviceLinks.slice(0, 4).map((link) => (
                 <li key={link.name}>
                   <Link
@@ -156,8 +156,8 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-6 md:mb-8">Newsletter</h4>
-            <p className="text-text-dark-muted dark:text-text-dark-muted text-xs mb-4 md:mb-6 tracking-wide">Quarterly insights on enterprise technology.</p>
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Newsletter</h4>
+            <p className="text-text-dark-muted dark:text-text-dark-muted text-xs mb-3 md:mb-4 tracking-wide">Quarterly insights on enterprise technology.</p>
             <form onSubmit={handleNewsletterSubmit} className="relative">
               <input
                 type="email"
@@ -177,8 +177,64 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Certifications & Recognition Section */}
+        <div className="py-6 md:py-8 border-t border-sandstone/10 dark:border-sandstone/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* Recognized By */}
+            <div>
+              <h5 className="text-[9px] uppercase tracking-widest text-sandstone/60 dark:text-sandstone/60 mb-3">Recognized By</h5>
+              <div className="flex gap-4 items-center flex-wrap">
+                {[1, 2, 3].map((num) => (
+                  <div key={`r${num}`} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                    <img
+                      src={`/r${num}.png`}
+                      alt={`Recognized by ${num}`}
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Incubated By */}
+            <div>
+              <h5 className="text-[9px] uppercase tracking-widest text-sandstone/60 dark:text-sandstone/60 mb-3">Incubated By</h5>
+              <div className="flex gap-4 items-center flex-wrap">
+                {[1, 2].map((num) => (
+                  <div key={`i${num}`} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                    <img
+                      src={`/i${num}.png`}
+                      alt={`Incubated by ${num}`}
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Certified By */}
+            <div>
+              <h5 className="text-[9px] uppercase tracking-widest text-sandstone/60 dark:text-sandstone/60 mb-3">Certified By</h5>
+              <div className="flex gap-4 items-center flex-wrap">
+                {[1, 2].map((num) => (
+                  <div key={`cf${num}`} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-md">
+                    <img
+                      src={`/cf${num}.png`}
+                      alt={`Certified by ${num}`}
+                      className="w-8 h-8 md:w-10 md:h-10 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="pt-8 md:pt-12 border-t border-sandstone/10 dark:border-sandstone/10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+        <div className="pt-6 md:pt-8 border-t border-sandstone/10 dark:border-sandstone/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <p className="text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60 text-center md:text-left">
             © {new Date().getFullYear()} AnyTechPros Consulting Group. All rights reserved.
           </p>

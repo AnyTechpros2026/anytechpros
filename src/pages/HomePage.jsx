@@ -1,12 +1,14 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import LogoCarousel from '../components/LogoCarousel';
 
 const HomePage = () => {
   return (
     <div>
       <Hero />
       <Services />
+      <LogoCarousel />
       
       {/* Universal Integration Section */}
       <section className="py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-[#E8DDD0] dark:bg-background-dark">

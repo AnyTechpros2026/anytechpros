@@ -59,7 +59,7 @@ const AboutPage = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ScrollAnimation>
-              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full">
                 <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Quality, IT Service & Business Continuity
                 </h3>
@@ -81,7 +81,7 @@ const AboutPage = () => {
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full">
                 <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   AI, Software & Systems Engineering
                 </h3>
@@ -103,7 +103,7 @@ const AboutPage = () => {
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 h-full">
                 <h3 className="text-xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Information Security & Privacy
                 </h3>
@@ -150,7 +150,7 @@ const AboutPage = () => {
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <ScrollAnimation>
-              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+              <div className="bg-[#E8DDD0] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full">
                 <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Strategy
                 </h3>
@@ -161,7 +161,7 @@ const AboutPage = () => {
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+              <div className="bg-[#C9D8BF] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full">
                 <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Engineering
                 </h3>
@@ -172,7 +172,7 @@ const AboutPage = () => {
             </ScrollAnimation>
 
             <ScrollAnimation>
-              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center">
+              <div className="bg-[#A8B5A1] p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 text-center h-full">
                 <h3 className="text-2xl font-heading font-semibold text-[#2F3B35] mb-4">
                   Intelligence
                 </h3>

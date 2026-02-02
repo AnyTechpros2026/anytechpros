@@ -93,14 +93,14 @@ const ManagementBusinessConsultingPage = () => {
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className={`scroll-animate text-center ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl`}>
+                <div className={`scroll-animate text-center ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl h-full flex flex-col`}>
                   <div className="text-5xl md:text-6xl font-heading font-bold opacity-20 mb-4">
                     {item.number}
                   </div>
                   <h3 className="text-xl md:text-2xl font-heading font-bold mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base leading-relaxed opacity-90">
+                  <p className="text-sm md:text-base leading-relaxed opacity-90 flex-grow">
                     {item.description}
                   </p>
                 </div>
@@ -176,11 +176,11 @@ const ManagementBusinessConsultingPage = () => {
               },
             ].map((item, index) => (
               <ScrollAnimation key={index}>
-                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`scroll-animate ${item.bgColor} ${item.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full flex flex-col`}>
                   <h3 className="text-xl md:text-2xl font-heading font-bold mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-sm md:text-base opacity-90">
+                  <p className="text-sm md:text-base opacity-90 flex-grow">
                     {item.description}
                   </p>
                 </div>

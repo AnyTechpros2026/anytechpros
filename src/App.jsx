@@ -11,11 +11,16 @@ import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
 
+// Development Pages
+import SoftwareDevelopmentMainPage from './pages/SoftwareDevelopmentMainPage';
+import AIAgenticDevelopmentPage from './pages/AIAgenticDevelopmentPage';
+import CustomSoftwareDevelopmentPage from './pages/CustomSoftwareDevelopmentPage';
+import ERPCRMDevelopmentPage from './pages/ERPCRMDevelopmentPage';
+import WhatsAppBusinessMarketingPage from './pages/WhatsAppBusinessMarketingPage';
+
 // Service & Product Pages - centralized imports
 import {
-  SoftwareDevelopmentPage,
   CyberSecurityPage,
-  DigitalMarketingPage,
   TelecomConsultingPage,
   EGovernanceConsultingPage,
   ManagementBusinessConsultingPage,
@@ -60,14 +65,18 @@ function App() {
               <Route path="/products/drones" element={<DronesAdvancedPage />} />
               <Route path="/products/botminds" element={<SaasPlatformsPage />} />
 
+              {/* Next-Gen Solutions Pages */}
+              <Route path="/development" element={<SoftwareDevelopmentMainPage />} />
+              <Route path="/development/ai-agentic" element={<AIAgenticDevelopmentPage />} />
+              <Route path="/development/custom-software" element={<CustomSoftwareDevelopmentPage />} />
+              <Route path="/development/erp-crm" element={<ERPCRMDevelopmentPage />} />
+
               {/* Service Detail Pages */}
               <Route path="/services/sales-growth-consulting" element={<SalesGrowthConsultingPage />} />
               <Route path="/services/management-consulting" element={<ManagementBusinessConsultingPage />} />
               <Route path="/services/business-consulting" element={<ManagementBusinessConsultingPage />} />
               <Route path="/services/hr-consulting" element={<HRTalentConsultingPage />} />
-              <Route path="/services/saas-platforms" element={<SaasPlatformsPage />} />
-              <Route path="/services/software-development" element={<SoftwareDevelopmentPage />} />
-              <Route path="/services/digital-marketing" element={<DigitalMarketingPage />} />
+              <Route path="/services/whatsapp-marketing" element={<WhatsAppBusinessMarketingPage />} />
               <Route path="/services/cyber-security" element={<CyberSecurityPage />} />
               <Route path="/services/telecom-consulting" element={<TelecomConsultingPage />} />
               <Route path="/services/e-governance-consulting" element={<EGovernanceConsultingPage />} />

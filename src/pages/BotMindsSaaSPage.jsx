@@ -321,28 +321,28 @@ const BotMindsSaaSPage = () => {
           <div className="grid md:grid-cols-2 gap-8 scroll-animate">
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/screenshot (11).png" 
+                src="/1.png" 
                 alt="BOTMINDS Dashboard Overview" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/screenshot (12).png" 
+                src="/2.png" 
                 alt="BOTMINDS Analytics" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/screenshot (13).png" 
+                src="/3.png" 
                 alt="BOTMINDS Automation" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
-                src="/screenshot (14).png" 
+                src="/4.png" 
                 alt="BOTMINDS Intelligence" 
                 className="w-full h-auto rounded-lg"
               />

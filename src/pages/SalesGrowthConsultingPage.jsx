@@ -129,14 +129,14 @@ const SalesGrowthConsultingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {services.map((service, index) => (
               <ScrollAnimation key={index}>
-                <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full flex flex-col`}>
                   <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
                     {service.title}
                   </h3>
                   <p className="mb-6 opacity-90">
                     {service.description}
                   </p>
-                  <ul className="space-y-3">
+                  <ul className="space-y-3 flex-grow">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2 text-sm">
                         <span className="material-symbols-outlined text-lg text-black">check</span>
@@ -167,12 +167,12 @@ const SalesGrowthConsultingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {benefits.map((benefit, index) => (
               <ScrollAnimation key={index}>
-                <div className={`${benefit.bgColor} ${benefit.textColor} p-6 md:p-8 rounded-xl text-center hover:opacity-90 transition-opacity duration-300`}>
+                <div className={`${benefit.bgColor} ${benefit.textColor} p-6 md:p-8 rounded-xl text-center hover:opacity-90 transition-opacity duration-300 h-full flex flex-col`}>
                   <span className="material-symbols-outlined text-6xl text-black mb-4 block">{benefit.icon}</span>
                   <h3 className="text-xl font-heading font-semibold mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="opacity-90">
+                  <p className="opacity-90 flex-grow">
                     {benefit.description}
                   </p>
                 </div>

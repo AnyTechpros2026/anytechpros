@@ -5,30 +5,6 @@ import ScrollAnimation from '../components/ScrollAnimation';
 const ServicesPage = () => {
   const services = [
     {
-      title: 'Software Development',
-      description: 'Custom software solutions with cutting-edge technologies and agile development practices.',
-      path: '/services/software-development',
-      features: ['Web Applications', 'Mobile Apps', 'Cloud Solutions', 'API Development'],
-      bgColor: 'bg-[#E8DDD0]',
-      textColor: 'text-[#2F3B35]'
-    },
-    {
-      title: 'Digital Marketing',
-      description: 'Comprehensive digital marketing strategies to boost your online presence and reach.',
-      path: '/services/digital-marketing',
-      features: ['SEO Optimization', 'Social Media', 'Content Marketing', 'PPC Campaigns'],
-      bgColor: 'bg-[#C9D8BF]',
-      textColor: 'text-[#2F3B35]'
-    },
-    {
-      title: 'Cyber Security',
-      description: 'Enterprise-grade security solutions and risk management for your business.',
-      path: '/services/cyber-security',
-      features: ['Security Audits', 'Penetration Testing', 'Compliance', 'Threat Monitoring'],
-      bgColor: 'bg-[#2F4538]',
-      textColor: 'text-[#F7F3ED]'
-    },
-    {
       title: 'Sales & Growth Consulting',
       description: 'Strategic sales and growth consulting to scale your business revenue.',
       path: '/services/sales-growth-consulting',
@@ -45,7 +21,7 @@ const ServicesPage = () => {
       textColor: 'text-[#2F3B35]'
     },
     {
-      title: 'HR Consulting',
+      title: 'HR & Talent Consulting',
       description: 'Optimize human resources with strategic talent management solutions.',
       path: '/services/hr-consulting',
       features: ['Talent Acquisition', 'Performance Management', 'Training', 'HR Technology'],
@@ -61,12 +37,47 @@ const ServicesPage = () => {
       textColor: 'text-[#F7F3ED]'
     },
     {
-      title: 'E-Governance',
+      title: 'E-Governance Consulting',
       description: 'Digital governance solutions for public sector transformation.',
       path: '/services/e-governance-consulting',
       features: ['Digital Services', 'Citizen Engagement', 'Data Management', 'Compliance'],
       bgColor: 'bg-[#A8B5A1]',
       textColor: 'text-[#2F3B35]'
+    },
+  ];
+
+  const nextGenSolutions = [
+    {
+      title: 'AI Agentic Development',
+      description: 'Autonomous AI agents powered by LLMs like GPT-4, Claude, and custom models for intelligent automation.',
+      path: '/development/ai-agentic',
+      features: ['Autonomous AI Agents', 'Multi-Agent Systems', 'LLM Integration', 'RAG Architecture'],
+      bgColor: 'bg-[#2F4538]',
+      textColor: 'text-[#F7F3ED]'
+    },
+    {
+      title: 'Custom Software Development',
+      description: 'Tailored web, mobile, and cloud applications built with modern frameworks and best practices.',
+      path: '/development/custom-software',
+      features: ['Web Applications', 'Mobile Apps (iOS/Android)', 'Cloud-Native Solutions', 'API Development'],
+      bgColor: 'bg-[#C9D8BF]',
+      textColor: 'text-[#2F3B35]'
+    },
+    {
+      title: 'ERP / CRM Solutions',
+      description: 'Comprehensive ERP and CRM implementation across SAP, Microsoft Dynamics, Oracle, Salesforce, and more.',
+      path: '/development/erp-crm',
+      features: ['Multi-Platform Support', 'Custom Development', 'Cloud Migration', 'System Integration'],
+      bgColor: 'bg-[#E8DDD0]',
+      textColor: 'text-[#2F3B35]'
+    },
+    {
+      title: 'Cyber Security',
+      description: 'Enterprise-grade security solutions and risk management for your business.',
+      path: '/services/cyber-security',
+      features: ['Security Audits', 'Penetration Testing', 'Compliance', 'Threat Monitoring'],
+      bgColor: 'bg-[#2F4538]',
+      textColor: 'text-[#F7F3ED]'
     },
   ];
 
@@ -85,6 +96,14 @@ const ServicesPage = () => {
       path: '/products/botminds',
       features: ['AI Automation', 'Smart Alerts', 'Seamless Integration', 'Real-time Analytics'],
       bgColor: 'bg-[#C9D8BF]',
+      textColor: 'text-[#2F3B35]'
+    },
+    {
+      title: 'WhatsApp Business Marketing',
+      description: 'Transform customer engagement with WhatsApp Business API, chatbots, and automated campaigns.',
+      path: '/services/whatsapp-marketing',
+      features: ['WhatsApp API', 'Broadcast Campaigns', 'Chatbot Automation', 'E-Commerce Integration'],
+      bgColor: 'bg-[#E8DDD0]',
       textColor: 'text-[#2F3B35]'
     },
   ];
@@ -118,7 +137,7 @@ const ServicesPage = () => {
           <div className="text-center mb-12 md:mb-16 scroll-animate">
             <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">WHAT WE OFFER</div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
-              Our Services
+              Consulting Services
             </h2>
             <p className="text-lg text-brown-grey dark:text-text-dark-muted max-w-3xl mx-auto">
               Expert consulting services to transform your business
@@ -126,8 +145,38 @@ const ServicesPage = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {services.map((service, index) => (
+            {services.slice(0, 3).map((service, index) => (
               <ScrollAnimation key={index}>
+                <Link to={service.path}>
+                  <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full`}>
+                    <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="mb-6 opacity-90">
+                      {service.description}
+                    </p>
+                    <div className="space-y-3 mb-6">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="material-symbols-outlined text-lg">check</span>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center font-semibold hover:underline text-sm uppercase tracking-widest">
+                      Learn More
+                      <span className="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+                    </span>
+                  </div>
+                </Link>
+              </ScrollAnimation>
+            ))}
+          </div>
+          
+          {/* Second row with 2 centered cards */}
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto mt-6 md:mt-8">
+            {services.slice(3, 5).map((service, index) => (
+              <ScrollAnimation key={index + 3}>
                 <Link to={service.path}>
                   <div className={`${service.bgColor} ${service.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full`}>
                     <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
@@ -156,8 +205,52 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* Products Section */}
+      {/* Next-Gen Solutions Section */}
       <section className="py-16 md:py-24 bg-taupe/30 dark:bg-charcoal-light">
+        <div className="container-custom px-4 md:px-6">
+          <div className="text-center mb-12 md:mb-16 scroll-animate">
+            <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">DEVELOPMENT SERVICES</div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-4">
+              Next-Gen Solutions
+            </h2>
+            <p className="text-lg text-brown-grey dark:text-text-dark-muted max-w-3xl mx-auto">
+              Cutting-edge software development and AI-powered solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            {nextGenSolutions.map((solution, index) => (
+              <ScrollAnimation key={index}>
+                <Link to={solution.path}>
+                  <div className={`${solution.bgColor} ${solution.textColor} p-6 md:p-8 rounded-xl hover:opacity-90 transition-opacity duration-300 h-full`}>
+                    <h3 className="text-xl md:text-2xl font-heading font-semibold mb-3">
+                      {solution.title}
+                    </h3>
+                    <p className="mb-6 opacity-90">
+                      {solution.description}
+                    </p>
+                    <div className="space-y-3 mb-6">
+                      {solution.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start gap-2 text-sm">
+                          <span className="material-symbols-outlined text-lg">check</span>
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center font-semibold hover:underline text-sm uppercase tracking-widest">
+                      Learn More
+                      <span className="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+                    </span>
+                  </div>
+                </Link>
+              </ScrollAnimation>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products Section */}
+      <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
         <div className="container-custom px-4 md:px-6">
           <div className="text-center mb-12 md:mb-16 scroll-animate">
             <div className="text-brown-grey dark:text-sandstone text-xs uppercase tracking-widest mb-3">OUR INNOVATIONS</div>
@@ -169,7 +262,7 @@ const ServicesPage = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {products.map((product, index) => (
               <ScrollAnimation key={index}>
                 <Link to={product.path}>
