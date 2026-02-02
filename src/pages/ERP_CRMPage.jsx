@@ -238,7 +238,7 @@ const ERPCRMDevelopmentPage = () => {
     <div className="pt-20 md:pt-24">
       {/* Hero Section */}
       <section className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.7) 0%, rgba(31, 31, 31, 0.8) 100%), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop')` }}>
+        style={{ backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.7) 0%, rgba(31, 31, 31, 0.8) 100%), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop')` }}>
         <div className="container-custom px-4 md:px-6 py-16 md:py-24 relative z-10">
           <div className="max-w-4xl">
             <div className="hero-heading flex items-center gap-3 mb-6">
