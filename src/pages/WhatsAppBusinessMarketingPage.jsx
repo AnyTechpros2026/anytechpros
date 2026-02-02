@@ -36,7 +36,7 @@ const WhatsAppBusinessMarketingPage = () => {
       icon: 'chat', 
       title: 'WhatsApp Business API', 
       description: 'Leverage official WhatsApp Business API for scalable, automated customer communication and engagement.',
-      bgColor: 'bg-[#25D366]', 
+      bgColor: 'bg-[#2F4538]', 
       textColor: 'text-white' 
     },
     { 
@@ -114,7 +114,7 @@ const WhatsAppBusinessMarketingPage = () => {
       title: 'E-Commerce & Retail',
       description: 'Product catalogs, order confirmations, shipping updates, abandoned cart recovery',
       icon: 'storefront',
-      bgColor: 'bg-[#25D366]',
+      bgColor: 'bg-[#2F4538]',
       textColor: 'text-white'
     },
     {
@@ -142,14 +142,14 @@ const WhatsAppBusinessMarketingPage = () => {
       title: 'Real Estate',
       description: 'Property listings, site visit scheduling, document sharing, lead nurturing',
       icon: 'home',
-      bgColor: 'bg-[#2F4538]',
-      textColor: 'text-[#F7F3ED]'
+      bgColor: 'bg-[#E8DDD0]',
+      textColor: 'text-[#2F3B35]'
     },
     {
       title: 'Travel & Hospitality',
       description: 'Booking confirmations, itinerary updates, check-in reminders, customer feedback',
       icon: 'flight',
-      bgColor: 'bg-[#25D366]',
+      bgColor: 'bg-[#2F4538]',
       textColor: 'text-white'
     }
   ];
@@ -170,12 +170,12 @@ const WhatsAppBusinessMarketingPage = () => {
     <div className="pt-20 md:pt-24">
       {/* Hero Section */}
       <section className="relative min-h-[500px] md:min-h-[600px] bg-cover bg-center flex items-center justify-center overflow-hidden"
-        style={{ backgroundImage: `linear-gradient(rgba(37, 211, 102, 0.85) 0%, rgba(37, 211, 102, 0.9) 100%), url('https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop')` }}>
+        style={{ backgroundImage: `linear-gradient(rgba(47, 69, 56, 0.85) 0%, rgba(47, 69, 56, 0.9) 100%), url('https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2000&auto=format&fit=crop')` }}>
         <div className="container-custom px-4 md:px-6 py-16 md:py-24 relative z-10">
           <div className="max-w-4xl">
             <div className="hero-heading flex items-center gap-3 mb-6">
               <span className="material-symbols-outlined text-5xl text-white">chat</span>
-              <span className="text-sm uppercase tracking-widest text-white/90">Consulting Services</span>
+              <span className="text-sm uppercase tracking-widest text-white/90"></span>
             </div>
             <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl font-heading font-light text-white mb-6 leading-tight">
               WhatsApp Business Marketing
@@ -223,8 +223,8 @@ const WhatsAppBusinessMarketingPage = () => {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 rounded-xl border-2 border-[#2F3B35]/10 dark:border-sandstone/20 hover:border-[#25D366] dark:hover:border-[#25D366] transition-all duration-300">
-                <span className="material-symbols-outlined text-4xl mb-3 block text-[#25D366]">
+              <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 rounded-xl border-2 border-[#2F3B35]/10 dark:border-sandstone/20 hover:border-charcoal dark:hover:border-sandstone transition-all duration-300">
+                <span className="material-symbols-outlined text-4xl mb-3 block text-charcoal dark:text-sandstone">
                   {feature.icon}
                 </span>
                 <h3 className="text-xl font-heading mb-2 text-charcoal dark:text-sandstone">{feature.title}</h3>
@@ -269,7 +269,7 @@ const WhatsAppBusinessMarketingPage = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit, index) => (
               <div key={index} className="scroll-animate bg-white dark:bg-charcoal p-6 rounded-xl text-center hover:shadow-xl transition-shadow duration-300">
-                <span className="material-symbols-outlined text-5xl mb-4 block text-[#25D366]">
+                <span className="material-symbols-outlined text-5xl mb-4 block text-charcoal dark:text-sandstone">
                   {benefit.icon}
                 </span>
                 <h3 className="font-heading mb-2 text-lg text-charcoal dark:text-sandstone">{benefit.title}</h3>
@@ -297,7 +297,7 @@ const WhatsAppBusinessMarketingPage = () => {
             {integrations.map((integration, index) => (
               <span 
                 key={index} 
-                className="px-6 py-3 bg-taupe/30 dark:bg-charcoal-light text-charcoal dark:text-sandstone rounded-full text-sm font-medium hover:bg-[#25D366] hover:text-white dark:hover:bg-[#25D366] dark:hover:text-white transition-all duration-300 cursor-default"
+                className="px-6 py-3 bg-taupe/30 dark:bg-charcoal-light text-charcoal dark:text-sandstone rounded-full text-sm font-medium hover:bg-charcoal hover:text-white dark:hover:bg-sandstone dark:hover:text-charcoal transition-all duration-300 cursor-default"
               >
                 {integration}
               </span>
@@ -307,7 +307,7 @@ const WhatsAppBusinessMarketingPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-[#25D366] text-white">
+      <section className="py-16 md:py-24 bg-[#2F4538] text-white">
         <div className="container-custom px-4 md:px-6 text-center scroll-animate">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light mb-6">
             Ready to Scale Your Business with WhatsApp?
@@ -317,7 +317,7 @@ const WhatsAppBusinessMarketingPage = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <button className="bg-white text-[#25D366] text-xs uppercase tracking-widest-xl font-bold px-8 md:px-12 py-3.5 md:py-4 hover:bg-gray-100 transition-all">
+              <button className="bg-white text-charcoal text-xs uppercase tracking-widest-xl font-bold px-8 md:px-12 py-3.5 md:py-4 hover:bg-gray-100 transition-all">
                 Get Started Today
               </button>
             </Link>

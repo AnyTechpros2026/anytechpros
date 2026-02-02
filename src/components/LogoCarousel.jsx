@@ -54,7 +54,7 @@ const LogoCarousel = () => {
             TRUSTED BY INDUSTRY LEADERS
           </div>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-light text-charcoal dark:text-sandstone">
-            Our Partners & Certifications
+            Our Partners & Collaborations 
           </h2>
         </div>
       </div>
