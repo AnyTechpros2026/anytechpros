@@ -178,7 +178,7 @@ const WhatsAppBusinessMarketingPage = () => {
               <span className="text-sm uppercase tracking-widest text-white/90"></span>
             </div>
             <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl font-heading font-light text-white mb-6 leading-tight">
-              WhatsApp Business Marketing
+              WhatsApp Business Solution
             </h1>
             <p className="hero-heading text-lg md:text-xl text-white/95 leading-relaxed">
               Transform customer engagement with WhatsApp Business API. Reach over 2 billion users with automated messaging, chatbots, and personalized marketing campaigns.

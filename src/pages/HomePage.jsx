@@ -7,6 +7,56 @@ const HomePage = () => {
   return (
     <div>
       <Hero />
+      
+      {/* Stats Section */}
+      <section className="py-12 md:py-16 lg:py-20 bg-charcoal dark:bg-charcoal">
+        <div className="container-custom px-4 md:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+            {/* Years of Experience */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">workspace_premium</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">7+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">Years of Experience</span>
+            </div>
+
+            {/* Consulting Assignments */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">business_center</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">100+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">Consulting </span>
+            </div>
+
+            {/* Software Solutions */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">code</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">50+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">Software Solutions</span>
+            </div>
+
+            {/* Government Clients */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">account_balance</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">10+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">Government Clients</span>
+            </div>
+
+            {/* Global Clients */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">public</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">100+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">Global Clients</span>
+            </div>
+
+            {/* SaaS Downloads */}
+            <div className="text-center p-4 md:p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded hover:bg-white/10 transition-all duration-300">
+              <span className="material-symbols-outlined text-3xl md:text-4xl text-white/80 font-light mb-2 block">download</span>
+              <span className="text-2xl md:text-3xl font-heading font-light text-white block mb-1">27k+</span>
+              <span className="text-[8px] md:text-[9px] uppercase tracking-widest text-white/70 font-bold">SaaS Clients</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Services />
       <LogoCarousel />
       

@@ -48,7 +48,7 @@ const Header = () => {
       items: [
         { name: 'Sales & Growth Consulting', path: '/services/sales-growth-consulting' },
         { name: 'Management & Business Consulting', path: '/services/management-consulting' },
-        { name: 'HR & Talent Consulting', path: '/services/hr-consulting' },
+        { name: 'Talent Acquisition Consulting', path: '/services/hr-consulting' },
         { name: 'Telecom Consulting', path: '/services/telecom-consulting' },
         { name: 'E-Governance Consulting', path: '/services/e-governance-consulting' },
       ]
@@ -70,8 +70,8 @@ const Header = () => {
       main: { name: 'View All Products', path: '/services' },
       items: [
         { name: 'Advanced Unmanned Aerial Systems', path: '/products/drones', icon: 'air' },
-        { name: 'BotMind', path: '/products/botminds', icon: 'psychology' },
-        { name: 'WhatsApp Business Marketing', path: '/services/whatsapp-marketing', icon: 'chat' },
+        { name: 'BotMinds ADDU Agentic AI', path: '/products/botminds', icon: 'psychology' },
+        { name: 'WhatsApp Business Solution', path: '/services/whatsapp-marketing', icon: 'chat' },
       ]
     }
   };
@@ -100,8 +100,13 @@ const Header = () => {
       <div className="container-custom px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center group">
-            <span className="text-xl md:text-2xl font-bold tracking-tighter text-charcoal dark:text-sandstone" style={{ fontFamily: "'Playfair Display', 'Georgia', serif", letterSpacing: '-0.02em' }}>
+          <Link to="/" className="flex items-center gap-3 group">
+            <img 
+              src={theme === 'dark' ? '/atplogodark.png' : '/atplogolight.png'} 
+              alt="AnyTechPros Logo" 
+              className="w-8 h-8 md:w-10 md:h-10 object-contain"
+            />
+            <span className="text-lg md:text-xl font-bold tracking-wider text-charcoal dark:text-sandstone uppercase">
               AnyTechPros
             </span>
           </Link>

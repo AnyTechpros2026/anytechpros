@@ -21,7 +21,7 @@ const ServicesPage = () => {
       textColor: 'text-[#2F3B35]'
     },
     {
-      title: 'HR & Talent Consulting',
+      title: 'Talent Acquisition',
       description: 'Optimize human resources with strategic talent management solutions.',
       path: '/services/hr-consulting',
       features: ['Talent Acquisition', 'Performance Management', 'Training', 'HR Technology'],
@@ -91,7 +91,7 @@ const ServicesPage = () => {
       textColor: 'text-[#F7F3ED]'
     },
     {
-      title: 'BotMinds - AI Automation Platform',
+      title: 'BotMinds ADDU Agentic AI - AI Automation Platform',
       description: 'AI-powered automation platform that reduces IT burden and boosts productivity.',
       path: '/products/botminds',
       features: ['AI Automation', 'Smart Alerts', 'Seamless Integration', 'Real-time Analytics'],
@@ -99,7 +99,7 @@ const ServicesPage = () => {
       textColor: 'text-[#2F3B35]'
     },
     {
-      title: 'WhatsApp Business Marketing',
+      title: 'WhatsApp Business Solution',
       description: 'Transform customer engagement with WhatsApp Business API, chatbots, and automated campaigns.',
       path: '/services/whatsapp-marketing',
       features: ['WhatsApp API', 'Broadcast Campaigns', 'Chatbot Automation', 'E-Commerce Integration'],
@@ -318,3 +318,4 @@ const ServicesPage = () => {
 };
 
 export default ServicesPage;
+

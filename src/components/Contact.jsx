@@ -194,8 +194,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Email Us</h4>
-                    <p className="text-[#2F3B35]/80 text-sm mb-1">info@anytechpros.com</p>
-                    <p className="text-[#2F3B35]/80 text-sm">support@anytechpros.com</p>
+                    <p className="text-[#2F3B35]/80 text-sm mb-1">
+                      <a href="mailto:info@anytechpros.com" className="hover:text-[#2F3B35] transition-colors">info@anytechpros.com</a>
+                    </p>
+                    <p className="text-[#2F3B35]/80 text-sm">
+                      <a href="mailto:support@anytechpros.com" className="hover:text-[#2F3B35] transition-colors">support@anytechpros.com</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -209,8 +213,12 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Call Us</h4>
-                    <p className="text-[#2F3B35]/80 text-sm mb-1">+1 (555) 123-4567</p>
-                    <p className="text-[#2F3B35]/80 text-sm">+1 (555) 987-6543</p>
+                    <p className="text-[#2F3B35]/80 text-sm mb-1">
+                      <a href="tel:+917464048311" className="hover:text-[#2F3B35] transition-colors">+91 9893220811</a>
+                    </p>
+                    <p className="text-[#2F3B35]/80 text-sm">
+                      <a href="tel:+919625651944" className="hover:text-[#2F3B35] transition-colors">+91 9625651944</a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -223,11 +231,17 @@ const Contact = () => {
                     <span className="material-symbols-outlined text-white text-2xl">location_on</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Visit Us</h4>
+                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2">Corporate Office</h4>
+                    <p className="text-[#2F3B35]/80 text-sm mb-3">
+                      First Floor, Nirupam Shopping Mall,<br />
+                      Narmadapuram Rd, Bagmugaliya,<br />
+                      Bhopal, Madhya Pradesh 462026
+                    </p>
+                    <h4 className="font-semibold text-[#2F3B35] text-lg mb-2 mt-4">Register Office</h4>
                     <p className="text-[#2F3B35]/80 text-sm">
-                      123 Business Avenue<br />
-                      Suite 456<br />
-                      San Francisco, CA 94105
+                      238, Royal Krishna Bungalow<br />
+                      Near Emerald Heights School,<br />
+                      Indore, Madhya Pradesh 452010
                     </p>
                   </div>
                 </div>

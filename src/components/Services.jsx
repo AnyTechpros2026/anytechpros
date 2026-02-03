@@ -31,7 +31,7 @@ const Services = () => {
       date: 'CEO / Testimonial'
     },
     {
-      title: 'HR & Talent Consulting',
+      title: 'Talent Acquisition',
       description: 'We help you architect future ready teams through workforce planning, talent advisory, and tech enabled hiring and HR processes.',
       path: '/services/hr-consulting',
       icon: 'groups',
@@ -71,7 +71,7 @@ const Services = () => {
     },
     {
       title: 'SaaS Platforms',
-      description: 'We offer BOTMINDs turns complex IT operations into a proactive, self healing system—cutting tickets, improving compliance, and freeing teams to focus on strategic work.',
+      description: 'We offer BotMinds ADDU Agentic AI that turns complex IT operations into a proactive, self healing system—cutting tickets, improving compliance, and freeing teams to focus on strategic work.',
       path: '/botminds',
       icon: 'layers',
       bgColor: 'bg-[#B8C8B1]',

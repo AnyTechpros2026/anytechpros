@@ -56,10 +56,9 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', icon: 'linkedin', url: 'https://linkedin.com' },
-    { name: 'Twitter', icon: 'twitter', url: 'https://twitter.com' },
-    { name: 'Facebook', icon: 'facebook', url: 'https://facebook.com' },
-    { name: 'Instagram', icon: 'instagram', url: 'https://instagram.com' },
+    { name: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/company/anytechprosinfotech/?viewAsMember=true' },
+    { name: 'Facebook', icon: 'facebook', url: 'https://www.facebook.com/share/1Sb31fLPXp/' },
+    { name: 'Instagram', icon: 'instagram', url: 'https://www.instagram.com/anytechpros_infotech/' },
   ];
 
   return (
@@ -81,11 +80,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
-              <div className="text-sandstone dark:text-sandstone">
-                <svg className="w-5 md:w-6 h-5 md:h-6" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path>
-                </svg>
-              </div>
+              <img 
+                src="/atplogodark.png" 
+                alt="AnyTechPros Logo" 
+                className="w-6 md:w-8 h-6 md:h-8 object-contain"
+              />
               <span className="text-base md:text-lg font-semibold tracking-widest uppercase">AnyTechPros</span>
             </Link>
             <p className="text-text-dark-muted dark:text-text-dark-muted text-sm leading-relaxed mb-4 md:mb-6 font-light">
@@ -154,26 +153,24 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Contact Information */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Newsletter</h4>
-            <p className="text-text-dark-muted dark:text-text-dark-muted text-xs mb-3 md:mb-4 tracking-wide">Quarterly insights on enterprise technology.</p>
-            <form onSubmit={handleNewsletterSubmit} className="relative">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Professional Email"
-                required
-                className="w-full bg-charcoal-light dark:bg-charcoal-light border border-sandstone/10 dark:border-sandstone/10 text-xs py-4 px-4 tracking-widest focus:ring-1 focus:ring-sandstone dark:focus:ring-sandstone focus:border-sandstone dark:focus:border-sandstone text-sandstone dark:text-sandstone placeholder-text-dark-muted"
-              />
-              <button
-                type="submit"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-sandstone dark:text-sandstone"
-              >
-                <span className="material-symbols-outlined text-lg">arrow_forward</span>
-              </button>
-            </form>
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Contact Us</h4>
+            <div className="space-y-3 text-xs text-text-dark-muted dark:text-text-dark-muted">
+              <div>
+                <p className="font-semibold text-sandstone mb-1">Corporate Office</p>
+                <p className="leading-relaxed">First Floor, Nirupam Shopping Mall, Narmadapuram Rd, Bagmugaliya, Bhopal, MP 462026</p>
+              </div>
+              <div>
+                <p className="font-semibold text-sandstone mb-1">Register Office</p>
+                <p className="leading-relaxed">238, Royal Krishna Bungalow Near Emerald Heights School, Indore, MP 452010</p>
+              </div>
+              <div className="pt-2">
+                <p className="mb-1"><a href="mailto:info@anytechpros.com" className="hover:text-sandstone transition-colors">info@anytechpros.com</a></p>
+                <p><a href="tel:+917464048311" className="hover:text-sandstone transition-colors">+91 9893220811</a></p>
+                <p><a href="tel:+919625651944" className="hover:text-sandstone transition-colors">+91 9625651944</a></p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -236,7 +233,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-6 md:pt-8 border-t border-sandstone/10 dark:border-sandstone/10 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <p className="text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60 text-center md:text-left">
-            © {new Date().getFullYear()} AnyTechPros Consulting Group. All rights reserved.
+            © {new Date().getFullYear()} AnyTechPros Infotech LLP. All rights reserved.
           </p>
           <div className="flex gap-8 md:gap-12 text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60">
             <Link to="/privacy" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Privacy</Link>
