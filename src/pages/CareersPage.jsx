@@ -60,6 +60,7 @@ const CareersPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setSuccessMessage('');
 
     try {
       let resumeURL = '';
@@ -73,7 +74,10 @@ const CareersPage = () => {
           .from('resumes')
           .upload(fileName, formData.resume);
 
-        if (uploadError) throw uploadError;
+        if (uploadError) {
+          console.error('Storage upload error:', uploadError);
+          throw new Error(`Resume upload failed: ${uploadError.message}`);
+        }
 
         // Get public URL
         const { data: urlData } = supabase.storage
@@ -100,7 +104,10 @@ const CareersPage = () => {
           applied_date: new Date().toISOString(),
         }]);
 
-      if (error) throw error;
+      if (error) {
+        console.error('Database insert error:', error);
+        throw new Error(`Application submission failed: ${error.message}`);
+      }
 
       setSuccessMessage('Application submitted successfully! We will get back to you soon.');
       setFormData({
@@ -125,7 +132,7 @@ const CareersPage = () => {
       }, 5000);
     } catch (error) {
       console.error('Error submitting application:', error);
-      alert('Error submitting application. Please try again.');
+      alert('Error: ' + error.message);
     } finally {
       setLoading(false);
     }
@@ -389,7 +396,7 @@ const CareersPage = () => {
                     />
                   </div>
 
-                  {selectedJob.includeGithub && (
+                  {selectedJob.include_github && (
                     <div className="md:col-span-2">
                       <label className="block text-sm font-medium text-charcoal dark:text-sandstone mb-2">
                         GitHub Profile

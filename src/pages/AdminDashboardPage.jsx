@@ -69,10 +69,22 @@ const AdminDashboardPage = () => {
   const handleAddJob = async (e) => {
     e.preventDefault();
     try {
+      // Convert camelCase to snake_case for database
+      const dbJobData = {
+        title: jobForm.title,
+        department: jobForm.department,
+        location: jobForm.location,
+        type: jobForm.type,
+        description: jobForm.description,
+        requirements: jobForm.requirements,
+        responsibilities: jobForm.responsibilities,
+        include_github: jobForm.includeGithub, // Convert to snake_case
+      };
+
       if (editingJob) {
         const { error } = await supabase
           .from('jobs')
-          .update(jobForm)
+          .update(dbJobData)
           .eq('id', editingJob.id);
         
         if (error) throw error;
@@ -80,7 +92,7 @@ const AdminDashboardPage = () => {
         const { error } = await supabase
           .from('jobs')
           .insert([{
-            ...jobForm,
+            ...dbJobData,
             posted_date: new Date().toISOString(),
           }]);
         
@@ -99,8 +111,10 @@ const AdminDashboardPage = () => {
         includeGithub: false,
       });
       fetchJobs();
+      alert('Job posted successfully!');
     } catch (error) {
       console.error('Error saving job:', error);
+      alert('Error saving job: ' + error.message);
     }
   };
 
@@ -130,7 +144,7 @@ const AdminDashboardPage = () => {
       description: job.description,
       requirements: job.requirements || [],
       responsibilities: job.responsibilities || [],
-      includeGithub: job.includeGithub || false,
+      includeGithub: job.include_github || false, // Convert from snake_case
     });
     setShowJobForm(true);
   };
