@@ -108,9 +108,14 @@ const Header = () => {
               alt="AnyTechPros Logo" 
               className="w-8 h-8 md:w-10 md:h-10 object-contain"
             />
-            <span className="text-lg md:text-xl font-bold tracking-wider text-charcoal dark:text-sandstone uppercase">
-              AnyTechPros
-            </span>
+            <div className="flex flex-col">
+              <span className="text-lg md:text-xl font-bold tracking-wider text-charcoal dark:text-sandstone uppercase">
+                AnyTechPros
+              </span>
+              <span className="text-[10px] md:text-xs text-brown-grey dark:text-text-dark-muted italic -mt-1">
+                Where innovation meets execution
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
