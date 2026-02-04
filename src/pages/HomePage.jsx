@@ -90,27 +90,27 @@ const HomePage = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               
               {/* Top - Legacy ERP */}
-              <div className="absolute top-4 sm:top-6 md:top-8 lg:top-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">storage</span>
-                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
+              <div className="absolute top-2 sm:top-6 md:top-8 lg:top-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">storage</span>
+                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
               </div>
               
               {/* Right - CRM Hub */}
-              <div className="absolute right-4 sm:right-6 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">groups</span>
-                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
+              <div className="absolute right-1 sm:right-6 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">groups</span>
+                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
               </div>
               
               {/* Bottom - SaaS Stack */}
-              <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">cloud_done</span>
-                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
+              <div className="absolute bottom-2 sm:bottom-6 md:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">cloud_done</span>
+                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
               </div>
               
               {/* Left - On-Prem */}
-              <div className="absolute left-4 sm:left-6 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">lan</span>
-                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
+              <div className="absolute left-1 sm:left-6 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">lan</span>
+                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
               </div>
             </div>
           </div>
