@@ -61,7 +61,7 @@ const HomePage = () => {
       <LogoCarousel />
       
       {/* Universal Integration Section */}
-      <section className="py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-[#E8DDD0] dark:bg-background-dark">
+      <section className="py-16 md:py-24 lg:py-32 px-4 md:px-6 bg-[#E8DDD0] dark:bg-background-dark overflow-hidden">
         <div className="container-custom">
           <div className="text-center mb-16 md:mb-24">
             <span className="text-xs uppercase tracking-[0.4em] font-bold text-[#2F3B35]/60 dark:text-text-dark-muted mb-4 block">ECOSYSTEM</span>
@@ -71,47 +71,58 @@ const HomePage = () => {
             </p>
           </div>
           
-          <div className="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[700px] flex items-center justify-center max-w-5xl mx-auto">
-            {/* Connection Lines - Visible */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              {/* Horizontal line */}
-              <div className="absolute w-[2px] h-[90%] bg-[#2F3B35]/20 dark:bg-white/20"></div>
+          <div className="relative w-full max-w-4xl mx-auto" style={{ aspectRatio: '1 / 1', maxHeight: '700px' }}>
+            {/* SVG Connection Lines */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
               {/* Vertical line */}
-              <div className="absolute w-[90%] h-[2px] bg-[#2F3B35]/20 dark:bg-white/20 top-1/2"></div>
-            </div>
+              <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" strokeWidth="0.15" className="text-[#2F3B35]/20 dark:text-white/20" />
+              {/* Horizontal line */}
+              <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="0.15" className="text-[#2F3B35]/20 dark:text-white/20" />
+            </svg>
             
-            {/* Center AI Engine */}
-            <div className="relative z-20 w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-64 lg:h-64 bg-[#1F1F1F] rounded-full flex flex-col items-center justify-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] ring-2 sm:ring-3 md:ring-4 ring-white/20 dark:ring-white/10">
-              <span className="material-symbols-outlined text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light">grain</span>
-              <span className="font-bold text-[9px] sm:text-[10px] md:text-[11px] uppercase mt-2 md:mt-4 tracking-[0.15em] sm:tracking-[0.2em]">AI ENGINE</span>
-            </div>
-            
-            {/* Integration Points */}
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* Grid Container */}
+            <div className="absolute inset-0 grid grid-cols-3 grid-rows-3 gap-0 p-4 sm:p-6 md:p-8">
               
-              {/* Top - Legacy ERP */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[180px] sm:-translate-y-[200px] md:-translate-y-[240px] lg:-translate-y-[290px] bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">storage</span>
-                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
+              {/* Top Center - Legacy ERP */}
+              <div className="col-start-2 row-start-1 flex items-end justify-center pb-2 sm:pb-3 md:pb-4">
+                <div className="bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl lg:text-3xl">storage</span>
+                  <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
+                </div>
               </div>
               
-              {/* Right - CRM Hub */}
-              <div className="absolute left-1/2 top-1/2 translate-x-[100px] sm:translate-x-[130px] md:translate-x-[180px] lg:translate-x-[230px] -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">groups</span>
-                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
+              {/* Middle Right - CRM Hub */}
+              <div className="col-start-3 row-start-2 flex items-center justify-start pl-2 sm:pl-3 md:pl-4">
+                <div className="bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl lg:text-3xl">groups</span>
+                  <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
+                </div>
               </div>
               
-              {/* Bottom - SaaS Stack */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-[180px] sm:translate-y-[200px] md:translate-y-[240px] lg:translate-y-[290px] bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">cloud_done</span>
-                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
+              {/* Center - AI Engine */}
+              <div className="col-start-2 row-start-2 flex items-center justify-center">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 bg-[#1F1F1F] dark:bg-[#0F0F0F] rounded-full flex flex-col items-center justify-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.6)] dark:shadow-[0_20px_80px_rgba(0,0,0,0.9)] ring-2 sm:ring-3 md:ring-4 ring-white/20 dark:ring-white/30 relative z-10">
+                  <span className="material-symbols-outlined text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light">grain</span>
+                  <span className="font-bold text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs uppercase mt-1 sm:mt-2 md:mt-3 tracking-[0.2em] sm:tracking-[0.25em]">AI ENGINE</span>
+                </div>
               </div>
               
-              {/* Left - On-Prem */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-[100px] sm:-translate-x-[130px] md:-translate-x-[180px] lg:-translate-x-[230px] -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-xl md:text-2xl">lan</span>
-                <span className="text-[8px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.1em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
+              {/* Middle Left - On-Prem */}
+              <div className="col-start-1 row-start-2 flex items-center justify-end pr-2 sm:pr-3 md:pr-4">
+                <div className="bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl lg:text-3xl">lan</span>
+                  <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
+                </div>
               </div>
+              
+              {/* Bottom Center - SaaS Stack */}
+              <div className="col-start-2 row-start-3 flex items-start justify-center pt-2 sm:pt-3 md:pt-4">
+                <div className="bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl lg:text-3xl">cloud_done</span>
+                  <span className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-bold uppercase tracking-[0.15em] md:tracking-[0.2em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
