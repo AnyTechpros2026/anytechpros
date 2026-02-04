@@ -316,7 +316,7 @@ const Header = () => {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="hidden sm:block p-1.5 md:p-2 rounded-lg hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-300"
+              className="block p-1.5 md:p-2 rounded-lg hover:bg-taupe/30 dark:hover:bg-charcoal-light transition-colors duration-300"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
@@ -541,6 +541,28 @@ const Header = () => {
                   Inquire
                 </button>
               </Link>
+
+              {/* Theme Toggle for Mobile */}
+              <div className="pt-4 border-t border-charcoal/10 dark:border-sandstone/10">
+                <button
+                  onClick={toggleTheme}
+                  className="w-full flex items-center justify-between text-xs uppercase tracking-widest font-medium text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors py-2"
+                >
+                  <span>Theme</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs">{theme === 'light' ? 'Light' : 'Dark'}</span>
+                    {theme === 'light' ? (
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                      </svg>
+                    ) : (
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                      </svg>
+                    )}
+                  </div>
+                </button>
+              </div>
             </nav>
           </div>
         )}
