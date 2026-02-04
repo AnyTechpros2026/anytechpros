@@ -134,6 +134,24 @@ const AdminDashboardPage = () => {
     }
   };
 
+  const handleDeleteApplication = async (applicationId) => {
+    if (window.confirm('Are you sure you want to delete this application? This cannot be undone.')) {
+      try {
+        const { error } = await supabase
+          .from('applications')
+          .delete()
+          .eq('id', applicationId);
+        
+        if (error) throw error;
+        fetchApplications();
+        alert('Application deleted successfully!');
+      } catch (error) {
+        console.error('Error deleting application:', error);
+        alert('Error deleting application: ' + error.message);
+      }
+    }
+  };
+
   const handleEditJob = (job) => {
     setEditingJob(job);
     setJobForm({
@@ -442,20 +460,23 @@ const AdminDashboardPage = () => {
             ) : (
               <div className="grid gap-6">
                 {applications.map((application) => {
-                  const job = jobs.find(j => j.id === application.jobId);
+                  const job = jobs.find(j => j.id === application.job_id);
                   return (
                     <div key={application.id} className="bg-white dark:bg-charcoal-light rounded-xl p-6 shadow-card">
                       <div className="flex justify-between items-start mb-4">
                         <div>
                           <h3 className="text-xl font-heading text-charcoal dark:text-sandstone mb-1">
-                            {application.fullName}
+                            {application.full_name}
                           </h3>
                           <p className="text-sm text-brown-grey dark:text-text-dark-muted mb-2">
-                            Applied for: {job?.title || 'Position Deleted'}
+                            Applied for: <span className="font-medium text-charcoal dark:text-sandstone">{application.job_title}</span>
+                          </p>
+                          <p className="text-xs text-brown-grey dark:text-text-dark-muted">
+                            Status: {job ? '✓ Position Active' : '⚠ Position Deleted'}
                           </p>
                         </div>
                         <span className="text-xs text-brown-grey dark:text-text-dark-muted">
-                          {new Date(application.appliedDate).toLocaleDateString()}
+                          {new Date(application.applied_date).toLocaleDateString()}
                         </span>
                       </div>
 
@@ -470,7 +491,7 @@ const AdminDashboardPage = () => {
                         </div>
                         <div>
                           <span className="text-xs text-brown-grey dark:text-text-dark-muted">Experience:</span>
-                          <p className="text-charcoal dark:text-sandstone">{application.experience} years</p>
+                          <p className="text-charcoal dark:text-sandstone">{application.experience}</p>
                         </div>
                         <div>
                           <span className="text-xs text-brown-grey dark:text-text-dark-muted">Degree:</span>
@@ -483,7 +504,7 @@ const AdminDashboardPage = () => {
                               href={application.linkedin} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="text-charcoal dark:text-sandstone hover:underline break-all"
+                              className="text-charcoal dark:text-sandstone hover:underline break-all block"
                             >
                               {application.linkedin}
                             </a>
@@ -496,7 +517,7 @@ const AdminDashboardPage = () => {
                               href={application.github} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="text-charcoal dark:text-sandstone hover:underline break-all"
+                              className="text-charcoal dark:text-sandstone hover:underline break-all block"
                             >
                               {application.github}
                             </a>
@@ -504,19 +525,26 @@ const AdminDashboardPage = () => {
                         )}
                       </div>
 
-                      {application.resumeURL && (
-                        <div className="mt-4 pt-4 border-t border-taupe dark:border-charcoal">
+                      <div className="mt-4 pt-4 border-t border-taupe dark:border-charcoal flex gap-3">
+                        {application.resume_url && (
                           <a
-                            href={application.resumeURL}
+                            href={application.resume_url}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-charcoal dark:bg-sandstone text-white dark:text-charcoal text-sm uppercase tracking-widest font-bold px-6 py-3 hover:opacity-90 transition-all duration-300"
                           >
-                            <span className="material-symbols-outlined">description</span>
-                            View Resume/CV
+                            <span className="material-symbols-outlined text-base">description</span>
+                            View Resume
                           </a>
-                        </div>
-                      )}
+                        )}
+                        <button
+                          onClick={() => handleDeleteApplication(application.id)}
+                          className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm uppercase tracking-widest font-bold px-6 py-3 transition-all duration-300"
+                        >
+                          <span className="material-symbols-outlined text-base">delete</span>
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   );
                 })}
