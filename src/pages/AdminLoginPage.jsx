@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../firebase/config';
+import { ADMIN_CREDENTIALS } from '../firebase/config';
 
 const AdminLoginPage = () => {
-  const [email, setEmail] = useState('');
+  const [userId, setUserId] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -16,10 +15,17 @@ const AdminLoginPage = () => {
     setLoading(true);
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate('/admin-dashboard');
+      // Check credentials
+      if (userId === ADMIN_CREDENTIALS.userId && password === ADMIN_CREDENTIALS.password) {
+        // Store admin session
+        sessionStorage.setItem('adminAuthenticated', 'true');
+        sessionStorage.setItem('adminUserId', userId);
+        navigate('/admin-dashboard');
+      } else {
+        setError('Invalid User ID or Password. Please try again.');
+      }
     } catch (err) {
-      setError('Invalid credentials. Please try again.');
+      setError('Login failed. Please try again.');
       console.error('Login error:', err);
     } finally {
       setLoading(false);
@@ -47,17 +53,17 @@ const AdminLoginPage = () => {
             )}
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-charcoal dark:text-sandstone mb-2">
-                Email Address
+              <label htmlFor="userId" className="block text-sm font-medium text-charcoal dark:text-sandstone mb-2">
+                User ID
               </label>
               <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                id="userId"
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
                 required
                 className="w-full px-4 py-3 bg-white dark:bg-charcoal border border-taupe dark:border-sandstone/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-charcoal dark:focus:ring-sandstone text-charcoal dark:text-sandstone"
-                placeholder="admin@anytechpros.com"
+                placeholder="Enter User ID"
               />
             </div>
 

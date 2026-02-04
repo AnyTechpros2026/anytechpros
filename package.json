@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.94.1",
     "dotted-map": "^2.2.3",
     "firebase": "^12.8.0",
     "framer-motion": "^10.16.0",

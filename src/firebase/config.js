@@ -1,27 +1,18 @@
-// Firebase configuration
-// Replace these values with your actual Firebase project configuration
-// You can find these values in your Firebase Console -> Project Settings
+// Supabase configuration
+// Replace these values with your actual Supabase project configuration
+// You can find these values in your Supabase Dashboard -> Project Settings -> API
 
-import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { getFirestore } from 'firebase/firestore';
-import { getStorage } from 'firebase/storage';
+import { createClient } from '@supabase/supabase-js';
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+const supabaseUrl = 'YOUR_SUPABASE_URL'; // e.g., https://xxxxx.supabase.co
+const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
+
+export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+// Admin credentials (hardcoded for security - only for admin login)
+export const ADMIN_CREDENTIALS = {
+  userId: 'Anytechpros2026',
+  password: '@#!Anytech2026'
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-// Initialize Firebase services
-export const auth = getAuth(app);
-export const db = getFirestore(app);
-export const storage = getStorage(app);
-
-export default app;
+export default supabase;

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { collection, getDocs, addDoc } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase/config';
+import { supabase } from '../firebase/config';
 
 const CareersPage = () => {
   const [jobs, setJobs] = useState([]);
@@ -29,12 +27,13 @@ const CareersPage = () => {
 
   const fetchJobs = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'jobs'));
-      const jobsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setJobs(jobsData);
+      const { data, error } = await supabase
+        .from('jobs')
+        .select('*')
+        .order('posted_date', { ascending: false });
+      
+      if (error) throw error;
+      setJobs(data || []);
     } catch (error) {
       console.error('Error fetching jobs:', error);
     }
@@ -65,27 +64,43 @@ const CareersPage = () => {
     try {
       let resumeURL = '';
       
-      // Upload resume to Firebase Storage
+      // Upload resume to Supabase Storage
       if (formData.resume) {
-        const storageRef = ref(storage, `resumes/${Date.now()}_${formData.resume.name}`);
-        await uploadBytes(storageRef, formData.resume);
-        resumeURL = await getDownloadURL(storageRef);
+        const fileExt = formData.resume.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+        
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(fileName, formData.resume);
+
+        if (uploadError) throw uploadError;
+
+        // Get public URL
+        const { data: urlData } = supabase.storage
+          .from('resumes')
+          .getPublicUrl(fileName);
+        
+        resumeURL = urlData.publicUrl;
       }
 
-      // Save application to Firestore
-      await addDoc(collection(db, 'applications'), {
-        jobId: selectedJob.id,
-        jobTitle: selectedJob.title,
-        fullName: formData.fullName,
-        email: formData.email,
-        phone: formData.phone,
-        experience: formData.experience,
-        degree: formData.degree,
-        linkedin: formData.linkedin,
-        github: formData.github || null,
-        resumeURL,
-        appliedDate: new Date().toISOString(),
-      });
+      // Save application to Supabase
+      const { error } = await supabase
+        .from('applications')
+        .insert([{
+          job_id: selectedJob.id,
+          job_title: selectedJob.title,
+          full_name: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          experience: formData.experience,
+          degree: formData.degree,
+          linkedin: formData.linkedin,
+          github: formData.github || null,
+          resume_url: resumeURL,
+          applied_date: new Date().toISOString(),
+        }]);
+
+      if (error) throw error;
 
       setSuccessMessage('Application submitted successfully! We will get back to you soon.');
       setFormData({

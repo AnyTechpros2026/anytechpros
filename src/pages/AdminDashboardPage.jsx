@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from 'firebase/firestore';
-import { auth, db } from '../firebase/config';
+import { supabase } from '../firebase/config';
 
 const AdminDashboardPage = () => {
   const [activeTab, setActiveTab] = useState('jobs');
@@ -25,26 +23,24 @@ const AdminDashboardPage = () => {
 
   useEffect(() => {
     // Check if user is authenticated
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (!user) {
-        navigate('/admin-login');
-      } else {
-        fetchJobs();
-        fetchApplications();
-      }
-    });
-
-    return () => unsubscribe();
+    const isAuthenticated = sessionStorage.getItem('adminAuthenticated');
+    if (!isAuthenticated) {
+      navigate('/admin-login');
+    } else {
+      fetchJobs();
+      fetchApplications();
+    }
   }, [navigate]);
 
   const fetchJobs = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'jobs'));
-      const jobsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setJobs(jobsData);
+      const { data, error } = await supabase
+        .from('jobs')
+        .select('*')
+        .order('posted_date', { ascending: false });
+      
+      if (error) throw error;
+      setJobs(data || []);
     } catch (error) {
       console.error('Error fetching jobs:', error);
     }
@@ -52,36 +48,43 @@ const AdminDashboardPage = () => {
 
   const fetchApplications = async () => {
     try {
-      const querySnapshot = await getDocs(collection(db, 'applications'));
-      const applicationsData = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      setApplications(applicationsData);
+      const { data, error } = await supabase
+        .from('applications')
+        .select('*')
+        .order('applied_date', { ascending: false });
+      
+      if (error) throw error;
+      setApplications(data || []);
     } catch (error) {
       console.error('Error fetching applications:', error);
     }
   };
 
   const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate('/');
-    } catch (error) {
-      console.error('Logout error:', error);
-    }
+    sessionStorage.removeItem('adminAuthenticated');
+    sessionStorage.removeItem('adminUserId');
+    navigate('/');
   };
 
   const handleAddJob = async (e) => {
     e.preventDefault();
     try {
       if (editingJob) {
-        await updateDoc(doc(db, 'jobs', editingJob.id), jobForm);
+        const { error } = await supabase
+          .from('jobs')
+          .update(jobForm)
+          .eq('id', editingJob.id);
+        
+        if (error) throw error;
       } else {
-        await addDoc(collection(db, 'jobs'), {
-          ...jobForm,
-          postedDate: new Date().toISOString(),
-        });
+        const { error } = await supabase
+          .from('jobs')
+          .insert([{
+            ...jobForm,
+            posted_date: new Date().toISOString(),
+          }]);
+        
+        if (error) throw error;
       }
       setShowJobForm(false);
       setEditingJob(null);
@@ -104,7 +107,12 @@ const AdminDashboardPage = () => {
   const handleDeleteJob = async (jobId) => {
     if (window.confirm('Are you sure you want to delete this job?')) {
       try {
-        await deleteDoc(doc(db, 'jobs', jobId));
+        const { error } = await supabase
+          .from('jobs')
+          .delete()
+          .eq('id', jobId);
+        
+        if (error) throw error;
         fetchJobs();
       } catch (error) {
         console.error('Error deleting job:', error);
