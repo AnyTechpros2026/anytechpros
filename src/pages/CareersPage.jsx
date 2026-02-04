@@ -449,12 +449,17 @@ const CareersPage = () => {
       )}
 
       {/* Admin Access (Hidden) */}
-      <div className="fixed bottom-4 right-4 opacity-0 hover:opacity-100 transition-opacity duration-300">
+      <div className="fixed bottom-4 right-4 z-50">
         <button
           onClick={() => navigate('/admin-login')}
-          className="w-3 h-3 bg-transparent"
+          className="w-12 h-12 rounded-full bg-charcoal/5 dark:bg-sandstone/5 hover:bg-charcoal/20 dark:hover:bg-sandstone/20 transition-all duration-300 flex items-center justify-center group"
           aria-label="Admin Access"
-        />
+          title="Admin Login"
+        >
+          <span className="material-symbols-outlined text-xs text-charcoal/20 dark:text-sandstone/20 group-hover:text-charcoal/50 dark:group-hover:text-sandstone/50">
+            admin_panel_settings
+          </span>
+        </button>
       </div>
     </div>
   );
