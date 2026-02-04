@@ -71,46 +71,46 @@ const HomePage = () => {
             </p>
           </div>
           
-          <div className="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] flex items-center justify-center max-w-5xl mx-auto overflow-hidden">
+          <div className="relative h-[500px] sm:h-[550px] md:h-[600px] lg:h-[700px] flex items-center justify-center max-w-5xl mx-auto">
             {/* Connection Lines - Visible */}
             <div className="absolute inset-0 flex items-center justify-center">
               {/* Horizontal line */}
-              <div className="absolute w-[90%] sm:w-[85%] md:w-[80%] h-[1.5px] sm:h-[2px] bg-[#2F3B35]/20 dark:bg-white/20"></div>
+              <div className="absolute w-[2px] h-[90%] bg-[#2F3B35]/20 dark:bg-white/20"></div>
               {/* Vertical line */}
-              <div className="absolute h-[90%] sm:h-[85%] md:h-[80%] w-[1.5px] sm:w-[2px] bg-[#2F3B35]/20 dark:bg-white/20"></div>
+              <div className="absolute w-[90%] h-[2px] bg-[#2F3B35]/20 dark:bg-white/20 top-1/2"></div>
             </div>
             
             {/* Center AI Engine */}
-            <div className="relative z-20 w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 bg-[#1F1F1F] rounded-full flex flex-col items-center justify-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] ring-2 sm:ring-3 md:ring-4 ring-white/20 dark:ring-white/10">
-              <span className="material-symbols-outlined text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-light">grain</span>
-              <span className="font-bold text-[8px] sm:text-[9px] md:text-[11px] uppercase mt-1 sm:mt-2 md:mt-4 tracking-[0.15em] sm:tracking-[0.2em]">AI ENGINE</span>
+            <div className="relative z-20 w-32 h-32 sm:w-36 sm:h-36 md:w-48 md:h-48 lg:w-64 lg:h-64 bg-[#1F1F1F] rounded-full flex flex-col items-center justify-center text-white shadow-[0_20px_60px_rgba(0,0,0,0.5)] ring-2 sm:ring-3 md:ring-4 ring-white/20 dark:ring-white/10">
+              <span className="material-symbols-outlined text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-light">grain</span>
+              <span className="font-bold text-[9px] sm:text-[10px] md:text-[11px] uppercase mt-2 md:mt-4 tracking-[0.15em] sm:tracking-[0.2em]">AI ENGINE</span>
             </div>
             
             {/* Integration Points */}
             <div className="absolute inset-0 flex items-center justify-center">
               
               {/* Top - Legacy ERP */}
-              <div className="absolute -translate-y-24 sm:-translate-y-32 md:-translate-y-48 lg:-translate-y-64 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-3 sm:py-2 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-2 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-lg md:text-2xl">storage</span>
-                <span className="text-[7px] sm:text-[8px] md:text-[11px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
+              <div className="absolute top-4 sm:top-6 md:top-8 lg:top-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">storage</span>
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">LEGACY ERP</span>
               </div>
               
               {/* Right - CRM Hub */}
-              <div className="absolute translate-x-24 sm:translate-x-32 md:translate-x-48 lg:translate-x-80 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-3 sm:py-2 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-2 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-lg md:text-2xl">groups</span>
-                <span className="text-[7px] sm:text-[8px] md:text-[11px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
+              <div className="absolute right-4 sm:right-6 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">groups</span>
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">CRM HUB</span>
               </div>
               
               {/* Bottom - SaaS Stack */}
-              <div className="absolute translate-y-24 sm:translate-y-32 md:translate-y-48 lg:translate-y-64 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-3 sm:py-2 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-2 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-lg md:text-2xl">cloud_done</span>
-                <span className="text-[7px] sm:text-[8px] md:text-[11px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
+              <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-12 left-1/2 -translate-x-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">cloud_done</span>
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">SAAS STACK</span>
               </div>
               
               {/* Left - On-Prem */}
-              <div className="absolute -translate-x-24 sm:-translate-x-32 md:-translate-x-48 lg:-translate-x-80 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-2 py-1.5 sm:px-3 sm:py-2 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-1.5 sm:gap-2 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
-                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-base sm:text-lg md:text-2xl">lan</span>
-                <span className="text-[7px] sm:text-[8px] md:text-[11px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
+              <div className="absolute left-4 sm:left-6 md:left-8 lg:left-12 top-1/2 -translate-y-1/2 bg-[#E8DDD0] dark:bg-charcoal-light border border-[#2F3B35]/10 dark:border-white/15 px-3 py-2 sm:px-4 sm:py-2.5 md:px-8 md:py-5 rounded-lg md:rounded-xl flex items-center gap-2 sm:gap-3 md:gap-4 shadow-md hover:shadow-lg transition-all duration-300">
+                <span className="material-symbols-outlined text-[#2F3B35] dark:text-sandstone font-light text-lg sm:text-xl md:text-2xl">lan</span>
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] md:tracking-[0.25em] text-[#2F3B35] dark:text-sandstone whitespace-nowrap">ON-PREM</span>
               </div>
             </div>
           </div>

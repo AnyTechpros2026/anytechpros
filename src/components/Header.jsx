@@ -7,6 +7,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isWhatWeDoOpen, setIsWhatWeDoOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
+  const [mobileExpandedSection, setMobileExpandedSection] = useState(null);
   const { theme, toggleTheme } = useTheme();
   const location = useLocation();
 
@@ -91,18 +92,19 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-charcoal/5 dark:border-sandstone/5 ${
-        isScrolled
-          ? 'glass-nav shadow-card'
-          : 'glass-nav'
-      }`}
+      style={{
+        background: theme === 'dark' 
+          ? 'linear-gradient(to right, #1e1e1e 0%, #1e1e1e 100%)' 
+          : 'linear-gradient(to right, #e8e8dc 0%, #e8e8dc 100%)'
+      }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-charcoal/10 dark:border-sandstone/10 shadow-sm"
     >
       <div className="container-custom px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src={theme === 'dark' ? '/atplogodark.png' : '/atplogolight.png'} 
+              src={theme === 'dark' ? '/AdobeD.png' : '/AdobeL.png'} 
               alt="AnyTechPros Logo" 
               className="w-8 h-8 md:w-10 md:h-10 object-contain"
             />
@@ -352,75 +354,182 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-charcoal/10 dark:border-sandstone/10">
             <nav className="flex flex-col space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
-                    location.pathname === item.path
-                      ? 'text-charcoal dark:text-sandstone'
-                      : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              
-              {/* What We Do Mobile Submenu */}
-              <div className="border-t border-charcoal/10 dark:border-sandstone/10 pt-4 mt-4">
-                <p className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone mb-3">Consulting</p>
-                <div className="space-y-2 ml-2">
-                  {whatWeDoMenu.consulting.items.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className="block text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors py-1"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
+              <Link
+                to="/"
+                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
+                  location.pathname === '/'
+                    ? 'text-charcoal dark:text-sandstone'
+                    : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                }`}
+              >
+                Overview
+              </Link>
 
-                <p className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone mb-3 mt-6">Next-Gen Solutions</p>
-                <Link
-                  to={whatWeDoMenu.nextGen.main.path}
-                  className="block text-xs font-medium text-charcoal dark:text-sandstone mb-3 bg-taupe/30 dark:bg-charcoal-light px-3 py-2 rounded-lg ml-2"
-                >
-                  {whatWeDoMenu.nextGen.main.name}
-                </Link>
-                <div className="space-y-2 ml-2">
-                  {whatWeDoMenu.nextGen.items.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className="flex items-center gap-2 text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-sm">{item.icon}</span>
-                      <span>{item.name}</span>
-                    </Link>
-                  ))}
-                </div>
+              <Link
+                to="/about"
+                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
+                  location.pathname === '/about'
+                    ? 'text-charcoal dark:text-sandstone'
+                    : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                }`}
+              >
+                Our Story
+              </Link>
 
-                <p className="text-xs uppercase tracking-widest font-bold text-charcoal dark:text-sandstone mb-3 mt-6">Products</p>
-                <Link
-                  to={whatWeDoMenu.products.main.path}
-                  className="block text-xs font-medium text-charcoal dark:text-sandstone mb-3 bg-taupe/30 dark:bg-charcoal-light px-3 py-2 rounded-lg ml-2"
+              {/* What We Do - Collapsible */}
+              <div>
+                <button
+                  onClick={() => setIsWhatWeDoOpen(!isWhatWeDoOpen)}
+                  className="w-full flex items-center justify-between text-xs uppercase tracking-widest font-medium transition-colors duration-300 text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone"
                 >
-                  {whatWeDoMenu.products.main.name}
-                </Link>
-                <div className="space-y-2 ml-2">
-                  {whatWeDoMenu.products.items.map((item, idx) => (
-                    <Link
-                      key={idx}
-                      to={item.path}
-                      className="flex items-center gap-2 text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors"
-                    >
-                      <span className="material-symbols-outlined text-sm">{item.icon}</span>
-                      <span>{item.name}</span>
-                    </Link>
-                  ))}
-                </div>
+                  <span>What We Do</span>
+                  <svg 
+                    className={`w-4 h-4 transition-transform ${isWhatWeDoOpen ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor" 
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {isWhatWeDoOpen && (
+                  <div className="mt-3 ml-4 space-y-3 pb-2">
+                    {/* Consulting */}
+                    <div>
+                      <button
+                        onClick={() => setMobileExpandedSection(mobileExpandedSection === 'consulting' ? null : 'consulting')}
+                        className="w-full flex items-center justify-between text-xs uppercase tracking-widest font-semibold text-charcoal dark:text-sandstone hover:opacity-80 transition-opacity"
+                      >
+                        <span>Consulting</span>
+                        <svg 
+                          className={`w-3 h-3 transition-transform ${mobileExpandedSection === 'consulting' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor" 
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {mobileExpandedSection === 'consulting' && (
+                        <div className="mt-2 ml-3 space-y-2">
+                          {whatWeDoMenu.consulting.items.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              to={item.path}
+                              className="block text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors py-1"
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Next-Gen Solutions */}
+                    <div>
+                      <button
+                        onClick={() => setMobileExpandedSection(mobileExpandedSection === 'nextgen' ? null : 'nextgen')}
+                        className="w-full flex items-center justify-between text-xs uppercase tracking-widest font-semibold text-charcoal dark:text-sandstone hover:opacity-80 transition-opacity"
+                      >
+                        <span>Next-Gen Solutions</span>
+                        <svg 
+                          className={`w-3 h-3 transition-transform ${mobileExpandedSection === 'nextgen' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor" 
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {mobileExpandedSection === 'nextgen' && (
+                        <div className="mt-2 ml-3 space-y-2">
+                          <Link
+                            to={whatWeDoMenu.nextGen.main.path}
+                            className="block text-xs font-medium text-charcoal dark:text-sandstone bg-taupe/30 dark:bg-charcoal-light px-3 py-2 rounded-lg"
+                          >
+                            {whatWeDoMenu.nextGen.main.name}
+                          </Link>
+                          {whatWeDoMenu.nextGen.items.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              to={item.path}
+                              className="flex items-center gap-2 text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors py-1"
+                            >
+                              <span className="material-symbols-outlined text-sm">{item.icon}</span>
+                              <span>{item.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Products */}
+                    <div>
+                      <button
+                        onClick={() => setMobileExpandedSection(mobileExpandedSection === 'products' ? null : 'products')}
+                        className="w-full flex items-center justify-between text-xs uppercase tracking-widest font-semibold text-charcoal dark:text-sandstone hover:opacity-80 transition-opacity"
+                      >
+                        <span>Products</span>
+                        <svg 
+                          className={`w-3 h-3 transition-transform ${mobileExpandedSection === 'products' ? 'rotate-180' : ''}`}
+                          fill="none" 
+                          viewBox="0 0 24 24" 
+                          stroke="currentColor" 
+                          strokeWidth={2}
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                      {mobileExpandedSection === 'products' && (
+                        <div className="mt-2 ml-3 space-y-2">
+                          <Link
+                            to={whatWeDoMenu.products.main.path}
+                            className="block text-xs font-medium text-charcoal dark:text-sandstone bg-taupe/30 dark:bg-charcoal-light px-3 py-2 rounded-lg"
+                          >
+                            {whatWeDoMenu.products.main.name}
+                          </Link>
+                          {whatWeDoMenu.products.items.map((item, idx) => (
+                            <Link
+                              key={idx}
+                              to={item.path}
+                              className="flex items-center gap-2 text-xs text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone transition-colors py-1"
+                            >
+                              <span className="material-symbols-outlined text-sm">{item.icon}</span>
+                              <span>{item.name}</span>
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
+
+              <Link
+                to="/careers"
+                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
+                  location.pathname === '/careers'
+                    ? 'text-charcoal dark:text-sandstone'
+                    : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                }`}
+              >
+                Careers
+              </Link>
+
+              <Link
+                to="/contact"
+                className={`text-xs uppercase tracking-widest font-medium transition-colors duration-300 ${
+                  location.pathname === '/contact'
+                    ? 'text-charcoal dark:text-sandstone'
+                    : 'text-brown-grey dark:text-text-dark-muted hover:text-charcoal dark:hover:text-sandstone'
+                }`}
+              >
+                Get in Touch
+              </Link>
 
               <Link to="/contact" className="pt-2">
                 <button className="bg-charcoal dark:bg-sandstone text-sandstone dark:text-charcoal text-xs uppercase tracking-widest-xl font-bold px-6 py-2.5 hover:opacity-90 transition-all w-full">

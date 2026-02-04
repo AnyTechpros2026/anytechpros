@@ -32,25 +32,20 @@ const Footer = () => {
     setEmail('');
   };
 
-  const companyLinks = [
+  const expertiseLinks = [
     { name: 'About Us', path: '/about' },
     { name: 'Careers', path: '/careers' },
-    { name: 'Platform', path: '/platform' },
-    { name: 'Industries', path: '/industries' },
+    { name: 'Contact Us', path: '/contact' },
   ];
 
   const serviceLinks = [
-    { name: 'Software Development', path: '/services/software-development' },
-    { name: 'Digital Marketing', path: '/services/digital-marketing' },
-    { name: 'Cyber Security', path: '/services/cyber-security' },
-    { name: 'IT Consulting', path: '/services/it-consulting' },
-    { name: 'Management Consulting', path: '/services/management-consulting' },
-    { name: 'Business Consulting', path: '/services/business-consulting' },
+    { name: 'Consulting', path: '/services' },
+    { name: 'Next-Gen Solutions', path: '/services' },
+    { name: 'Products', path: '/services' },
   ];
 
   const resourceLinks = [
     { name: 'Resources', path: '/resources' },
-    { name: 'Contact', path: '/contact' },
     { name: 'Privacy Policy', path: '/privacy' },
     { name: 'Terms of Service', path: '/terms' },
   ];
@@ -78,10 +73,10 @@ const Footer = () => {
       <div className="container-custom px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-8 md:mb-12">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div>
             <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
               <img 
-                src="/atplogodark.png" 
+                src="/AdobeD.png" 
                 alt="AnyTechPros Logo" 
                 className="w-6 md:w-8 h-6 md:h-8 object-contain"
               />
@@ -119,11 +114,26 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Company Links */}
+          {/* Expertise & What We Do Combined */}
           <div>
             <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Expertise</h4>
-            <ul className="space-y-2 md:space-y-3 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
-              {companyLinks.map((link) => (
+            <ul className="space-y-2 md:space-y-3 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted mb-6">
+              {expertiseLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.path}
+                    className="hover:text-sandstone dark:hover:text-sandstone transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* What We Do under Expertise */}
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 mt-6">What We Do</h4>
+            <ul className="space-y-2 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
+              {serviceLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
@@ -136,11 +146,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services Links */}
+          {/* Resources */}
           <div>
-            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Services</h4>
+            <h4 className="text-[10px] uppercase tracking-widest-4xl font-bold text-sandstone dark:text-sandstone mb-4 md:mb-6">Resources</h4>
             <ul className="space-y-2 md:space-y-3 text-xs tracking-widest text-text-dark-muted dark:text-text-dark-muted">
-              {serviceLinks.slice(0, 4).map((link) => (
+              {resourceLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
@@ -167,7 +177,7 @@ const Footer = () => {
               </div>
               <div className="pt-2">
                 <p className="mb-1"><a href="mailto:info@anytechpros.com" className="hover:text-sandstone transition-colors">info@anytechpros.com</a></p>
-                <p><a href="tel:+917464048311" className="hover:text-sandstone transition-colors">+91 9893220811</a></p>
+                <p><a href="tel:+919893220811" className="hover:text-sandstone transition-colors">+91 9893220811</a></p>
                 <p><a href="tel:+919625651944" className="hover:text-sandstone transition-colors">+91 9625651944</a></p>
               </div>
             </div>

@@ -10,6 +10,9 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesPage from './pages/ServicesPage';
 import ContactPage from './pages/ContactPage';
+import CareersPage from './pages/CareersPage';
+import AdminLoginPage from './pages/AdminLoginPage';
+import AdminDashboardPage from './pages/AdminDashboardPage';
 
 // Development Pages
 import SoftwareDevelopmentMainPage from './pages/SoftwareDevelopmentMainPage';
@@ -37,7 +40,6 @@ import {
   ConsultingPage,
   ResourcesPage,
   ProductsPage,
-  CareersPage,
 } from './pages/OtherPages';
 
 function App() {
@@ -60,6 +62,8 @@ function App() {
               <Route path="/resources" element={<ResourcesPage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/careers" element={<CareersPage />} />
+              <Route path="/admin-login" element={<AdminLoginPage />} />
+              <Route path="/admin-dashboard" element={<AdminDashboardPage />} />
 
               {/* Product Pages */}
               <Route path="/products/drones" element={<DronesAdvancedPage />} />
