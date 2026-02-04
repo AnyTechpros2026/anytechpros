@@ -71,7 +71,7 @@ const CareersPage = () => {
         const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
         
         const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('resumes')
+          .from('resume')
           .upload(fileName, formData.resume);
 
         if (uploadError) {
@@ -81,7 +81,7 @@ const CareersPage = () => {
 
         // Get public URL
         const { data: urlData } = supabase.storage
-          .from('resumes')
+          .from('resume')
           .getPublicUrl(fileName);
         
         resumeURL = urlData.publicUrl;
