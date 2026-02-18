@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../context/ThemeContext';
 import DottedMap from 'dotted-map';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const canvasRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -48,6 +50,7 @@ const Footer = () => {
     { name: 'Resources', path: '/resources' },
     { name: 'Privacy Policy', path: '/privacy' },
     { name: 'Terms of Service', path: '/terms' },
+    { name: 'Security', path: '/security' },
   ];
 
   const socialLinks = [
@@ -76,7 +79,7 @@ const Footer = () => {
           <div>
             <Link to="/" className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
               <img 
-                src="/AdobeD.png" 
+                src="/darklogo1.png" 
                 alt="AnyTechPros Logo" 
                 className="w-6 md:w-8 h-6 md:h-8 object-contain"
               />
@@ -248,7 +251,7 @@ const Footer = () => {
           <div className="flex gap-8 md:gap-12 text-[9px] uppercase tracking-widest text-text-dark-muted/60 dark:text-text-dark-muted/60">
             <Link to="/privacy" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Privacy</Link>
             <Link to="/terms" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Terms</Link>
-            <a href="#" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Security</a>
+            <Link to="/security" className="hover:text-sandstone dark:hover:text-sandstone transition-colors">Security</Link>
           </div>
         </div>
       </div>

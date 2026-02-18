@@ -35,11 +35,23 @@ const DigitalMarketingPage = () => {
     });
   }, []);
 
-  // Currency conversion function (1 USD = 83 INR approximately)
+  // Currency conversion function with doubled prices for Standard/Premium
   const convertPrice = (inrPrice) => {
     const numPrice = parseInt(inrPrice.replace('₹', ''));
     if (currency === 'USD') {
-      return `$${Math.round(numPrice / 83)}`;
+      // Fixed USD prices - doubled for Standard/Premium, contact for Enterprise
+      const usdPriceMap = {
+        7999: 192,   // RAW (Standard)
+        11999: 288,  // MINIMAL (Premium)
+        14999: 360,  // CULINARY (Premium)
+        17999: 432,  // ULTRA CULINARY (Premium)
+        29999: 720   // Premium Package
+      };
+      const result = usdPriceMap[numPrice];
+      if (result === undefined) {
+        return `$${Math.round(numPrice / 83)}`;
+      }
+      return `$${result}`;
     }
     return inrPrice;
   };

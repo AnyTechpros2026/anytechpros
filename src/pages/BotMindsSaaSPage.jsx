@@ -23,28 +23,28 @@ const BotMindsSaaSPage = () => {
     { 
       icon: 'tune', 
       title: 'Customizable Models', 
-      description: 'BotMinds ADDU Agentic AI  offers customizable models that can be tailored to specific business needs, allowing seamless integration with existing workflows and enhanced automation for various industries.',
+      description: 'BotMinds Addu Agentic AI  offers customizable models that can be tailored to specific business needs, allowing seamless integration with existing workflows and enhanced automation for various industries.',
       bgColor: 'bg-[#E8DDD0]',
       textColor: 'text-[#2F3B35]'
     },
     { 
       icon: 'notifications_active', 
       title: 'Smart Alerts & Notifications', 
-      description: 'BotMinds ADDU Agentic AI  features smart alerts and notifications that keep you informed in real-time, ensuring timely actions and preventing potential issues from escalating.',
+      description: 'BotMinds Addu Agentic AI  features smart alerts and notifications that keep you informed in real-time, ensuring timely actions and preventing potential issues from escalating.',
       bgColor: 'bg-[#C9D8BF]',
       textColor: 'text-[#2F3B35]'
     },
     { 
       icon: 'speed', 
       title: 'Competitive Advantage', 
-      description: 'BotMinds ADDU Agentic AI  gives businesses the tools they need to stay ahead of the competition by optimizing operations and providing actionable insights.',
+      description: 'BotMinds Addu Agentic AI  gives businesses the tools they need to stay ahead of the competition by optimizing operations and providing actionable insights.',
       bgColor: 'bg-[#2F4538]',
       textColor: 'text-[#F7F3ED]'
     },
     { 
       icon: 'api', 
       title: 'Seamless Integration', 
-      description: 'BotMinds ADDU Agentic AI offers seamless integration with existing tools and platforms, ensuring smooth data flow and enhanced workflow across your entire tech ecosystem.',
+      description: 'BotMinds Addu Agentic AI offers seamless integration with existing tools and platforms, ensuring smooth data flow and enhanced workflow across your entire tech ecosystem.',
       bgColor: 'bg-[#A8B5A1]',
       textColor: 'text-[#2F3B35]'
     }
@@ -54,21 +54,21 @@ const BotMindsSaaSPage = () => {
     { 
       icon: 'sync', 
       title: 'Automation & Sync', 
-      description: 'BotMinds ADDU Agentic AI enables automation & sync across multiple systems, ensuring real-time updates, smooth data transfer, and efficient task execution without manual intervention.',
+      description: 'BotMinds Addu Agentic AI enables automation & sync across multiple systems, ensuring real-time updates, smooth data transfer, and efficient task execution without manual intervention.',
       bgColor: 'bg-[#E8DDD0]',
       textColor: 'text-[#2F3B35]'
     },
     { 
       icon: 'settings_suggest', 
       title: 'Completely Flexible', 
-      description: 'BotMinds ADDU Agentic AI fits into any IT environment- ERP, CRM, cloud, or custom systems. No disruptions. No complexity. Just seamless, AI-powered automation. Deploy Anywhere. Automate Everything.',
+      description: 'BotMinds Addu Agentic AI fits into any IT environment- ERP, CRM, cloud, or custom systems. No disruptions. No complexity. Just seamless, AI-powered automation. Deploy Anywhere. Automate Everything.',
       bgColor: 'bg-[#C9D8BF]',
       textColor: 'text-[#2F3B35]'
     },
     { 
       icon: 'psychology', 
       title: 'AI-Powered Insights', 
-      description: 'BotMinds ADDU Agentic AI  delivers AI-powered insights, analyzing data to provide actionable recommendations that drive smarter decision-making and optimize business performance.',
+      description: 'BotMinds Addu Agentic AI  delivers AI-powered insights, analyzing data to provide actionable recommendations that drive smarter decision-making and optimize business performance.',
       bgColor: 'bg-[#2F4538]',
       textColor: 'text-[#F7F3ED]'
     }
@@ -89,12 +89,15 @@ const BotMindsSaaSPage = () => {
   const convertPrice = (inrPrice) => {
     const numPrice = parseInt(inrPrice.replace('₹', ''));
     if (currency === 'USD') {
-      // Fixed USD prices: ₹250 -> $5, ₹550 -> $7, ₹750 -> $10
+      // Fixed USD prices: ₹250 -> $10, ₹550 -> $18, ₹750 -> Contact company
       const usdPriceMap = {
-        250: 5,
-        550: 9,
-        750: 13
+        250: 10,
+        550: 18,
+        750: null  // Enterprise - show contact text
       };
+      if (numPrice === 750) {
+        return 'Talk to Company';
+      }
       return `$${usdPriceMap[numPrice] || Math.round(numPrice / 83)}`;
     }
     return inrPrice;
@@ -118,7 +121,7 @@ const BotMindsSaaSPage = () => {
       name: 'Premium',
       price: '₹550',
       period: '/Month',
-      tagline: 'Power Meets Precision – Advanced Automation with BotMinds ADDU Agentic AI .',
+      tagline: 'Power Meets Precision – Advanced Automation with BotMinds Addu Agentic AI .',
       popular: true,
       features: [
         'Advanced AI Features',
@@ -134,6 +137,7 @@ const BotMindsSaaSPage = () => {
       price: '₹750',
       period: '/Month',
       tagline: 'Limitless Intelligence – Scalable AI for Enterprise Excellence.',
+      isEnterprise: true,
       features: [
         'Full AI Suite',
         '24/7 Dedicated Support',
@@ -170,7 +174,7 @@ const BotMindsSaaSPage = () => {
     { 
       name: 'Robert K', 
       title: 'Founder – RK Technology', 
-      quote: 'Secure, Scalable, and Cost-Saving. BotMinds ADDU Agentic AI helped us save lakhs monthly by automating recurring IT issues. The enterprise-grade security and GDPR compliance make it trustworthy for sensitive operations.' 
+      quote: 'Secure, Scalable, and Cost-Saving. BotMinds Addu Agentic AI helped us save lakhs monthly by automating recurring IT issues. The enterprise-grade security and GDPR compliance make it trustworthy for sensitive operations.' 
     },
     { 
       name: 'Darci L', 
@@ -181,44 +185,44 @@ const BotMindsSaaSPage = () => {
 
   const faqItems = [
     {
-      q: 'What is BotMinds ADDU Agentic AI ADDU Agentic AI and how does it work?',
-      a: 'BotMinds ADDU Agentic AI ADDU Agentic AI is an AI-powered automation platform designed to simplify IT operations. It integrates seamlessly with your existing systems and resolves issues in real-time. From ticketing to compliance, everything is automated - intelligently and securely.'
+      q: 'What is BotMinds Addu Agentic AI and how does it work?',
+      a: 'BotMinds Addu Agentic AI  is an AI-powered automation platform designed to simplify IT operations. It integrates seamlessly with your existing systems and resolves issues in real-time. From ticketing to compliance, everything is automated - intelligently and securely.'
     },
     {
-      q: 'Is BotMinds ADDU Agentic AI ADDU Agentic AI compatible with our current tools and platform?',
-      a: 'Yes! BotMinds ADDU Agentic AI ADDU Agentic AI offers seamless integration with existing tools and platforms through APIs, webhooks, and pre-built connectors, ensuring smooth data flow and enhanced workflow across your entire tech ecosystem.'
+      q: 'Is BotMinds Addu Agentic AI  compatible with our current tools and platform?',
+      a: 'Yes! BotMinds Addu Agentic AI  offers seamless integration with existing tools and platforms through APIs, webhooks, and pre-built connectors, ensuring smooth data flow and enhanced workflow across your entire tech ecosystem.'
     },
     {
-      q: 'How secure is BotMinds ADDU Agentic AI ADDU Agentic AI?',
-      a: 'BotMinds ADDU Agentic AI ADDU Agentic AI features enterprise-grade security with GDPR compliance, making it trustworthy for sensitive operations. All data is encrypted and follows industry-standard security protocols.'
+      q: 'How secure is BotMinds Addu Agentic AI ?',
+      a: 'BotMinds Addu Agentic AI features enterprise-grade security with GDPR compliance, making it trustworthy for sensitive operations. All data is encrypted and follows industry-standard security protocols.'
     },
     {
-      q: 'Can BotMinds ADDU Agentic AI ADDU Agentic AI be deployed on-premise or in private cloud?',
-      a: 'Yes, BotMinds ADDU Agentic AI ADDU Agentic AI can be deployed on-premise, in private cloud, or in public cloud environments based on your organization\'s requirements and security policies.'
+      q: 'Can BotMinds Addu Agentic AI  be deployed on-premise or in private cloud?',
+      a: 'Yes, BotMinds Addu Agentic AI  can be deployed on-premise, in private cloud, or in public cloud environments based on your organization\'s requirements and security policies.'
     },
     {
-      q: 'Which industry can benefit from BotMinds ADDU Agentic AI ADDU Agentic AI?',
-      a: 'BotMinds ADDU Agentic AI ADDU Agentic AI is designed for various industries including IT services, healthcare, finance, retail, manufacturing, education, and government sectors. Any organization looking to automate IT operations can benefit.'
+      q: 'Which industry can benefit from BotMinds Addu Agentic AI ?',
+      a: 'BotMinds Addu Agentic AI  is designed for various industries including IT services, healthcare, finance, retail, manufacturing, education, and government sectors. Any organization looking to automate IT operations can benefit.'
     },
     {
-      q: 'How quickly can BotMinds ADDU Agentic AI ADDU Agentic AI be implemented?',
+      q: 'How quickly can BotMinds Addu Agentic AI  be implemented?',
       a: 'Implementation typically takes 2-6 weeks depending on complexity and customization requirements. Our expert team provides dedicated support throughout the process.'
     },
     {
-      q: 'Does BotMinds ADDU Agentic AI ADDU Agentic AI offer multilingual or voice-enabled support?',
-      a: 'Yes, BotMinds ADDU Agentic AI ADDU Agentic AI includes BOTVoice capabilities that enable voice-enabled commands and support, allowing users to execute key system tasks through intuitive voice interactions.'
+      q: 'Does BotMinds ADDU Agentic AI  offer multilingual or voice-enabled support?',
+      a: 'Yes, BotMinds ADDU Agentic AI  includes BOTVoice capabilities that enable voice-enabled commands and support, allowing users to execute key system tasks through intuitive voice interactions.'
     }
   ];
 
   return (
-    <div className="pt-20 md:pt-24">
+    <div>
       {/* Hero Section */}
-      <section className="relative min-h-[600px] md:min-h-[700px] bg-cover bg-center flex items-center justify-center overflow-hidden"
+      <section className="relative min-h-[600px] md:min-h-[700px] bg-cover bg-center flex items-center justify-center overflow-hidden pt-20 md:pt-24"
         style={{ backgroundImage: `linear-gradient(rgba(31, 31, 31, 0.7) 0%, rgba(31, 31, 31, 0.8) 100%), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop')` }}>
         <div className="container-custom px-4 md:px-6 py-20 md:py-32 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="hero-heading text-5xl md:text-6xl lg:text-7xl font-heading font-light text-white mb-6 leading-tight tracking-wide">
-              BotMinds ADDU Agentic AI 
+              BotMinds Addu Agentic AI 
             </h1>
             <h2 className="hero-heading text-3xl md:text-4xl lg:text-5xl font-heading font-light text-white mb-8 leading-tight">
               Automate. Optimize. Transform.
@@ -245,18 +249,18 @@ const BotMindsSaaSPage = () => {
         </div>
       </section>
 
-      {/* Why Choose BotMinds ADDU Agentic AI ADDU Agentic AI - Introduction */}
+      {/* Why Choose BotMinds Addu Agentic AI  - Introduction */}
       <section className="py-16 md:py-24 bg-white dark:bg-charcoal">
         <div className="container-custom px-4 md:px-6">
           <div className="text-center mb-12 scroll-animate max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-light text-charcoal dark:text-sandstone mb-6">
-              WHY CHOOSE BotMinds ADDU Agentic AI ADDU Agentic AI
+              WHY CHOOSE BotMinds Addu Agentic AI 
             </h2>
             <p className="text-lg md:text-xl text-brown-grey dark:text-text-dark-muted leading-relaxed mb-6">
-              AI is no longer the future - it's the present. BotMinds ADDU Agentic AI ADDU Agentic AI automates tasks and delivers AI-driven insights to boost efficiency, cut costs, and enable smarter decisions.
+              AI is no longer the future - it's the present. BotMinds Addu Agentic AI  automates tasks and delivers AI-driven insights to boost efficiency, cut costs, and enable smarter decisions.
             </p>
             <p className="text-base md:text-lg text-brown-grey dark:text-text-dark-muted leading-relaxed mb-4">
-              BotMinds ADDU Agentic AI ADDU Agentic AI leverages artificial intelligence to resolve IT issues, automate workflows, and drive compliance in real time.
+              BotMinds Addu Agentic AI  leverages artificial intelligence to resolve IT issues, automate workflows, and drive compliance in real time.
             </p>
             <p className="text-base md:text-lg text-brown-grey dark:text-text-dark-muted leading-relaxed mb-4">
               From auto-ticketing to voice-enabled commands, it works 24×7 without human intervention. It learns, adapts, and scales with your business or institution.
@@ -286,7 +290,7 @@ const BotMindsSaaSPage = () => {
               AI Automation That Works While You Don't
             </h2>
             <p className="text-lg md:text-xl text-brown-grey dark:text-text-dark-muted leading-relaxed">
-              From ticketing to compliance, BotMinds ADDU Agentic AI ADDU Agentic AI runs your IT behind the scenes - 24×7. Experience the Power of Effortless Automation.
+              From ticketing to compliance, BotMinds ADDU Agentic AI runs your IT behind the scenes - 24×7. Experience the Power of Effortless Automation.
             </p>
           </div>
 
@@ -305,7 +309,7 @@ const BotMindsSaaSPage = () => {
               Play Into Anything. Sync Everything. Automate Instantly.
             </h3>
             <p className="text-lg text-brown-grey dark:text-text-dark-muted">
-              BotMinds ADDU Agentic AI ADDU Agentic AI integrates across your digital ecosystem - securely and intelligently.
+              BotMinds Addu Agentic AI integrates across your digital ecosystem - securely and intelligently.
             </p>
           </div>
         </div>
@@ -319,7 +323,7 @@ const BotMindsSaaSPage = () => {
               Smart Strategies Tools to Boost Your Business
             </h2>
             <p className="text-lg md:text-xl text-brown-grey dark:text-text-dark-muted leading-relaxed">
-              BotMinds ADDU Agentic AI ADDU Agentic AI is an AI-powered automation platform designed to simplify IT operations. It integrates seamlessly with your existing systems and resolves issues in real-time. From ticketing to compliance, everything is automated - intelligently and securely.
+              BotMinds Addu Agentic AI  is an AI-powered automation platform designed to simplify IT operations. It integrates seamlessly with your existing systems and resolves issues in real-time. From ticketing to compliance, everything is automated - intelligently and securely.
             </p>
           </div>
 
@@ -328,28 +332,28 @@ const BotMindsSaaSPage = () => {
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/1.png" 
-                alt="BotMinds ADDU Agentic AI ADDU Agentic AI Dashboard Overview" 
+                alt="BotMinds Addu Agentic AI  Dashboard Overview" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/2.png" 
-                alt="BotMinds ADDU Agentic AI ADDU Agentic AI Analytics" 
+                alt="BotMinds Addu Agentic AI  Analytics" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/3.png" 
-                alt="BotMinds ADDU Agentic AI ADDU Agentic AI Automation" 
+                alt="BotMinds Addu Agentic AI  Automation" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
             <div className="bg-white dark:bg-charcoal p-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
               <img 
                 src="/4.png" 
-                alt="BotMinds ADDU Agentic AI ADDU Agentic AI Intelligence" 
+                alt="BotMinds Addu Agentic AI  Intelligence" 
                 className="w-full h-auto rounded-lg"
               />
             </div>
@@ -365,7 +369,7 @@ const BotMindsSaaSPage = () => {
               Cutting-Edge Solutions for Scaling Your Business
             </h2>
             <p className="text-lg md:text-xl text-brown-grey dark:text-text-dark-muted leading-relaxed mb-8">
-              BotMinds ADDU Agentic AI ADDU Agentic AI delivers next-gen automation powered by AI - built to grow with you. From startups to large enterprises, it integrates, automates, and optimizes your entire IT ecosystem. Scale smarter, reduce costs, and unlock peak performance with zero friction.
+              BotMinds ADDU Agentic AI delivers next-gen automation powered by AI - built to grow with you. From startups to large enterprises, it integrates, automates, and optimizes your entire IT ecosystem. Scale smarter, reduce costs, and unlock peak performance with zero friction.
             </p>
           </div>
 
@@ -376,7 +380,7 @@ const BotMindsSaaSPage = () => {
                 <div>
                   <h3 className="text-2xl font-heading text-charcoal dark:text-sandstone mb-3">Business Strategy</h3>
                   <p className="text-brown-grey dark:text-text-dark-muted leading-relaxed mb-4">
-                    BotMinds ADDU Agentic AI ADDU Agentic AI aligns technology with your business goals - automating what slows you down and scaling what drives results. Our AI-powered platform enables cost optimization, operational efficiency, and faster decision-making.
+                    BotMinds ADDU Agentic AI  aligns technology with your business goals - automating what slows you down and scaling what drives results. Our AI-powered platform enables cost optimization, operational efficiency, and faster decision-making.
                   </p>
                   <p className="text-brown-grey dark:text-text-dark-muted leading-relaxed font-semibold">
                     It's not just a tech tool - it's a strategic asset for modern, growth-ready organizations.
@@ -483,8 +487,16 @@ const BotMindsSaaSPage = () => {
                 )}
                 <h3 className="text-3xl font-heading text-charcoal dark:text-sandstone mb-2 text-center">{plan.name}</h3>
                 <div className="text-center mb-4">
-                  <span className="text-5xl font-heading text-charcoal dark:text-sandstone">{convertPrice(plan.price)}</span>
-                  <span className="text-brown-grey dark:text-text-dark-muted text-lg">{plan.period}</span>
+                  {plan.isEnterprise && currency === 'USD' ? (
+                    <div className="text-2xl font-heading text-charcoal dark:text-sandstone mb-2">
+                      {convertPrice(plan.price)}
+                    </div>
+                  ) : (
+                    <>
+                      <span className="text-5xl font-heading text-charcoal dark:text-sandstone">{convertPrice(plan.price)}</span>
+                      <span className="text-brown-grey dark:text-text-dark-muted text-lg">{plan.period}</span>
+                    </>
+                  )}
                 </div>
                 <p className="text-sm text-brown-grey dark:text-text-dark-muted text-center mb-6 italic">
                   {plan.tagline}
@@ -601,7 +613,7 @@ const BotMindsSaaSPage = () => {
                   Schedule Demo
                 </button>
               </Link>
-              <a href="/BotMinds ADDU Agentic AI ADDU Agentic AI.pdf" download>
+              <a href="/BotMinds ADDU Agentic AI .pdf" download>
                 <button className="border-2 border-white text-white text-sm uppercase tracking-widest font-bold px-10 py-5 hover:bg-white/10 transition-all duration-300">
                   Download Brochure
                 </button>
@@ -615,4 +627,3 @@ const BotMindsSaaSPage = () => {
 };
 
 export default BotMindsSaaSPage;
-

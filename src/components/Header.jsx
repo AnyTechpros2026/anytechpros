@@ -104,7 +104,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img 
-              src={theme === 'dark' ? '/AdobeD.png' : '/AdobeL.png'} 
+              src={theme === 'dark' ? '/darklogo1.png' : '/lightlogo1.png'} 
               alt="AnyTechPros Logo" 
               className="w-8 h-8 md:w-10 md:h-10 object-contain"
             />

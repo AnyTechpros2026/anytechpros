@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { useFavicon } from './context/useFavicon';
 import ScrollToTop from './components/ScrollToTop';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,6 +14,9 @@ import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import AdminDashboardPage from './pages/AdminDashboardPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsPage from './pages/TermsPage';
+import SecurityPage from './pages/SecurityPage';
 
 // Development Pages
 import SoftwareDevelopmentMainPage from './pages/SoftwareDevelopmentMainPage';
@@ -42,20 +46,25 @@ import {
   ProductsPage,
 } from './pages/OtherPages';
 
-function App() {
+// App Content Component that uses useFavicon inside ThemeProvider
+function AppContent() {
+  useFavicon();
+  
   return (
-    <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <div className="min-h-screen flex flex-col">
-          <Header />
-          <main className="flex-grow">
-            <Routes>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-grow">
+          <Routes>
               {/* Main Pages */}
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/privacy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms" element={<TermsPage />} />
+              <Route path="/security" element={<SecurityPage />} />
               <Route path="/platform" element={<PlatformPage />} />
               <Route path="/industries" element={<IndustriesPage />} />
               <Route path="/consulting" element={<ConsultingPage />} />
@@ -89,6 +98,13 @@ function App() {
           <Footer />
         </div>
       </Router>
+    );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
     </ThemeProvider>
   );
 }
