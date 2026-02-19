@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import useRazorpay from '../context/useRazorpay';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const BotMindsSaaSPage = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
   const [currency, setCurrency] = useState('INR'); // INR or USD
+  const { initiatePayment } = useRazorpay();
+  const navigate = useNavigate();
 
   useEffect(() => {
     gsap.fromTo('.hero-heading', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out', stagger: 0.1 });
@@ -88,19 +91,68 @@ const BotMindsSaaSPage = () => {
   // Currency conversion function
   const convertPrice = (inrPrice) => {
     const numPrice = parseInt(inrPrice.replace('₹', ''));
+    // Enterprise plan - show contact text for both currencies
+    if (numPrice === 750) {
+      return 'Talk to our sales team';
+    }
     if (currency === 'USD') {
-      // Fixed USD prices: ₹250 -> $10, ₹550 -> $18, ₹750 -> Contact company
+      // Fixed USD prices: ₹250 -> $10, ₹550 -> $18
       const usdPriceMap = {
         250: 10,
-        550: 18,
-        750: null  // Enterprise - show contact text
+        550: 18
       };
-      if (numPrice === 750) {
-        return 'Talk to Company';
-      }
       return `$${usdPriceMap[numPrice] || Math.round(numPrice / 83)}`;
     }
     return inrPrice;
+  };
+
+  // Handle payment for plan
+  const handlePayment = (plan) => {
+    // If Enterprise plan, redirect to contact page
+    if (plan.isEnterprise) {
+      navigate('/contact');
+      return;
+    }
+
+    // Get the price value
+    const priceStr = plan.price.replace('₹', '');
+    let amount = parseInt(priceStr);
+    let curr = 'INR';
+
+    // Convert to appropriate currency
+    if (currency === 'USD') {
+      const usdPriceMap = {
+        250: 10,
+        550: 18
+      };
+      amount = usdPriceMap[parseInt(priceStr)];
+      curr = 'USD';
+    }
+
+    // Note: Minimum 25 licenses required
+    const totalAmount = amount * 25; // Minimum order quantity
+
+    initiatePayment({
+      amount: totalAmount,
+      currency: curr,
+      name: `BotMinds ADDU - ${plan.name} Plan`,
+      description: `${plan.period} Subscription (Minimum 25 licenses)`,
+      planType: plan.name,
+      onSuccess: (paymentData) => {
+        // Handle successful payment
+        console.log('Payment successful:', paymentData);
+        alert(`Payment Successful! \n\nPayment ID: ${paymentData.razorpay_payment_id}\n\nThank you for subscribing to ${plan.name} plan. Our team will contact you shortly to set up your account.`);
+        
+        // TODO: Send payment details to your backend to:
+        // 1. Verify payment signature
+        // 2. Create user account/subscription
+        // 3. Send confirmation email
+      },
+      onFailure: (error) => {
+        console.error('Payment failed:', error);
+        alert(`Payment Failed: ${error.description || 'Please try again'}`);
+      }
+    });
   };
 
   const plans = [
@@ -487,7 +539,7 @@ const BotMindsSaaSPage = () => {
                 )}
                 <h3 className="text-3xl font-heading text-charcoal dark:text-sandstone mb-2 text-center">{plan.name}</h3>
                 <div className="text-center mb-4">
-                  {plan.isEnterprise && currency === 'USD' ? (
+                  {plan.isEnterprise ? (
                     <div className="text-2xl font-heading text-charcoal dark:text-sandstone mb-2">
                       {convertPrice(plan.price)}
                     </div>
@@ -509,11 +561,12 @@ const BotMindsSaaSPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className="block">
-                  <button className="w-full bg-charcoal dark:bg-sandstone text-white dark:text-charcoal text-sm uppercase tracking-widest font-bold py-4 hover:opacity-90 transition-all duration-300">
-                    Get Started
-                  </button>
-                </Link>
+                <button 
+                  onClick={() => handlePayment(plan)}
+                  className="w-full bg-charcoal dark:bg-sandstone text-white dark:text-charcoal text-sm uppercase tracking-widest font-bold py-4 hover:opacity-90 transition-all duration-300"
+                >
+                  {plan.isEnterprise ? 'Contact Sales' : 'Buy Now'}
+                </button>
               </div>
             ))}
           </div>

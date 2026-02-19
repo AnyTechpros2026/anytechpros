@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import useRazorpay from '../context/useRazorpay';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const DigitalMarketingPage = () => {
   const [currency, setCurrency] = useState('INR'); // INR or USD
+  const { initiatePayment } = useRazorpay();
+  const navigate = useNavigate();
 
   useEffect(() => {
     gsap.fromTo(
@@ -54,6 +57,49 @@ const DigitalMarketingPage = () => {
       return `$${result}`;
     }
     return inrPrice;
+  };
+
+  // Handle payment for plan
+  const handlePayment = (plan) => {
+    // Get the price value
+    const priceStr = plan.price.replace('₹', '');
+    let amount = parseInt(priceStr);
+    let curr = 'INR';
+
+    // Convert to appropriate currency
+    if (currency === 'USD') {
+      const usdPriceMap = {
+        7999: 192,
+        11999: 288,
+        14999: 360,
+        17999: 432,
+        29999: 720
+      };
+      amount = usdPriceMap[parseInt(priceStr)] || Math.round(amount / 83);
+      curr = 'USD';
+    }
+
+    initiatePayment({
+      amount: amount,
+      currency: curr,
+      name: `Digital Marketing - ${plan.name} Plan`,
+      description: 'Monthly Subscription',
+      planType: plan.name,
+      onSuccess: (paymentData) => {
+        // Handle successful payment
+        console.log('Payment successful:', paymentData);
+        alert(`Payment Successful! \n\nPayment ID: ${paymentData.razorpay_payment_id}\n\nThank you for subscribing to ${plan.name} plan. Our team will contact you shortly to start your campaign.`);
+        
+        // TODO: Send payment details to your backend to:
+        // 1. Verify payment signature
+        // 2. Create user subscription
+        // 3. Send confirmation email
+      },
+      onFailure: (error) => {
+        console.error('Payment failed:', error);
+        alert(`Payment Failed: ${error.description || 'Please try again'}`);
+      }
+    });
   };
 
   const plans = [
@@ -231,11 +277,12 @@ const DigitalMarketingPage = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact">
-                  <button className={`w-full ${plan.bgColor === 'bg-[#2F4538]' ? 'bg-white text-charcoal' : 'bg-charcoal text-white'} py-3 px-6 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-opacity`}>
-                    Get Started
-                  </button>
-                </Link>
+                <button 
+                  onClick={() => handlePayment(plan)}
+                  className={`w-full ${plan.bgColor === 'bg-[#2F4538]' ? 'bg-white text-charcoal' : 'bg-charcoal text-white'} py-3 px-6 text-xs uppercase tracking-widest font-bold hover:opacity-90 transition-opacity`}
+                >
+                  Buy Now
+                </button>
               </div>
             ))}
           </div>
@@ -249,11 +296,12 @@ const DigitalMarketingPage = () => {
               <p className="text-lg leading-relaxed mb-8 text-white/90">
                 This is the premium service offered by us in which we provide the Software development for your business as well as Digital Marketing Services to grow your business. Our highly skilled, experienced and professional software developers are able to design and develop the software with all the functionalities you require and our dynamic Digital Marketing Team will help you to grow your business and achieve your market goals and make profits. In this service you are also able to customise your package according to your business needs.
               </p>
-              <Link to="/contact">
-                <button className="bg-white text-charcoal py-4 px-10 text-sm uppercase tracking-widest font-bold hover:bg-white/90 transition-all">
-                  Customize Your Package
-                </button>
-              </Link>
+              <button 
+                onClick={() => handlePayment({ name: 'Premium Package', price: '₹29999' })}
+                className="bg-white text-charcoal py-4 px-10 text-sm uppercase tracking-widest font-bold hover:bg-white/90 transition-all"
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

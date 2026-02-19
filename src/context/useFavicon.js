@@ -10,8 +10,6 @@ export const useFavicon = () => {
       // Update favicon based on theme
       if (theme === 'dark') {
         favicon.href = '/darklogo1.png';
-      } else {
-        favicon.href = '/lightlogo1.png';
       }
     }
   }, [theme]);
